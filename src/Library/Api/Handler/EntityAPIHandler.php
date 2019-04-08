@@ -36,139 +36,134 @@ class EntityAPIHandler extends APIHandler
 
     public function createRecord()
     {
-            $inputJSON = self::getZCRMRecordAsJSON();
-            $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
-            $this->urlPath = $this->record->getModuleApiName();
-            $this->addHeader('Content-Type', 'application/json');
-            $this->requestBody = json_encode(array_filter(['data'=>[$inputJSON]]));
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
-            $responseDataArray = $responseInstance->getResponseJSON()['data'];
-            $responseData = $responseDataArray[0];
-            $reponseDetails = $responseData['details'];
-            $this->record->setEntityId($reponseDetails['id']);
-            $this->record->setCreatedTime($reponseDetails['Created_Time']);
-            $createdBy = $reponseDetails['Created_By'];
-            $this->record->setCreatedBy(ZCRMUser::getInstance($createdBy['id'], $createdBy['name']));
+        $inputJSON = self::getZCRMRecordAsJSON();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
+        $this->urlPath = $this->record->getModuleApiName();
+        $this->addHeader('Content-Type', 'application/json');
+        $this->requestBody = json_encode(array_filter(['data'=>[$inputJSON]]));
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseDataArray = $responseInstance->getResponseJSON()['data'];
+        $responseData = $responseDataArray[0];
+        $reponseDetails = $responseData['details'];
+        $this->record->setEntityId($reponseDetails['id']);
+        $this->record->setCreatedTime($reponseDetails['Created_Time']);
+        $createdBy = $reponseDetails['Created_By'];
+        $this->record->setCreatedBy(ZCRMUser::getInstance($createdBy['id'], $createdBy['name']));
 
-            $responseInstance->setData($this->record);
+        $responseInstance->setData($this->record);
 
-            return $responseInstance;
+        return $responseInstance;
     }
 
     public function updateRecord()
     {
-            $inputJSON = self::getZCRMRecordAsJSON();
-            $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
-            $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId();
-            $this->addHeader('Content-Type', 'application/json');
-            $this->requestBody = json_encode(array_filter(['data'=>[$inputJSON]]));
+        $inputJSON = self::getZCRMRecordAsJSON();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
+        $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId();
+        $this->addHeader('Content-Type', 'application/json');
+        $this->requestBody = json_encode(array_filter(['data'=>[$inputJSON]]));
 
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
 
-            $responseDataArray = $responseInstance->getResponseJSON()['data'];
-            $responseData = $responseDataArray[0];
-            $reponseDetails = $responseData['details'];
-            $this->record->setCreatedTime($reponseDetails['Created_Time']);
-            $this->record->setModifiedTime($reponseDetails['Modified_Time']);
-            $createdBy = $reponseDetails['Created_By'];
-            $this->record->setCreatedBy(ZCRMUser::getInstance($createdBy['id'], $createdBy['name']));
-            $modifiedBy = $reponseDetails['Modified_By'];
-            $this->record->setModifiedBy(ZCRMUser::getInstance($modifiedBy['id'], $modifiedBy['name']));
+        $responseDataArray = $responseInstance->getResponseJSON()['data'];
+        $responseData = $responseDataArray[0];
+        $reponseDetails = $responseData['details'];
+        $this->record->setCreatedTime($reponseDetails['Created_Time']);
+        $this->record->setModifiedTime($reponseDetails['Modified_Time']);
+        $createdBy = $reponseDetails['Created_By'];
+        $this->record->setCreatedBy(ZCRMUser::getInstance($createdBy['id'], $createdBy['name']));
+        $modifiedBy = $reponseDetails['Modified_By'];
+        $this->record->setModifiedBy(ZCRMUser::getInstance($modifiedBy['id'], $modifiedBy['name']));
 
-            $responseInstance->setData($this->record);
+        $responseInstance->setData($this->record);
 
-            return $responseInstance;
+        return $responseInstance;
     }
 
     public function deleteRecord()
     {
+        $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
+        $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId();
+        $this->addHeader('Content-Type', 'application/json');
 
-            $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
-            $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId();
-            $this->addHeader('Content-Type', 'application/json');
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
 
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
-
-            return $responseInstance;
-
+        return $responseInstance;
     }
 
     public function convertRecord($potentialRecord, $assignToUser)
     {
-            $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
-            $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId().'/actions/convert';
-            $this->addHeader('Content-Type', 'application/json');
+        $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
+        $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId().'/actions/convert';
+        $this->addHeader('Content-Type', 'application/json');
 
-            $dataObject = [];
-            if ($assignToUser != null) {
-                $dataObject['assign_to'] = $assignToUser->getId();
-            }
-            if ($potentialRecord != null) {
-                $dataObject['Deals'] = self::getInstance($potentialRecord)->getZCRMRecordAsJSON();
-            }
-            if (count($dataObject) > 0) {
-                $dataArray = json_encode([APIConstants::DATA=>[array_filter($dataObject)]]);
-            } else {
-                $dataArray = json_encode([APIConstants::DATA=>[new ArrayObject()]]);
-            }
-            $this->requestBody = $dataArray;
+        $dataObject = [];
+        if ($assignToUser != null) {
+            $dataObject['assign_to'] = $assignToUser->getId();
+        }
+        if ($potentialRecord != null) {
+            $dataObject['Deals'] = self::getInstance($potentialRecord)->getZCRMRecordAsJSON();
+        }
+        if (count($dataObject) > 0) {
+            $dataArray = json_encode([APIConstants::DATA=>[array_filter($dataObject)]]);
+        } else {
+            $dataArray = json_encode([APIConstants::DATA=>[new ArrayObject()]]);
+        }
+        $this->requestBody = $dataArray;
 
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
 
-            $responseJSON = $responseInstance->getResponseJSON();
+        $responseJSON = $responseInstance->getResponseJSON();
 
-            //Process Response JSON
-            $convertedIdsJSON = $responseJSON[APIConstants::DATA][0];
-            $convertedIds = [];
-            $convertedIds[APIConstants::CONTACTS] = isset($convertedIdsJSON[APIConstants::CONTACTS]) ? $convertedIdsJSON[APIConstants::CONTACTS] : null;
-            if (isset($convertedIdsJSON[APIConstants::ACCOUNTS]) && $convertedIdsJSON[APIConstants::ACCOUNTS] != null) {
-                $convertedIds[APIConstants::ACCOUNTS] = $convertedIdsJSON[APIConstants::ACCOUNTS];
-            }
-            if (isset($convertedIdsJSON[APIConstants::DEALS]) && $convertedIdsJSON[APIConstants::DEALS] != null) {
-                $convertedIds[APIConstants::DEALS] = $convertedIdsJSON[APIConstants::DEALS];
-            }
+        //Process Response JSON
+        $convertedIdsJSON = $responseJSON[APIConstants::DATA][0];
+        $convertedIds = [];
+        $convertedIds[APIConstants::CONTACTS] = isset($convertedIdsJSON[APIConstants::CONTACTS]) ? $convertedIdsJSON[APIConstants::CONTACTS] : null;
+        if (isset($convertedIdsJSON[APIConstants::ACCOUNTS]) && $convertedIdsJSON[APIConstants::ACCOUNTS] != null) {
+            $convertedIds[APIConstants::ACCOUNTS] = $convertedIdsJSON[APIConstants::ACCOUNTS];
+        }
+        if (isset($convertedIdsJSON[APIConstants::DEALS]) && $convertedIdsJSON[APIConstants::DEALS] != null) {
+            $convertedIds[APIConstants::DEALS] = $convertedIdsJSON[APIConstants::DEALS];
+        }
 
-            return $convertedIds;
+        return $convertedIds;
     }
 
     public function uploadPhoto($filePath)
     {
-            $fileContent = file_get_contents($filePath);
-            $filePathArray = explode('/', $filePath);
-            $fileName = $filePathArray[count($filePathArray) - 1];
-            if (function_exists('curl_file_create')) { // php 5.6+
-                $cFile = curl_file_create($filePath);
-            } else { //
-                $cFile = '@'.realpath($filePath);
-            }
-            $post = ['file'=> $cFile];
+        $fileContent = file_get_contents($filePath);
+        $filePathArray = explode('/', $filePath);
+        $fileName = $filePathArray[count($filePathArray) - 1];
+        if (function_exists('curl_file_create')) { // php 5.6+
+            $cFile = curl_file_create($filePath);
+        } else { //
+            $cFile = '@'.realpath($filePath);
+        }
+        $post = ['file'=> $cFile];
 
-            $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
-            $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId().'/photo';
-            $this->requestBody = $post;
+        $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
+        $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId().'/photo';
+        $this->requestBody = $post;
 
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
 
-            return $responseInstance;
+        return $responseInstance;
     }
 
     public function downloadPhoto()
     {
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId().'/photo';
 
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId().'/photo';
-
-            return APIRequest::getInstance($this)->downloadFile();
+        return APIRequest::getInstance($this)->downloadFile();
     }
 
     public function deletePhoto()
     {
-        
-            $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
-            $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId().'/photo';
+        $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
+        $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId().'/photo';
 
-            return APIRequest::getInstance($this)->getAPIResponse();
-
+        return APIRequest::getInstance($this)->getAPIResponse();
     }
 
     public function getZCRMRecordAsJSON()

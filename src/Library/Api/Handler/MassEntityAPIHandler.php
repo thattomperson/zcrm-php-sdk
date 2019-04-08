@@ -22,47 +22,45 @@ class MassEntityAPIHandler extends APIHandler
             throw new ZCRMException(APIConstants::API_MAX_RECORDS_MSG, APIConstants::RESPONSECODE_BAD_REQUEST);
         }
 
-        
-            $this->urlPath = $this->module->getAPIName();
-            $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
-            $this->addHeader('Content-Type', 'application/json');
-            $requestBodyObj = [];
-            $dataArray = [];
-            foreach ($records as $record) {
-                if ($record->getEntityId() == null) {
-                    array_push($dataArray, EntityAPIHandler::getInstance($record)->getZCRMRecordAsJSON());
-                } else {
-                    throw new ZCRMException('Entity ID MUST be null for create operation.', APIConstants::RESPONSECODE_BAD_REQUEST);
-                }
+        $this->urlPath = $this->module->getAPIName();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
+        $this->addHeader('Content-Type', 'application/json');
+        $requestBodyObj = [];
+        $dataArray = [];
+        foreach ($records as $record) {
+            if ($record->getEntityId() == null) {
+                array_push($dataArray, EntityAPIHandler::getInstance($record)->getZCRMRecordAsJSON());
+            } else {
+                throw new ZCRMException('Entity ID MUST be null for create operation.', APIConstants::RESPONSECODE_BAD_REQUEST);
             }
-            $requestBodyObj['data'] = $dataArray;
-            if ($trigger !== null && is_array($trigger)) {
-                $requestBodyObj['trigger'] = $trigger;
-            }
-            $this->requestBody = $requestBodyObj;
+        }
+        $requestBodyObj['data'] = $dataArray;
+        if ($trigger !== null && is_array($trigger)) {
+            $requestBodyObj['trigger'] = $trigger;
+        }
+        $this->requestBody = $requestBodyObj;
 
-            //Fire Request
-            $bulkAPIResponse = APIRequest::getInstance($this)->getBulkAPIResponse();
-            $createdRecords = [];
-            $responses = $bulkAPIResponse->getEntityResponses();
-            $size = count($responses);
-            for ($i = 0; $i < $size; $i++) {
-                $entityResIns = $responses[$i];
-                if (APIConstants::STATUS_SUCCESS === $entityResIns->getStatus()) {
-                    $responseData = $entityResIns->getResponseJSON();
-                    $recordDetails = $responseData['details'];
-                    $newRecord = $records[$i];
-                    EntityAPIHandler::getInstance($newRecord)->setRecordProperties($recordDetails);
-                    array_push($createdRecords, $newRecord);
-                    $entityResIns->setData($newRecord);
-                } else {
-                    $entityResIns->setData(null);
-                }
+        //Fire Request
+        $bulkAPIResponse = APIRequest::getInstance($this)->getBulkAPIResponse();
+        $createdRecords = [];
+        $responses = $bulkAPIResponse->getEntityResponses();
+        $size = count($responses);
+        for ($i = 0; $i < $size; $i++) {
+            $entityResIns = $responses[$i];
+            if (APIConstants::STATUS_SUCCESS === $entityResIns->getStatus()) {
+                $responseData = $entityResIns->getResponseJSON();
+                $recordDetails = $responseData['details'];
+                $newRecord = $records[$i];
+                EntityAPIHandler::getInstance($newRecord)->setRecordProperties($recordDetails);
+                array_push($createdRecords, $newRecord);
+                $entityResIns->setData($newRecord);
+            } else {
+                $entityResIns->setData(null);
             }
-            $bulkAPIResponse->setData($createdRecords);
+        }
+        $bulkAPIResponse->setData($createdRecords);
 
-            return $bulkAPIResponse;
-    
+        return $bulkAPIResponse;
     }
 
     public function upsertRecords($records)
@@ -71,43 +69,42 @@ class MassEntityAPIHandler extends APIHandler
             throw new ZCRMException(APIConstants::API_MAX_RECORDS_MSG, APIConstants::RESPONSECODE_BAD_REQUEST);
         }
 
-        
-            $this->urlPath = $this->module->getAPIName().'/upsert';
-            $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
-            $this->addHeader('Content-Type', 'application/json');
-            $requestBodyObj = [];
-            $dataArray = [];
-            foreach ($records as $record) {
-                $recordJSON = EntityAPIHandler::getInstance($record)->getZCRMRecordAsJSON();
-                if ($record->getEntityId() != null) {
-                    $recordJSON['id'] = $record->getEntityId();
-                }
-                array_push($dataArray, $recordJSON);
+        $this->urlPath = $this->module->getAPIName().'/upsert';
+        $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
+        $this->addHeader('Content-Type', 'application/json');
+        $requestBodyObj = [];
+        $dataArray = [];
+        foreach ($records as $record) {
+            $recordJSON = EntityAPIHandler::getInstance($record)->getZCRMRecordAsJSON();
+            if ($record->getEntityId() != null) {
+                $recordJSON['id'] = $record->getEntityId();
             }
-            $requestBodyObj['data'] = $dataArray;
-            $this->requestBody = $requestBodyObj;
+            array_push($dataArray, $recordJSON);
+        }
+        $requestBodyObj['data'] = $dataArray;
+        $this->requestBody = $requestBodyObj;
 
-            //Fire Request
-            $bulkAPIResponse = APIRequest::getInstance($this)->getBulkAPIResponse();
-            $upsertRecords = [];
-            $responses = $bulkAPIResponse->getEntityResponses();
-            $size = count($responses);
-            for ($i = 0; $i < $size; $i++) {
-                $entityResIns = $responses[$i];
-                if (APIConstants::STATUS_SUCCESS === $entityResIns->getStatus()) {
-                    $responseData = $entityResIns->getResponseJSON();
-                    $recordDetails = $responseData['details'];
-                    $newRecord = $records[$i];
-                    EntityAPIHandler::getInstance($newRecord)->setRecordProperties($recordDetails);
-                    array_push($upsertRecords, $newRecord);
-                    $entityResIns->setData($newRecord);
-                } else {
-                    $entityResIns->setData(null);
-                }
+        //Fire Request
+        $bulkAPIResponse = APIRequest::getInstance($this)->getBulkAPIResponse();
+        $upsertRecords = [];
+        $responses = $bulkAPIResponse->getEntityResponses();
+        $size = count($responses);
+        for ($i = 0; $i < $size; $i++) {
+            $entityResIns = $responses[$i];
+            if (APIConstants::STATUS_SUCCESS === $entityResIns->getStatus()) {
+                $responseData = $entityResIns->getResponseJSON();
+                $recordDetails = $responseData['details'];
+                $newRecord = $records[$i];
+                EntityAPIHandler::getInstance($newRecord)->setRecordProperties($recordDetails);
+                array_push($upsertRecords, $newRecord);
+                $entityResIns->setData($newRecord);
+            } else {
+                $entityResIns->setData(null);
             }
-            $bulkAPIResponse->setData($upsertRecords);
+        }
+        $bulkAPIResponse->setData($upsertRecords);
 
-            return $bulkAPIResponse;
+        return $bulkAPIResponse;
     }
 
     public function updateRecords($records, $trigger)
@@ -116,46 +113,45 @@ class MassEntityAPIHandler extends APIHandler
             throw new ZCRMException(APIConstants::API_MAX_RECORDS_MSG, APIConstants::RESPONSECODE_BAD_REQUEST);
         }
 
-        
-            $this->urlPath = $this->module->getAPIName();
-            $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
-            $this->addHeader('Content-Type', 'application/json');
-            $requestBodyObj = [];
-            $dataArray = [];
-            foreach ($records as $record) {
-                $recordJSON = EntityAPIHandler::getInstance($record)->getZCRMRecordAsJSON();
-                if ($record->getEntityId() != null) {
-                    $recordJSON['id'] = $record->getEntityId();
-                }
-                array_push($dataArray, $recordJSON);
+        $this->urlPath = $this->module->getAPIName();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
+        $this->addHeader('Content-Type', 'application/json');
+        $requestBodyObj = [];
+        $dataArray = [];
+        foreach ($records as $record) {
+            $recordJSON = EntityAPIHandler::getInstance($record)->getZCRMRecordAsJSON();
+            if ($record->getEntityId() != null) {
+                $recordJSON['id'] = $record->getEntityId();
             }
-            $requestBodyObj['data'] = $dataArray;
-            if ($trigger !== null && is_array($trigger)) {
-                $requestBodyObj['trigger'] = $trigger;
-            }
-            $this->requestBody = $requestBodyObj;
+            array_push($dataArray, $recordJSON);
+        }
+        $requestBodyObj['data'] = $dataArray;
+        if ($trigger !== null && is_array($trigger)) {
+            $requestBodyObj['trigger'] = $trigger;
+        }
+        $this->requestBody = $requestBodyObj;
 
-            //Fire Request
-            $bulkAPIResponse = APIRequest::getInstance($this)->getBulkAPIResponse();
-            $upsertRecords = [];
-            $responses = $bulkAPIResponse->getEntityResponses();
-            $size = count($responses);
-            for ($i = 0; $i < $size; $i++) {
-                $entityResIns = $responses[$i];
-                if (APIConstants::STATUS_SUCCESS === $entityResIns->getStatus()) {
-                    $responseData = $entityResIns->getResponseJSON();
-                    $recordDetails = $responseData['details'];
-                    $newRecord = $records[$i];
-                    EntityAPIHandler::getInstance($newRecord)->setRecordProperties($recordDetails);
-                    array_push($upsertRecords, $newRecord);
-                    $entityResIns->setData($newRecord);
-                } else {
-                    $entityResIns->setData(null);
-                }
+        //Fire Request
+        $bulkAPIResponse = APIRequest::getInstance($this)->getBulkAPIResponse();
+        $upsertRecords = [];
+        $responses = $bulkAPIResponse->getEntityResponses();
+        $size = count($responses);
+        for ($i = 0; $i < $size; $i++) {
+            $entityResIns = $responses[$i];
+            if (APIConstants::STATUS_SUCCESS === $entityResIns->getStatus()) {
+                $responseData = $entityResIns->getResponseJSON();
+                $recordDetails = $responseData['details'];
+                $newRecord = $records[$i];
+                EntityAPIHandler::getInstance($newRecord)->setRecordProperties($recordDetails);
+                array_push($upsertRecords, $newRecord);
+                $entityResIns->setData($newRecord);
+            } else {
+                $entityResIns->setData(null);
             }
-            $bulkAPIResponse->setData($upsertRecords);
+        }
+        $bulkAPIResponse->setData($upsertRecords);
 
-            return $bulkAPIResponse;
+        return $bulkAPIResponse;
     }
 
     public function deleteRecords($entityIds)
@@ -164,24 +160,23 @@ class MassEntityAPIHandler extends APIHandler
             throw new ZCRMException(APIConstants::API_MAX_RECORDS_MSG, APIConstants::RESPONSECODE_BAD_REQUEST);
         }
 
-        
-            $this->urlPath = $this->module->getAPIName();
-            $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
-            $this->addHeader('Content-Type', 'application/json');
-            $this->addParam('ids', implode(',', $entityIds)); //converts array to string with specified seperator
+        $this->urlPath = $this->module->getAPIName();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
+        $this->addHeader('Content-Type', 'application/json');
+        $this->addParam('ids', implode(',', $entityIds)); //converts array to string with specified seperator
 
-            //Fire Request
-            $bulkAPIResponse = APIRequest::getInstance($this)->getBulkAPIResponse();
-            $responses = $bulkAPIResponse->getEntityResponses();
+        //Fire Request
+        $bulkAPIResponse = APIRequest::getInstance($this)->getBulkAPIResponse();
+        $responses = $bulkAPIResponse->getEntityResponses();
 
-            foreach ($responses as $entityResIns) {
-                $responseData = $entityResIns->getResponseJSON();
-                $responseJSON = $responseData['details'];
-                $record = ZCRMRecord::getInstance($this->module->getAPIName(), $responseJSON['id']);
-                $entityResIns->setData($record);
-            }
+        foreach ($responses as $entityResIns) {
+            $responseData = $entityResIns->getResponseJSON();
+            $responseJSON = $responseData['details'];
+            $record = ZCRMRecord::getInstance($this->module->getAPIName(), $responseJSON['id']);
+            $entityResIns->setData($record);
+        }
 
-            return $bulkAPIResponse;
+        return $bulkAPIResponse;
     }
 
     public function getAllDeletedRecords()
@@ -201,25 +196,24 @@ class MassEntityAPIHandler extends APIHandler
 
     private function getDeletedRecords($type)
     {
-        
-            $this->urlPath = $this->module->getAPIName().'/deleted';
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            $this->addParam('type', $type);
+        $this->urlPath = $this->module->getAPIName().'/deleted';
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        $this->addParam('type', $type);
 
-            $responseInstance = APIRequest::getInstance($this)->getBulkAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $trashRecords = $responseJSON['data'];
-            $trashRecordList = [];
-            foreach ($trashRecords as $trashRecord) {
-                $trashRecordInstance = ZCRMTrashRecord::getInstance($trashRecord['type'], $trashRecord['id']);
-                self::setTrashRecordProperties($trashRecordInstance, $trashRecord);
-                array_push($trashRecordList, $trashRecordInstance);
-            }
+        $responseInstance = APIRequest::getInstance($this)->getBulkAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $trashRecords = $responseJSON['data'];
+        $trashRecordList = [];
+        foreach ($trashRecords as $trashRecord) {
+            $trashRecordInstance = ZCRMTrashRecord::getInstance($trashRecord['type'], $trashRecord['id']);
+            self::setTrashRecordProperties($trashRecordInstance, $trashRecord);
+            array_push($trashRecordList, $trashRecordInstance);
+        }
 
-            $responseInstance->setData($trashRecordList);
+        $responseInstance->setData($trashRecordList);
 
-            return $responseInstance;
+        return $responseInstance;
     }
 
     public function setTrashRecordProperties($trashRecordInstance, $recordProperties)
@@ -242,47 +236,47 @@ class MassEntityAPIHandler extends APIHandler
 
     public function getRecords($cvId, $sortByField, $sortOrder, $page, $perPage, $customHeaders)
     {
-            $this->urlPath = $this->module->getAPIName();
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            if ($customHeaders != null) {
-                foreach ($customHeaders as $key=>$value) {
-                    $this->addHeader($key, $value);
-                }
+        $this->urlPath = $this->module->getAPIName();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        if ($customHeaders != null) {
+            foreach ($customHeaders as $key=>$value) {
+                $this->addHeader($key, $value);
             }
-            if ($cvId != null) {
-                $this->addParam('cvid', $cvId + 0);
-            }
-            if ($sortByField != null) {
-                $this->addParam('sort_by', $sortByField);
-            }
-            if ($sortOrder != null) {
-                $this->addParam('sort_order', $sortOrder);
-            }
-            $this->addParam('page', $page + 0);
-            $this->addParam('per_page', $perPage + 0);
+        }
+        if ($cvId != null) {
+            $this->addParam('cvid', $cvId + 0);
+        }
+        if ($sortByField != null) {
+            $this->addParam('sort_by', $sortByField);
+        }
+        if ($sortOrder != null) {
+            $this->addParam('sort_order', $sortOrder);
+        }
+        $this->addParam('page', $page + 0);
+        $this->addParam('per_page', $perPage + 0);
 
-            $responseInstance = APIRequest::getInstance($this)->getBulkAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $records = $responseJSON['data'];
-            $recordsList = [];
-            foreach ($records as $record) {
-                $recordInstance = ZCRMRecord::getInstance($this->module->getAPIName(), $record['id']);
-                EntityAPIHandler::getInstance($recordInstance)->setRecordProperties($record);
-                array_push($recordsList, $recordInstance);
-            }
+        $responseInstance = APIRequest::getInstance($this)->getBulkAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $records = $responseJSON['data'];
+        $recordsList = [];
+        foreach ($records as $record) {
+            $recordInstance = ZCRMRecord::getInstance($this->module->getAPIName(), $record['id']);
+            EntityAPIHandler::getInstance($recordInstance)->setRecordProperties($record);
+            array_push($recordsList, $recordInstance);
+        }
 
-            $responseInstance->setData($recordsList);
+        $responseInstance->setData($recordsList);
 
-            return $responseInstance;
+        return $responseInstance;
     }
 
     public function searchRecords($searchWord, $page, $perPage, $type)
     {
-            $this->urlPath = $this->module->getAPIName().'/search';
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            switch ($type) {
+        $this->urlPath = $this->module->getAPIName().'/search';
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        switch ($type) {
                 case 'word':
                     $this->addParam('word', $searchWord);
                     break;
@@ -296,21 +290,21 @@ class MassEntityAPIHandler extends APIHandler
                     $this->addParam('criteria', $searchWord);
                     break;
             }
-            $this->addParam('page', $page + 0);
-            $this->addParam('per_page', $perPage + 0);
-            $responseInstance = APIRequest::getInstance($this)->getBulkAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $records = $responseJSON['data'];
-            $recordsList = [];
-            foreach ($records as $record) {
-                $recordInstance = ZCRMRecord::getInstance($this->module->getAPIName(), $record['id']);
-                EntityAPIHandler::getInstance($recordInstance)->setRecordProperties($record);
-                array_push($recordsList, $recordInstance);
-            }
+        $this->addParam('page', $page + 0);
+        $this->addParam('per_page', $perPage + 0);
+        $responseInstance = APIRequest::getInstance($this)->getBulkAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $records = $responseJSON['data'];
+        $recordsList = [];
+        foreach ($records as $record) {
+            $recordInstance = ZCRMRecord::getInstance($this->module->getAPIName(), $record['id']);
+            EntityAPIHandler::getInstance($recordInstance)->setRecordProperties($record);
+            array_push($recordsList, $recordInstance);
+        }
 
-            $responseInstance->setData($recordsList);
+        $responseInstance->setData($recordsList);
 
-            return $responseInstance;
+        return $responseInstance;
     }
 
     public function massUpdateRecords($idList, $apiName, $value)
@@ -319,36 +313,34 @@ class MassEntityAPIHandler extends APIHandler
             throw new ZCRMException(APIConstants::API_MAX_RECORDS_MSG, APIConstants::RESPONSECODE_BAD_REQUEST);
         }
 
-        
-            $inputJSON = self::constructJSONForMassUpdate($idList, $apiName, $value);
-            $this->urlPath = $this->module->getAPIName();
-            $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
-            $this->addHeader('Content-Type', 'application/json');
-            $this->requestBody = $inputJSON;
-            $this->apiKey = 'data';
-            $bulkAPIResponse = APIRequest::getInstance($this)->getBulkAPIResponse();
+        $inputJSON = self::constructJSONForMassUpdate($idList, $apiName, $value);
+        $this->urlPath = $this->module->getAPIName();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
+        $this->addHeader('Content-Type', 'application/json');
+        $this->requestBody = $inputJSON;
+        $this->apiKey = 'data';
+        $bulkAPIResponse = APIRequest::getInstance($this)->getBulkAPIResponse();
 
-            $updatedRecords = [];
-            $responses = $bulkAPIResponse->getEntityResponses();
-            $size = count($responses);
-            for ($i = 0; $i < $size; $i++) {
-                $entityResIns = $responses[$i];
-                if (APIConstants::STATUS_SUCCESS === $entityResIns->getStatus()) {
-                    $responseData = $entityResIns->getResponseJSON();
-                    $recordJSON = $responseData['details'];
+        $updatedRecords = [];
+        $responses = $bulkAPIResponse->getEntityResponses();
+        $size = count($responses);
+        for ($i = 0; $i < $size; $i++) {
+            $entityResIns = $responses[$i];
+            if (APIConstants::STATUS_SUCCESS === $entityResIns->getStatus()) {
+                $responseData = $entityResIns->getResponseJSON();
+                $recordJSON = $responseData['details'];
 
-                    $updatedRecord = ZCRMRecord::getInstance($this->module->getAPIName(), $recordJSON['id']);
-                    EntityAPIHandler::getInstance($updatedRecord)->setRecordProperties($recordJSON);
-                    array_push($updatedRecords, $updatedRecord);
-                    $entityResIns->setData($updatedRecord);
-                } else {
-                    $entityResIns->setData(null);
-                }
+                $updatedRecord = ZCRMRecord::getInstance($this->module->getAPIName(), $recordJSON['id']);
+                EntityAPIHandler::getInstance($updatedRecord)->setRecordProperties($recordJSON);
+                array_push($updatedRecords, $updatedRecord);
+                $entityResIns->setData($updatedRecord);
+            } else {
+                $entityResIns->setData(null);
             }
-            $bulkAPIResponse->setData($updatedRecords);
+        }
+        $bulkAPIResponse->setData($updatedRecords);
 
-            return $bulkAPIResponse;
-        
+        return $bulkAPIResponse;
     }
 
     public function constructJSONForMassUpdate($idList, $apiName, $value)

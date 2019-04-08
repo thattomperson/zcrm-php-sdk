@@ -15,34 +15,32 @@ class MetaDataAPIHandler extends APIHandler
 
     public function getAllModules()
     {
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->urlPath = 'settings/modules';
-            $this->addHeader('Content-Type', 'application/json');
-            $responseInstance = APIRequest::getInstance($this)->getBulkAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $modulesArray = $responseJSON['modules'];
-            $responseData = [];
-            foreach ($modulesArray as $eachmodule) {
-                $module = self::getZCRMModule($eachmodule);
-                array_push($responseData, $module);
-            }
-            $responseInstance->setData($responseData);
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->urlPath = 'settings/modules';
+        $this->addHeader('Content-Type', 'application/json');
+        $responseInstance = APIRequest::getInstance($this)->getBulkAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $modulesArray = $responseJSON['modules'];
+        $responseData = [];
+        foreach ($modulesArray as $eachmodule) {
+            $module = self::getZCRMModule($eachmodule);
+            array_push($responseData, $module);
+        }
+        $responseInstance->setData($responseData);
 
-            return $responseInstance;
+        return $responseInstance;
     }
 
     public function getModule($moduleName)
     {
-    
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->urlPath = 'settings/modules/'.$moduleName;
-            $this->addHeader('Content-Type', 'application/json');
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
-            $moduleArray = $responseInstance->getResponseJSON()['modules'];
-            $responseInstance->setData(self::getZCRMModule($moduleArray[0]));
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->urlPath = 'settings/modules/'.$moduleName;
+        $this->addHeader('Content-Type', 'application/json');
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $moduleArray = $responseInstance->getResponseJSON()['modules'];
+        $responseInstance->setData(self::getZCRMModule($moduleArray[0]));
 
-            return $responseInstance;
-    
+        return $responseInstance;
     }
 
     public function getZCRMModule($moduleDetails)

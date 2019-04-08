@@ -2,8 +2,8 @@
 
 namespace Zoho\CRM\Tests\Library\Common;
 
-use Zoho\CRM\Tests\TestCase;
 use Zoho\CRM\Library\Common\APIConstants;
+use Zoho\CRM\Tests\TestCase;
 
 class APIConstantsTest extends TestCase
 {

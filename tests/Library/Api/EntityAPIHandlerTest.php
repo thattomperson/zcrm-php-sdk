@@ -22,13 +22,11 @@ class EntityAPIHandlerTest extends TestCase
         $responseIns = $parentRecord->addRelation($junctionRecord);
         $endTime = microtime(true) * 1000;
 
-
         $this->assertEquals(APIConstants::RESPONSECODE_OK, $responseIns->getHttpStatusCode());
         $this->assertEquals('relation added', $responseIns->getMessage());
         $this->assertEquals(APIConstants::CODE_SUCCESS, $responseIns->getCode());
         $this->assertEquals(APIConstants::STATUS_SUCCESS, $responseIns->getStatus());
         $this->assertEquals($junctionRecord->getId(), $responseIns->getDetails()['id']);
-
     }
 
     public function testRemoveRelation()
