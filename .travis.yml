@@ -1,6 +1,9 @@
 language: php
 php:
-  - '7.1'
-  - '7.2'
-  - '7.3'
-  - nightly
+- '7.1'
+- '7.2'
+- '7.3'
+- nightly
+env:
+  global:
+    secure: WxxE8TZbikAGqWmdCODdLJXpBSccQfqKn3SSGmXRHT0wkk9n6se3iZiD5wPflut3IdnceQYlmYJMVHRpCCQsSNzzlOUNFwhNz3F3Uq0SlqM0bSjcPGxwOHtzFkwQCOcrjMvG9gkwMA9WWouP+IecG1WWWHzi7mDB/tFJKbnNHh4JhxCr38RxruB0GrZ7ySwKiW095gqxa6SbO8jKqdLOUCtVquGWwsMd9kiVA3nk5nxICVEHpZtm+uRRSBHL9JghThFVJXq2xf+MPdNPPY8Z4F2szybLu7LXWT5oKli3LFjeix+yWaRwcrzUuv3Dssjho02PZ9LLLWi5tIaClYtB54fAwh3bs5gyT17zxgvdLMEfHkyKfnhQvt552ISxRMhrH8CijPN5Xg97ak28D1ZO3LsCfZY7e9jsPZNaNbxeux0fpyqjqkPgOPz0exnDaIbXl8lGMBO6GueHmXQv4vjB7Gcs3F6ZqB2I7lzzPiQri4WCxA1IdlZl809bXu8LPBQ4w8VL/qqA/dDP/9VkmVtIhXZ9pnFhQMGFghUR5rTRSNPF8v6c5/vSXE62xBk7xIwaAMC5OhFR9DKl3oZeAecX8fMX3T676Px/XoEo0KcSw357eMIG0tS9gChTAgwXcGgfbt1kJEsAT0IdkIwZ25jpexAONO97H8JqhJK4VAwPQwU=
