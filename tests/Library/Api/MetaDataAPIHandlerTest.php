@@ -2,7 +2,8 @@
 
 namespace Zoho\CRM\Tests\Library\Api;
 
-class MetaDataAPIHandlerTest
+use PHPUnit\Framework\TestCase;
+class MetaDataAPIHandlerTest extends TestCase
 {
     public static $moduleList = [];
     public static $moduleNameVsApiName = [];

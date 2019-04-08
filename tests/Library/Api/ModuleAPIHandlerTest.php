@@ -2,7 +2,8 @@
 
 namespace Zoho\CRM\Tests\Library\Api;
 
-class ModuleAPIHandlerTest
+use PHPUnit\Framework\TestCase;
+class ModuleAPIHandlerTest extends TestCase
 {
     private static $filePointer = null;
     public static $moduleVsFieldIdMap = [];

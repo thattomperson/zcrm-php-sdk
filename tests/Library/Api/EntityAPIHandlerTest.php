@@ -2,7 +2,10 @@
 
 namespace Zoho\CRM\Tests\Library\Api;
 
-class EntityAPIHandlerTest
+use Zoho\CRM\Library\Api\Handler\EntityAPIHandler;
+use PHPUnit\Framework\TestCase;
+
+class EntityAPIHandlerTest extends TestCase
 {
     public static $filePointer = null;
     public static $productId = null;

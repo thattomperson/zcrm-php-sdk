@@ -2,6 +2,8 @@
 
 namespace Zoho\CRM\Library\Setup\Metadata;
 
+use Zoho\CRM\Library\Api\Handler\OrganizationAPIHandler;
+
 /**
  * Purpose of this method is to call the Organization level APIs like users, profiles, roles, ..etc.
  *
