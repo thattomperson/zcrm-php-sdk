@@ -1,9 +1,8 @@
-#PHP SDK for Zoho CRM
-----------------------
+# PHP SDK for Zoho CRM [![Build Status](https://travis-ci.com/thattomperson/zcrm-php-sdk.svg?branch=master)](https://travis-ci.com/thattomperson/zcrm-php-sdk) [![codecov](https://codecov.io/gh/thattomperson/zcrm-php-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/thattomperson/zcrm-php-sdk) 
+
 PHP SDK for Zoho CRM APIs provides wrapper for Zoho CRM APIs. Hence invoking a Zoho CRM API from your client application is just a method call.It supports both single user as well as multi user authentication.
 
-Registering a Zoho Client
--------------------------
+## Registering a Zoho Client
 Since Zoho CRM APIs are authenticated with OAuth2 standards, you should register your client app with Zoho. To register your app:
 1) Visit this page [https://accounts.zoho.com/developerconsole](https://accounts.zoho.com/developerconsole).
 2) Click on `Add Client ID`.
@@ -12,11 +11,10 @@ Since Zoho CRM APIs are authenticated with OAuth2 standards, you should register
 5) The newly registered app's Client ID and Client Secret can be found by clicking `Options` → `Edit`.
 (Options is the three dot icon at the right corner).
 
-Setting Up
-----------
+## Setting Up
 PHP SDK is installable through `composer`. Composer is a tool for dependency management in PHP. SDK expects the following from the client app.
 
->Client app must have PHP 5.6 or above with curl extension enabled.
+>Client app must have PHP 7.2 or above with curl extension enabled.
 Client library must be installed into client app though composer.
 The function ZCRMRestClient::initialize() must be called on startup of app.
 
