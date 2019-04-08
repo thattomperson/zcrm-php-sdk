@@ -2,20 +2,18 @@ language: php
 php:
 - '7.2'
 - '7.3'
-
 jobs:
   test:
     before_script:
-      - travis_retry composer self-update
-      - travis_retry composer install --no-interaction --prefer-source
+    - travis_retry composer self-update
+    - travis_retry composer install --no-interaction --prefer-source
     script:
-      - vendor/bin/phpunit --coverage-clover=coverage.xml
+    - vendor/bin/phpunit --coverage-clover=coverage.xml
     after_success:
-      - bash <(curl -s https://codecov.io/bash)
-      - curl -LO https://github.com/blueend-ag/Sami/releases/download/4.1.3/sami.phar
-      - php sami.phar update sami.config.php
-
-after_success:
+    - bash <(curl -s https://codecov.io/bash)
+    - curl -LO https://github.com/blueend-ag/Sami/releases/download/4.1.3/sami.phar
+    - php sami.phar update sami.config.php
+after_success: 
 deploy:
   provider: pages
   skip_cleanup: true
@@ -26,4 +24,7 @@ deploy:
     branch: master
 env:
   global:
-    secure: BgA27yHwWurFqcXbZ+OWELdCiDVSS0tuYRV8UeXY9/u2osyY9JyXbX03FGNHXosW80DEdAPkRMWmYLZzCCcDI23+JpphSSLmU8dc8o0rYtddbYkR5A7l1R81XH31DoDWwUHn3uRY9Bhszc7HNZXLw+yft1UguMDmqezVtCktiFAzOf1PHJcUVYWscKoPKScNxPpIvAOCSGoxM2Io54c1Z5C3ytCUdPWT6pxLfHSo1EStOxDPv7YhRvqAsx8w1CsOLiyvWyUn6836zitpbJl5QZjQtuVKy0fkdKjAeDNVNRIdRzZEa5YUBGWXuROyiUCHb2C6/gM5YL1ZWFO1usCeznVob9n42CmAFm48i5GEWPs0E9d2D0st/JqKUGdF9kd0qx4931JcNcMaQlBU1Y2Q9/qk75gc/TPQAN4kgFMKKHdcOGvJAj7pYyGEnbvWux22TVMV5KPlNuOycyYB/qokqFI1W2mcYuI3Pkahh1BECIhC7NPqbaaHd0hJAlO9DrEJvfuRBT30pFps+cVXxvX6gOmOzktJ8dQUIGCcUrvi9xlenukCYwl257cfrO8iRXz2WSHB1nbV7D77h7cY1gGIqtDcqNYQf72fmyHHULA3V65yUJZIquRq+oZtWp8eMy9YnqUBzK6Alt2HORDvIhK3dDxk8sOjqDyaBxRHWRrBEUI=
+  - secure: BgA27yHwWurFqcXbZ+OWELdCiDVSS0tuYRV8UeXY9/u2osyY9JyXbX03FGNHXosW80DEdAPkRMWmYLZzCCcDI23+JpphSSLmU8dc8o0rYtddbYkR5A7l1R81XH31DoDWwUHn3uRY9Bhszc7HNZXLw+yft1UguMDmqezVtCktiFAzOf1PHJcUVYWscKoPKScNxPpIvAOCSGoxM2Io54c1Z5C3ytCUdPWT6pxLfHSo1EStOxDPv7YhRvqAsx8w1CsOLiyvWyUn6836zitpbJl5QZjQtuVKy0fkdKjAeDNVNRIdRzZEa5YUBGWXuROyiUCHb2C6/gM5YL1ZWFO1usCeznVob9n42CmAFm48i5GEWPs0E9d2D0st/JqKUGdF9kd0qx4931JcNcMaQlBU1Y2Q9/qk75gc/TPQAN4kgFMKKHdcOGvJAj7pYyGEnbvWux22TVMV5KPlNuOycyYB/qokqFI1W2mcYuI3Pkahh1BECIhC7NPqbaaHd0hJAlO9DrEJvfuRBT30pFps+cVXxvX6gOmOzktJ8dQUIGCcUrvi9xlenukCYwl257cfrO8iRXz2WSHB1nbV7D77h7cY1gGIqtDcqNYQf72fmyHHULA3V65yUJZIquRq+oZtWp8eMy9YnqUBzK6Alt2HORDvIhK3dDxk8sOjqDyaBxRHWRrBEUI=
+  - secure: j7jovbZ01w1qT86cqySJsDgxz144ZhLVFu3O2jPUfT412nVs/x+M46opjXmyD5+KMIszc/Key5o5lNRumoxTj03SDNu8yeWWRYbeYve6taSeyYtXmYeu2JoixeCVhha90KazbBDu3is15ulxnNijlZukve7J9qrh6pPt+JQkuiKgnACV2toz0cpZ/23k2cw6JjAy5BKHz5Tib14ab2dqc2BSFDBAJ6afeJ0RZ6iPEpG9Z5ji3EbAb7kQpqg6eZYVnSBw1uNaHZSWWDau1lqGWAzn/arpSYZ9LpkXYkpgU3MIMEfeYqzaOEx9HoeetW3IV/wmvZAVze4HluK7fZiO9JeiqOi7HpRO/QCtieMojXB8kvjIBEqYQO0iWA91L62BBJyGR9zMsuZQuD605VE5j0ypBDQADdSloI6sRBZRtZUk1quNCSkQi1yrEEKgJCLuzdj+8chYobnu6i1z5BTh21ebdRoRhjTeOO7+rBukdODDcypJtqnvErGUBgFDdy9mIC5fk4hnbChEsrjnZsagVwgxNFqCv+XU/ZA01lVUFCNTXlqhawyB5W/ag8/KbaUZXK+uD+b0uw2QnIfU0TI4ZQE7rRyxcbG/hKTAlmj1NGisbizuHQQYGqFz4hxUoHrKmF7t7MM6PIEYl/S4A/n4JL+4gGHdFi472Q7ZWgnCTng=
+  - secure: TN7GH50Vb0Af1wf4FwMpVX7Ubm/vHz8G2xOKW8YES90WLsGSC05t56mF0q2wo5ivsMhyn9opPsYy+j6h22TymRjyAubjWowo50vebz3vQ+e9CvFwRwBn4bHQf6FPLTdOxPPfqggDxippEIeNpR6YjKDJ/ttMyF28zaTpxMdItVwYqEALKGTSV+bM4dhmuYfrh7e+NloSEYQL73T8SqfGX2uJl0FuLZldZSYgR1DTZiLAIBLqvHXTHwWyZep8Gx9/980rngueqTjgV5hxaC5lJXFu1odEqz9AQCfQd75HcGWeCLqrnyqL60cobjThVQ7sCll1/RlBq2qkMFY0PfYBiWe79ctGBL3KlR+IX5XvRJv+pJblIr8xlGXHSdPWGsJ/Re3mbfUMuRhqjbbteaKmMTeW7/fTgXogr/5Z2+2BJrBHviS/yLrfRoq0+iZ7L20CzW9roKuvPuBZYqdGYxHNmJ46KqByeTgiEr/J1MyAZ2HgCSgbe1u9+UdHLrhNQC5n3NF0N/guXba/mLOufkwLCM/ov4QCNOAd7LEbXjs/IPMOzszsgjqg1SPMejOngT+LJBE4N27UoSjUK9Des/NVWf92x5GzTHKjNpGt30Ro7P44TbQcKksJi3JQi1ddcKt6YmHB3GVvTgiMVx8EvoGNjP3xEAdiht2QnUzsBhQ8noo=
+  - secure: TwPl6CQcCHOGfmhDwL3vrGt+xItvbzTLKRx11xFfCKfn1SbVVG+X0JNUfdRQab90BkOfJyaeFqd4eSeMun0mRFkAWSzYYZTn/m1MuUkGmSW4JaodomAcibSALeheySG3ZQn5a4/OF+OKpHXHsx/Gq6yq262UvBIWbWgRZhl/WG0PktpqhkrsmXMhsonG8+e5z96euAyykUd4wnTTWMw9JOctptm89ITASaEwp+hcxLYBn0aWZSco+3OBmrA5Rl2usOUKGP+x9172rvrW1eaexmS0nrzjyqf6+Vlpl4fyWyB/6ar3I6fZ/i007GIO6mWqpgie99fjt22awGziaYtJ1/WOjeWU4Mst4P9IVRg6PhG9RJUd0VCjadIrceCAE0cV4WSwSlcZjKNf7RepR+gPbd65oqv3BO48ruLtlsHs2B5k7TexTzGauWshkR1q1azUlu+dCzOEgOsdsa6Ux8Rsgy8pbgkz+714MH7aj4vLOalzdqy/guwznyHGbDIwQSMCFpMwJF73j5cc93eAS4zJ9KK4xZj57NVh8q9FxWL7+bb1XYnnbuw4DfzwOsKA4i+oMqJlfD9wK50/VYvPnfpSU7F28RBCE6ZTzQPfJp0BHBjBRpFeqyMncuaz43e58Anbm3Qn8v/+dCHNH9Y7APxY3GZ5jajzB6h4rofl2Q6qLPw=
