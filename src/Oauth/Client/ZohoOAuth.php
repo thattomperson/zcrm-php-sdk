@@ -2,6 +2,9 @@
 
 namespace Zoho\CRM\Oauth\Client;
 
+use Zoho\CRM\Oauth\Common\ZohoOAuthConstants;
+use Zoho\CRM\Oauth\Common\ZohoOAuthParams;
+
 class ZohoOAuth
 {
     private static $configProperties = [];
@@ -38,6 +41,7 @@ class ZohoOAuth
                     self::$configProperties[ZohoOAuthConstants::DATABASE_PASSWORD] = '';
                 }
             }
+            
             $oAuthParams = new ZohoOAuthParams();
 
             $oAuthParams->setAccessType(self::getConfigValue(ZohoOAuthConstants::ACCESS_TYPE));

@@ -4,7 +4,6 @@ namespace Zoho\CRM\Library\Api\Handler;
 
 use Zoho\CRM\Library\Api\APIRequest;
 use Zoho\CRM\Library\Common\APIConstants;
-use Zoho\CRM\Library\Exception\APIExceptionHandler;
 use Zoho\CRM\Library\Exception\ZCRMException;
 use Zoho\CRM\Library\Setup\Users\ZCRMUser;
 
@@ -24,26 +23,19 @@ class EntityAPIHandler extends APIHandler
 
     public function getRecord()
     {
-        try {
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId();
-            $this->addHeader('Content-Type', 'application/json');
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
-            $recordDetails = $responseInstance->getResponseJSON()['data'];
-            self::setRecordProperties($recordDetails[0]);
-            $responseInstance->setData($this->record);
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId();
+        $this->addHeader('Content-Type', 'application/json');
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $recordDetails = $responseInstance->getResponseJSON()['data'];
+        self::setRecordProperties($recordDetails[0]);
+        $responseInstance->setData($this->record);
 
-            return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+        return $responseInstance;
     }
 
     public function createRecord()
     {
-        try {
             $inputJSON = self::getZCRMRecordAsJSON();
             $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
             $this->urlPath = $this->record->getModuleApiName();
@@ -61,16 +53,10 @@ class EntityAPIHandler extends APIHandler
             $responseInstance->setData($this->record);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
     }
 
     public function updateRecord()
     {
-        try {
             $inputJSON = self::getZCRMRecordAsJSON();
             $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
             $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId();
@@ -92,16 +78,11 @@ class EntityAPIHandler extends APIHandler
             $responseInstance->setData($this->record);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
     }
 
     public function deleteRecord()
     {
-        try {
+
             $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
             $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId();
             $this->addHeader('Content-Type', 'application/json');
@@ -109,16 +90,11 @@ class EntityAPIHandler extends APIHandler
             $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
 
-            throw $exception;
-        }
     }
 
     public function convertRecord($potentialRecord, $assignToUser)
     {
-        try {
             $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
             $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId().'/actions/convert';
             $this->addHeader('Content-Type', 'application/json');
@@ -153,16 +129,10 @@ class EntityAPIHandler extends APIHandler
             }
 
             return $convertedIds;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
     }
 
     public function uploadPhoto($filePath)
     {
-        try {
             $fileContent = file_get_contents($filePath);
             $filePathArray = explode('/', $filePath);
             $fileName = $filePathArray[count($filePathArray) - 1];
@@ -180,39 +150,25 @@ class EntityAPIHandler extends APIHandler
             $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
     }
 
     public function downloadPhoto()
     {
-        try {
+
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId().'/photo';
 
             return APIRequest::getInstance($this)->downloadFile();
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
     }
 
     public function deletePhoto()
     {
-        try {
+        
             $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
             $this->urlPath = $this->record->getModuleApiName().'/'.$this->record->getEntityId().'/photo';
 
             return APIRequest::getInstance($this)->getAPIResponse();
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
 
-            throw $exception;
-        }
     }
 
     public function getZCRMRecordAsJSON()

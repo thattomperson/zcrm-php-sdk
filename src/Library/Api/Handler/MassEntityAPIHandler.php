@@ -22,7 +22,7 @@ class MassEntityAPIHandler extends APIHandler
             throw new ZCRMException(APIConstants::API_MAX_RECORDS_MSG, APIConstants::RESPONSECODE_BAD_REQUEST);
         }
 
-        try {
+        
             $this->urlPath = $this->module->getAPIName();
             $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
             $this->addHeader('Content-Type', 'application/json');
@@ -62,9 +62,7 @@ class MassEntityAPIHandler extends APIHandler
             $bulkAPIResponse->setData($createdRecords);
 
             return $bulkAPIResponse;
-        } catch (ZCRMException $e) {
-            throw $e;
-        }
+    
     }
 
     public function upsertRecords($records)
@@ -73,7 +71,7 @@ class MassEntityAPIHandler extends APIHandler
             throw new ZCRMException(APIConstants::API_MAX_RECORDS_MSG, APIConstants::RESPONSECODE_BAD_REQUEST);
         }
 
-        try {
+        
             $this->urlPath = $this->module->getAPIName().'/upsert';
             $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
             $this->addHeader('Content-Type', 'application/json');
@@ -110,9 +108,6 @@ class MassEntityAPIHandler extends APIHandler
             $bulkAPIResponse->setData($upsertRecords);
 
             return $bulkAPIResponse;
-        } catch (ZCRMException $e) {
-            throw $e;
-        }
     }
 
     public function updateRecords($records, $trigger)
@@ -121,7 +116,7 @@ class MassEntityAPIHandler extends APIHandler
             throw new ZCRMException(APIConstants::API_MAX_RECORDS_MSG, APIConstants::RESPONSECODE_BAD_REQUEST);
         }
 
-        try {
+        
             $this->urlPath = $this->module->getAPIName();
             $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
             $this->addHeader('Content-Type', 'application/json');
@@ -161,9 +156,6 @@ class MassEntityAPIHandler extends APIHandler
             $bulkAPIResponse->setData($upsertRecords);
 
             return $bulkAPIResponse;
-        } catch (ZCRMException $e) {
-            throw $e;
-        }
     }
 
     public function deleteRecords($entityIds)
@@ -172,7 +164,7 @@ class MassEntityAPIHandler extends APIHandler
             throw new ZCRMException(APIConstants::API_MAX_RECORDS_MSG, APIConstants::RESPONSECODE_BAD_REQUEST);
         }
 
-        try {
+        
             $this->urlPath = $this->module->getAPIName();
             $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
             $this->addHeader('Content-Type', 'application/json');
@@ -190,11 +182,6 @@ class MassEntityAPIHandler extends APIHandler
             }
 
             return $bulkAPIResponse;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
     }
 
     public function getAllDeletedRecords()
@@ -214,7 +201,7 @@ class MassEntityAPIHandler extends APIHandler
 
     private function getDeletedRecords($type)
     {
-        try {
+        
             $this->urlPath = $this->module->getAPIName().'/deleted';
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -233,11 +220,6 @@ class MassEntityAPIHandler extends APIHandler
             $responseInstance->setData($trashRecordList);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
     }
 
     public function setTrashRecordProperties($trashRecordInstance, $recordProperties)
@@ -260,7 +242,6 @@ class MassEntityAPIHandler extends APIHandler
 
     public function getRecords($cvId, $sortByField, $sortOrder, $page, $perPage, $customHeaders)
     {
-        try {
             $this->urlPath = $this->module->getAPIName();
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -294,16 +275,10 @@ class MassEntityAPIHandler extends APIHandler
             $responseInstance->setData($recordsList);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
     }
 
     public function searchRecords($searchWord, $page, $perPage, $type)
     {
-        try {
             $this->urlPath = $this->module->getAPIName().'/search';
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -336,11 +311,6 @@ class MassEntityAPIHandler extends APIHandler
             $responseInstance->setData($recordsList);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
     }
 
     public function massUpdateRecords($idList, $apiName, $value)
@@ -349,7 +319,7 @@ class MassEntityAPIHandler extends APIHandler
             throw new ZCRMException(APIConstants::API_MAX_RECORDS_MSG, APIConstants::RESPONSECODE_BAD_REQUEST);
         }
 
-        try {
+        
             $inputJSON = self::constructJSONForMassUpdate($idList, $apiName, $value);
             $this->urlPath = $this->module->getAPIName();
             $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
@@ -378,11 +348,7 @@ class MassEntityAPIHandler extends APIHandler
             $bulkAPIResponse->setData($updatedRecords);
 
             return $bulkAPIResponse;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+        
     }
 
     public function constructJSONForMassUpdate($idList, $apiName, $value)

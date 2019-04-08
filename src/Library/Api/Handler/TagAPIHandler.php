@@ -18,7 +18,7 @@ class TagAPIHandler extends APIHandler
 
     public function getTags()
     {
-        try {
+        
             $this->urlPath = 'settings/tags?module='.$this->module->getAPIName();
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -35,16 +35,12 @@ class TagAPIHandler extends APIHandler
             $responseInstance->setData($tagsList);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+       
     }
 
     public function getTagCount($tagId)
     {
-        try {
+        
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->urlPath = 'settings/tags/'.$tagId.'/actions/records_count?module='.$this->module->getAPIName();
             //Fire Request
@@ -55,11 +51,7 @@ class TagAPIHandler extends APIHandler
             $responseInstance->setData($tagInstance);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+   
     }
 
     public function createTags($tags)
@@ -68,7 +60,7 @@ class TagAPIHandler extends APIHandler
             throw new ZCRMException(APIConstants::API_MAX_TAGS_MSG, APIConstants::RESPONSECODE_BAD_REQUEST);
         }
 
-        try {
+        
             $this->urlPath = 'settings/tags?module='.$this->module->getAPIName();
             $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
             $this->addHeader('Content-Type', 'application/json');
@@ -104,9 +96,7 @@ class TagAPIHandler extends APIHandler
             $bulkAPIResponse->setData($createdTags);
 
             return $bulkAPIResponse;
-        } catch (ZCRMException $e) {
-            throw $e;
-        }
+    
     }
 
     public function updateTags($tags)
@@ -115,7 +105,7 @@ class TagAPIHandler extends APIHandler
             throw new ZCRMException(APIConstants::API_MAX_TAGS_MSG, APIConstants::RESPONSECODE_BAD_REQUEST);
         }
 
-        try {
+        
             $this->urlPath = 'settings/tags?module='.$this->module->getAPIName();
             $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
             $this->addHeader('Content-Type', 'application/json');
@@ -147,14 +137,12 @@ class TagAPIHandler extends APIHandler
             $bulkAPIResponse->setData($updatedTags);
 
             return $bulkAPIResponse;
-        } catch (ZCRMException $e) {
-            throw $e;
-        }
+
     }
 
     public function delete($tagId)
     {
-        try {
+        
             $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
             $this->urlPath = 'settings/tags/'.$tagId;
             $this->addHeader('Content-Type', 'application/json');
@@ -162,16 +150,12 @@ class TagAPIHandler extends APIHandler
             $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+       
     }
 
     public function merge($tagId, $mergeId)
     {
-        try {
+        
             $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
             $this->urlPath = 'settings/tags/'.$tagId.'/actions/merge';
             $this->addHeader('Content-Type', 'application/json');
@@ -189,14 +173,12 @@ class TagAPIHandler extends APIHandler
             $responseInstance->setData($tag);
 
             return $responseInstance;
-        } catch (ZCRMException $e) {
-            throw $e;
-        }
+     
     }
 
     public function update($tag)
     {
-        try {
+        
             $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
             $this->urlPath = 'settings/tags/'.$tag->getId().'?module='.$tag->getModuleApiName();
             $this->addHeader('Content-Type', 'application/json');
@@ -213,9 +195,7 @@ class TagAPIHandler extends APIHandler
             $responseInstance->setData($tag);
 
             return $responseInstance;
-        } catch (ZCRMException $e) {
-            throw $e;
-        }
+       
     }
 
     public function addTags($record, $tagNames)
@@ -224,7 +204,7 @@ class TagAPIHandler extends APIHandler
             throw new ZCRMException(APIConstants::API_MAX_RECORD_TAGS_MSG, APIConstants::RESPONSECODE_BAD_REQUEST);
         }
 
-        try {
+        
             $tagname = '';
             $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
             foreach ($tagNames as $tag) {
@@ -241,9 +221,7 @@ class TagAPIHandler extends APIHandler
             $responseInstance->setData($tag);
 
             return $responseInstance;
-        } catch (ZCRMException $e) {
-            throw $e;
-        }
+   
     }
 
     public function removeTags($record, $tagNames)
@@ -252,7 +230,7 @@ class TagAPIHandler extends APIHandler
             throw new ZCRMException(APIConstants::API_MAX_RECORD_TAGS_MSG, APIConstants::RESPONSECODE_BAD_REQUEST);
         }
 
-        try {
+        
             $tagname = '';
             $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
             foreach ($tagNames as $tag) {
@@ -269,9 +247,7 @@ class TagAPIHandler extends APIHandler
             $responseInstance->setData($tag);
 
             return $responseInstance;
-        } catch (ZCRMException $e) {
-            throw $e;
-        }
+      
     }
 
     public function addTagsToRecords($recordId, $tagNames)
@@ -283,7 +259,7 @@ class TagAPIHandler extends APIHandler
             throw new ZCRMException(APIConstants::API_MAX_RECORDS_MSG, APIConstants::RESPONSECODE_BAD_REQUEST);
         }
 
-        try {
+
             $tagname = '';
             $recordid = '';
             $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
@@ -313,9 +289,7 @@ class TagAPIHandler extends APIHandler
             $bulkAPIResponse->setData($addedTags);
 
             return $bulkAPIResponse;
-        } catch (ZCRMException $e) {
-            throw $e;
-        }
+      
     }
 
     public function removeTagsFromRecords($recordId, $tagNames)
@@ -327,7 +301,7 @@ class TagAPIHandler extends APIHandler
             throw new ZCRMException(APIConstants::API_MAX_RECORDS_MSG, APIConstants::RESPONSECODE_BAD_REQUEST);
         }
 
-        try {
+        
             $tagname = '';
             $recordid = '';
             $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
@@ -357,9 +331,7 @@ class TagAPIHandler extends APIHandler
             $bulkAPIResponse->setData($removedTags);
 
             return $bulkAPIResponse;
-        } catch (ZCRMException $e) {
-            throw $e;
-        }
+       
     }
 
     public function setTagProperties($tagInstance, $tagDetails)

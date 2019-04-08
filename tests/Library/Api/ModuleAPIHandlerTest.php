@@ -2,7 +2,7 @@
 
 namespace Zoho\CRM\Tests\Library\Api;
 
-use PHPUnit\Framework\TestCase;
+use Zoho\CRM\Tests\TestCase;
 
 class ModuleAPIHandlerTest extends TestCase
 {
@@ -13,21 +13,6 @@ class ModuleAPIHandlerTest extends TestCase
     public static $moduleVsRelatedListIdMap = [];
     public static $customViewVsFieldMap = [];
 
-    public static function test($fp)
-    {
-        self::$filePointer = $fp;
-        $ins = new self();
-        $ins->testGetAllFields();
-        $ins->testGetAllLayouts();
-        $ins->testGetFieldDetails();
-        $ins->testGetLayoutDetails();
-        $ins->testGetAllCustomViews();
-        $ins->testGetCustomViewDetails();
-        $ins->testGetAllRelatedLists();
-        $ins->testGetRelatedListDetails();
-        $ins->testUpdateCustomView();
-        $ins->testUpdateModuleSettings();
-    }
 
     public function testGetAllFields()
     {

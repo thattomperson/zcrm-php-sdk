@@ -2,6 +2,10 @@
 
 namespace Zoho\CRM\Library\Api\Handler;
 
+use Zoho\CRM\Library\Common\APIConstants;
+use Zoho\CRM\Library\Api\APIRequest;
+use Zoho\CRM\Library\Exception\ZCRMException;
+
 /**
  * Purpose of this class is to fire User level APIs and construct the response.
  *
@@ -20,7 +24,7 @@ class OrganizationAPIHandler extends APIHandler
 
     public function getOrganizationDetails()
     {
-        try {
+        
             $this->urlPath = 'org';
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -30,11 +34,7 @@ class OrganizationAPIHandler extends APIHandler
             $responseInstance->setData(self::setOrganizationDetails($orgDetails));
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+    
     }
 
     public function setOrganizationDetails($orgDetails)
@@ -78,7 +78,7 @@ class OrganizationAPIHandler extends APIHandler
 
     public function getAllRoles()
     {
-        try {
+    
             $this->urlPath = 'settings/roles';
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -92,16 +92,11 @@ class OrganizationAPIHandler extends APIHandler
             $responseInstance->setData($roleInstanceArray);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
     }
 
     public function getRole($roleId)
     {
-        try {
+        
             $this->urlPath = 'settings/roles/'.$roleId;
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -111,11 +106,6 @@ class OrganizationAPIHandler extends APIHandler
             $responseInstance->setData(self::getZCRMRole($roles[0]));
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
     }
 
     public function getZCRMRole($roleDetails)
@@ -132,7 +122,7 @@ class OrganizationAPIHandler extends APIHandler
 
     public function createUser($userInstance)
     {
-        try {
+        
             $userJson = self::constructJSONForUser([$userInstance]);
             $this->urlPath = 'users';
             $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
@@ -142,11 +132,7 @@ class OrganizationAPIHandler extends APIHandler
             $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+       
     }
 
     public function updateUser($userInstance)

@@ -15,7 +15,6 @@ class MetaDataAPIHandler extends APIHandler
 
     public function getAllModules()
     {
-        try {
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->urlPath = 'settings/modules';
             $this->addHeader('Content-Type', 'application/json');
@@ -30,16 +29,11 @@ class MetaDataAPIHandler extends APIHandler
             $responseInstance->setData($responseData);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
     }
 
     public function getModule($moduleName)
     {
-        try {
+    
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->urlPath = 'settings/modules/'.$moduleName;
             $this->addHeader('Content-Type', 'application/json');
@@ -48,11 +42,7 @@ class MetaDataAPIHandler extends APIHandler
             $responseInstance->setData(self::getZCRMModule($moduleArray[0]));
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+    
     }
 
     public function getZCRMModule($moduleDetails)

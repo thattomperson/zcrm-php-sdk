@@ -2,7 +2,7 @@
 
 namespace Zoho\CRM\Library\Api\Response;
 
-class CommonAPIResponse
+abstract class CommonAPIResponse
 {
     /**
      * http status code.
@@ -72,16 +72,12 @@ class CommonAPIResponse
     /**
      * method to check whether any faulty api response has occured and handles it accordingly.
      */
-    public function handleForFaultyResponses()
-    {
-    }
+    abstract public function handleForFaultyResponses();
 
     /**
      * method to process the correct api response.
      */
-    public function processResponseData()
-    {
-    }
+    abstract public function processResponseData();
 
     public function setResponseJSON()
     {

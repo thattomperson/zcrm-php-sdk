@@ -2,10 +2,11 @@
 
 namespace Zoho\CRM\Tests\Library\Api;
 
-use PHPUnit\Framework\TestCase;
+use Zoho\CRM\Tests\TestCase;
 use Zoho\CRM\Library\Exception\ZCRMException;
 use Zoho\CRM\Library\Setup\Metadata\ZCRMOrganization;
 use Zoho\CRM\Tests\Library\Common\Main;
+use Zoho\CRM\Library\Setup\Restclient\ZCRMRestClient;
 
 class OrganizationAPIHandlerTest extends TestCase
 {
@@ -37,24 +38,30 @@ class OrganizationAPIHandlerTest extends TestCase
 
     public function testGetOrganizationDetails()
     {
-        try {
-            Main::incrementTotalCount();
-            $startTime = microtime(true) * 1000;
-            $endTime = 0;
-            $restIns = ZCRMRestClient::getInstance();
-            $responseInstance = $restIns->getOrganizationDetails();
-            $zcrmOrganization = $responseInstance->getData();
-            $endTime = microtime(true) * 1000;
-            if ($zcrmOrganization->getOrgId() == null || $zcrmOrganization->getCompanyName() == null || $zcrmOrganization->getPrimaryEmail() == null || $zcrmOrganization->getPrimaryZuid() == null || $zcrmOrganization->getZgid() == null || $zcrmOrganization->getTimeZone() == null || $zcrmOrganization->getCurrencyLocale() == null || $zcrmOrganization->getCountry() == null || $zcrmOrganization->getCity() == null || $zcrmOrganization->getStreet() == null || $zcrmOrganization->getState() == null || $zcrmOrganization->getFax() == null || $zcrmOrganization->getEmployeeCount() == null || $zcrmOrganization->getPhone() == null || $zcrmOrganization->getMobile() == null || $zcrmOrganization->getZipCode() == null || $zcrmOrganization->getWebSite() == null || $zcrmOrganization->getCurrencySymbol() == null || $zcrmOrganization->getCountryCode() == null || $zcrmOrganization->getIsoCode() == null) {
-                Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMRestClient', 'getOrganizationDetails', 'Invalid Response', 'Org details not fetched properly', 'failure', ($endTime - $startTime));
+        $restIns = ZCRMRestClient::getInstance();
+        $responseInstance = $restIns->getOrganizationDetails();
+        $zcrmOrganization = $responseInstance->getData();
 
-                return;
-            }
-            Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMRestClient', 'getOrganizationDetails', 'Org Details Fetched Successfully!!', null, 'success', ($endTime - $startTime));
-        } catch (ZCRMException $e) {
-            $endTime = $endTime == 0 ? microtime(true) * 1000 : $endTime;
-            Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMRestClient', 'getOrganizationDetails', $e->getMessage(), $e->getExceptionDetails(), 'failure', ($endTime - $startTime));
-        }
+        $this->assertNotNull($zcrmOrganization->getOrgId());
+        $this->assertNotNull($zcrmOrganization->getCompanyName());
+        $this->assertNotNull($zcrmOrganization->getPrimaryEmail());
+        $this->assertNotNull($zcrmOrganization->getPrimaryZuid());
+        $this->assertNotNull($zcrmOrganization->getZgid());
+        $this->assertNotNull($zcrmOrganization->getTimeZone());
+        $this->assertNotNull($zcrmOrganization->getCurrencyLocale());
+        $this->assertNotNull($zcrmOrganization->getCountry());
+        $this->assertNotNull($zcrmOrganization->getCity());
+        $this->assertNotNull($zcrmOrganization->getStreet());
+        $this->assertNotNull($zcrmOrganization->getState());
+        $this->assertNotNull($zcrmOrganization->getFax());
+        $this->assertNotNull($zcrmOrganization->getEmployeeCount());
+        $this->assertNotNull($zcrmOrganization->getPhone());
+        $this->assertNotNull($zcrmOrganization->getMobile());
+        $this->assertNotNull($zcrmOrganization->getZipCode());
+        $this->assertNotNull($zcrmOrganization->getWebSite());
+        $this->assertNotNull($zcrmOrganization->getCurrencySymbol());
+        $this->assertNotNull($zcrmOrganization->getCountryCode());
+        $this->assertNotNull($zcrmOrganization->getIsoCode());
     }
 
     public function testGetAllProfiles()

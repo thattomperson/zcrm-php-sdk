@@ -27,7 +27,6 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function getFieldDetails($fieldId)
     {
-        try {
             $this->urlPath = 'settings/fields/'.$fieldId;
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -38,11 +37,6 @@ class ModuleAPIHandler extends APIHandler
             $responseInstance->setData(self::getZCRMField($fieldObj));
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
     }
 
     /**
@@ -51,7 +45,6 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function getAllFields()
     {
-        try {
             $this->urlPath = 'settings/fields';
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -64,11 +57,7 @@ class ModuleAPIHandler extends APIHandler
                 array_push($fieldInstancesArray, self::getZCRMField($fieldObj));
             }
             $responseInstance->setData($fieldInstancesArray);
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+    
 
         return $responseInstance;
     }
@@ -79,7 +68,7 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function getAllLayouts()
     {
-        try {
+    
             $this->urlPath = 'settings/layouts';
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -94,11 +83,7 @@ class ModuleAPIHandler extends APIHandler
             $responseInstance->setData($layoutInstancesArray);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+    
     }
 
     /**
@@ -108,7 +93,7 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function getLayoutDetails($layoutId)
     {
-        try {
+    
             $this->urlPath = 'settings/layouts/'.$layoutId;
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -119,11 +104,6 @@ class ModuleAPIHandler extends APIHandler
             $responseInstance->setData(self::getZCRMLayout($layoutDetails));
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
     }
 
     /**
@@ -133,7 +113,7 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function getCustomView($customViewId)
     {
-        try {
+
             $this->urlPath = 'settings/custom_views/'.$customViewId;
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -145,11 +125,7 @@ class ModuleAPIHandler extends APIHandler
             $responseInstance->setData(self::getZCRMCustomView($responseJSON['custom_views'][0], $categories));
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+   
     }
 
     /**
@@ -158,7 +134,7 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function getAllCustomViews()
     {
-        try {
+    
             $this->urlPath = 'settings/custom_views';
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -174,11 +150,7 @@ class ModuleAPIHandler extends APIHandler
             $responseInstance->setData($customViewInstances);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
 
-            throw $exception;
-        }
     }
 
     /**
@@ -188,7 +160,6 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function updateModuleSettings()
     {
-        try {
             $inputJSON = self::constructJSONForModuleUpdate($this->module);
             $this->urlPath = 'settings/modules/'.$this->module->getAPIName();
             $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
@@ -198,11 +169,6 @@ class ModuleAPIHandler extends APIHandler
             $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
     }
 
     /**
@@ -212,7 +178,6 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function updateCustomView($customViewInstance)
     {
-        try {
             $inputJSON = self::constructJSONForCustomView($customViewInstance);
             $this->urlPath = 'settings/custom_views/'.$customViewInstance->getId();
             $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
@@ -223,11 +188,6 @@ class ModuleAPIHandler extends APIHandler
             $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
     }
 
     /**
@@ -236,7 +196,6 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function getAllRelatedLists()
     {
-        try {
             $this->urlPath = 'settings/related_lists';
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -252,11 +211,7 @@ class ModuleAPIHandler extends APIHandler
             $responseInstance->setData($relatedListInstanceArray);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+    
     }
 
     /**
@@ -265,7 +220,6 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function getRelatedListDetails($relatedListId)
     {
-        try {
             $this->urlPath = 'settings/related_lists/'.$relatedListId;
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -279,11 +233,7 @@ class ModuleAPIHandler extends APIHandler
             $responseInstance->setData($moduleRelatedListIns);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+    
     }
 
     /**

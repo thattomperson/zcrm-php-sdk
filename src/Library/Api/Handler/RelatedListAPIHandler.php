@@ -25,7 +25,7 @@ class RelatedListAPIHandler extends APIHandler
 
     public function getRecords($sortByField, $sortOrder, $page, $perPage)
     {
-        try {
+        
             $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -51,16 +51,12 @@ class RelatedListAPIHandler extends APIHandler
             $responseInstance->setData($recordsList);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+      
     }
 
     public function getNotes($sortByField, $sortOrder, $page, $perPage)
     {
-        try {
+        
             $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -84,16 +80,12 @@ class RelatedListAPIHandler extends APIHandler
             $responseInstance->setData($notesList);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+  
     }
 
     public function getAttachments($page, $perPage)
     {
-        try {
+        
             $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->addHeader('Content-Type', 'application/json');
@@ -111,16 +103,12 @@ class RelatedListAPIHandler extends APIHandler
             $responseInstance->setData($attachmentList);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+       
     }
 
     public function addNote($zcrmNote)
     {
-        try {
+        
             $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
             $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
             $this->addHeader('Content-Type', 'application/json');
@@ -136,16 +124,12 @@ class RelatedListAPIHandler extends APIHandler
             $responseInstance->setData($zcrmNote);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+       
     }
 
     public function updateNote($zcrmNote)
     {
-        try {
+        
             $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName().'/'.$zcrmNote->getId();
             $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
             $this->addHeader('Content-Type', 'application/json');
@@ -160,16 +144,11 @@ class RelatedListAPIHandler extends APIHandler
             $responseInstance->setData($zcrmNote);
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+       
     }
 
     public function deleteNote($zcrmNote)
     {
-        try {
             $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName().'/'.$zcrmNote->getId();
             $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
             $this->addHeader('Content-Type', 'application/json');
@@ -177,16 +156,12 @@ class RelatedListAPIHandler extends APIHandler
             $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+      
     }
 
     public function uploadAttachment($filePath)
     {
-        try {
+        
             $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
             $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
 
@@ -196,16 +171,12 @@ class RelatedListAPIHandler extends APIHandler
             $responseInstance->setData(ZCRMAttachment::getInstance($this->parentRecord, isset($detailsJSON['id']) ? ($detailsJSON['id']) : '0'));
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+      
     }
 
     public function uploadLinkAsAttachment($attachmentUrl)
     {
-        try {
+        
             $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
             $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
 
@@ -216,44 +187,32 @@ class RelatedListAPIHandler extends APIHandler
             $responseInstance->setData(ZCRMAttachment::getInstance($this->parentRecord, isset($detailsJSON['id']) ? ($detailsJSON['id']) : '0'));
 
             return $responseInstance;
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+     
     }
 
     public function downloadAttachment($attachmentId)
     {
-        try {
+        
             $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
             $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName().'/'.$attachmentId;
 
             return APIRequest::getInstance($this)->downloadFile();
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+    
     }
 
     public function deleteAttachment($attachmentId)
     {
-        try {
+        
             $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
             $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName().'/'.$attachmentId;
 
             return APIRequest::getInstance($this)->getAPIResponse();
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+    
     }
 
     public function addRelation()
     {
-        try {
+        
             $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
             $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->junctionRecord->getApiName().'/'.$this->junctionRecord->getId();
 
@@ -265,25 +224,17 @@ class RelatedListAPIHandler extends APIHandler
             $this->requestBody = json_encode($inputJSON);
 
             return APIRequest::getInstance($this)->getAPIResponse();
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+     
     }
 
     public function removeRelation()
     {
-        try {
+        
             $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
             $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->junctionRecord->getApiName().'/'.$this->junctionRecord->getId();
 
             return APIRequest::getInstance($this)->getAPIResponse();
-        } catch (ZCRMException $exception) {
-            APIExceptionHandler::logException($exception);
-
-            throw $exception;
-        }
+       
     }
 
     public function getZCRMNoteAsJSON($noteIns)

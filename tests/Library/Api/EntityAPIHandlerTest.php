@@ -2,52 +2,33 @@
 
 namespace Zoho\CRM\Tests\Library\Api;
 
-use PHPUnit\Framework\TestCase;
+use Zoho\CRM\Tests\TestCase;
 
 class EntityAPIHandlerTest extends TestCase
 {
-    public static $filePointer = null;
     public static $productId = null;
     public static $firstParnetId = null;
     public static $firstParnetModule = null;
     public static $moduleApiNameVsEntityId = [];
 
-    public static function test($fp)
-    {
-        self::$filePointer = $fp;
-        self::testCreateRecord();
-        self::testUpdateRecord();
-        self::testGetRecord();
-        self::testAddRelation();
-        self::testRemoveRelation();
-        self::testDeleteRecord();
-    }
-
     public function testAddRelation()
     {
         $productId = self::$moduleApiNameVsEntityId[MetaDataAPIHandlerTest::$moduleNameVsApiName['Products']];
         $priceBookId = self::$moduleApiNameVsEntityId[MetaDataAPIHandlerTest::$moduleNameVsApiName['PriceBooks']];
-        $startTime = microtime(true) * 1000;
-        $endTime = 0;
 
-        try {
-            Main::incrementTotalCount();
-            $parentRecord = ZCRMRecord::getInstance('Products', $productId);
-            $junctionRecord = ZCRMJunctionRecord::getInstance('Price_Books', $priceBookId);
-            $junctionRecord->setRelatedData('list_price', 98);
-            $responseIns = $parentRecord->addRelation($junctionRecord);
-            $endTime = microtime(true) * 1000;
-            if ($responseIns->getHttpStatusCode() != APIConstants::RESPONSECODE_OK || 'relation added' != $responseIns->getMessage() || $responseIns->getCode() != APIConstants::CODE_SUCCESS || $responseIns->getStatus() != APIConstants::STATUS_SUCCESS || $responseIns->getDetails()['id'] != $junctionRecord->getId()) {
-                Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMRecord(Products,'.$productId.')', 'addRelation(Price_Books,'.$priceBookId.')', $responseIns->getMessage(), $responseIns->getHttpStatusCode(), 'failure', ($endTime - $startTime));
+        $parentRecord = ZCRMRecord::getInstance('Products', $productId);
+        $junctionRecord = ZCRMJunctionRecord::getInstance('Price_Books', $priceBookId);
+        $junctionRecord->setRelatedData('list_price', 98);
+        $responseIns = $parentRecord->addRelation($junctionRecord);
+        $endTime = microtime(true) * 1000;
 
-                return;
-            }
 
-            Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMRecord(Products,'.$productId.')', 'addRelation(Price_Books,'.$priceBookId.')', 'Relation added successfully', $responseIns->getDetails()['id'], 'success', ($endTime - $startTime));
-        } catch (ZCRMException $e) {
-            $endTime = $endTime == 0 ? microtime(true) * 1000 : $endTime;
-            Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMRecord(Products,'.$productId.')', 'addRelation(Price_Books,'.$priceBookId.')', $e->getMessage(), $e->getTraceAsString(), 'failure', ($endTime - $startTime));
-        }
+        $this->assertEquals(APIConstants::RESPONSECODE_OK, $responseIns->getHttpStatusCode());
+        $this->assertEquals('relation added', $responseIns->getMessage());
+        $this->assertEquals(APIConstants::CODE_SUCCESS, $responseIns->getCode());
+        $this->assertEquals(APIConstants::STATUS_SUCCESS, $responseIns->getStatus());
+        $this->assertEquals($junctionRecord->getId(), $responseIns->getDetails()['id']);
+
     }
 
     public function testRemoveRelation()

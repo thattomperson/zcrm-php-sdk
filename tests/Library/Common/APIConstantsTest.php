@@ -2,7 +2,7 @@
 
 namespace Zoho\CRM\Tests\Library\Common;
 
-use PHPUnit\Framework\TestCase;
+use Zoho\CRM\Tests\TestCase;
 use Zoho\CRM\Library\Common\APIConstants;
 
 class APIConstantsTest extends TestCase

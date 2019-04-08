@@ -2,7 +2,7 @@
 
 namespace Zoho\CRM\Tests\Library\Api;
 
-use PHPUnit\Framework\TestCase;
+use Zoho\CRM\Tests\TestCase;
 
 class MassEntityAPIHandlerTest extends TestCase
 {
