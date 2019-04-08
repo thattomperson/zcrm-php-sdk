@@ -2,7 +2,9 @@
 
 namespace Zoho\CRM\Library\Api;
 
-use Zoho\CRM\Library\Common\{ZCRMConfigUtil, ZohoHTTPConnector};
+use Zoho\CRM\Library\Common\ZCRMConfigUtil;
+use Zoho\CRM\Library\Common\ZohoHTTPConnector;
+
 /**
  * This class is to construct the API requests and initiate the request.
  *
@@ -45,7 +47,6 @@ class APIRequest
      */
     public function constructAPIUrl()
     {
-        
         $hitSandbox = ZCRMConfigUtil::getConfigValue('sandbox');
         $baseUrl = strcasecmp($hitSandbox, 'true') == 0 ? str_replace('www', 'sandbox', ZCRMConfigUtil::getAPIBaseUrl()) : ZCRMConfigUtil::getAPIBaseUrl();
         $this->url = $baseUrl.'/crm/'.ZCRMConfigUtil::getAPIVersion().'/';

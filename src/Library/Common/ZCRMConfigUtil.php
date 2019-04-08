@@ -2,8 +2,8 @@
 
 namespace Zoho\CRM\Library\Common;
 
-use Zoho\CRM\Oauth\Client\ZohoOAuth;
 use Zoho\CRM\Library\Setup\Restclient\ZCRMRestClient;
+use Zoho\CRM\Oauth\Client\ZohoOAuth;
 use Zoho\CRM\Oauth\Common\ZohoOAuthConstants;
 
 class ZCRMConfigUtil

@@ -2,14 +2,13 @@
 
 namespace Zoho\CRM\Oauth\Clientapp;
 
-use Zoho\CRM\Oauth\Client\ZohoOAuthPersistenceInterface;
 use Zoho\CRM\Oauth\Client\ZohoOAuth;
+use Zoho\CRM\Oauth\Client\ZohoOAuthPersistenceInterface;
 
 class ZohoOAuthPersistenceByFile implements ZohoOAuthPersistenceInterface
 {
     public function setIncludePath()
     {
-        
         $path = ZohoOAuth::getConfigValue('token_persistence_path');
         $path = trim($path);
         set_include_path($path);
