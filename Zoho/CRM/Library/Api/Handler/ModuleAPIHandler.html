@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Zoho\CRM\Library\Api\Handler\ModuleAPIHandler | ZCRM Php SDK</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../../css/sami.css">
+        <script src="../../../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../../../js/bootstrap.min.js"></script>
+        <script src="../../../../../js/typeahead.min.js"></script>
+        <script src="../../../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Zoho_CRM_Library_Api_Handler_ModuleAPIHandler" data-root-path="../../../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../../../index.html">ZCRM Php SDK</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../../../traits.html">Traits</a></li>
+                    <li><a href="../../../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../../../Zoho.html">Zoho</a></li><li class="backslash">\</li><li><a href="../../../../../Zoho/CRM.html">CRM</a></li><li class="backslash">\</li><li><a href="../../../../../Zoho/CRM/Library.html">Library</a></li><li class="backslash">\</li><li><a href="../../../../../Zoho/CRM/Library/Api.html">Api</a></li><li class="backslash">\</li><li><a href="../../../../../Zoho/CRM/Library/Api/Handler.html">Handler</a></li><li class="backslash">\</li><li>ModuleAPIHandler</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            ModuleAPIHandler
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>ModuleAPIHandler</strong>        extends <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a>
+</p>
+
+        
+    
+
+    
+    
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_requestMethod">
+                                        protected                                        
+                </td>
+                <td>$requestMethod</td>
+                <td class="last">
+                    
+                                    </td>
+                <td><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#property_requestMethod"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_urlPath">
+                                        protected                                        
+                </td>
+                <td>$urlPath</td>
+                <td class="last">
+                    
+                                    </td>
+                <td><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#property_urlPath"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_requestHeaders">
+                                        protected                                        
+                </td>
+                <td>$requestHeaders</td>
+                <td class="last">
+                    
+                                    </td>
+                <td><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#property_requestHeaders"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_requestParams">
+                                        protected                                        
+                </td>
+                <td>$requestParams</td>
+                <td class="last">
+                    
+                                    </td>
+                <td><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#property_requestParams"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_requestBody">
+                                        protected                                        
+                </td>
+                <td>$requestBody</td>
+                <td class="last">
+                    
+                                    </td>
+                <td><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#property_requestBody"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_apiKey">
+                                        protected                                        
+                </td>
+                <td>$apiKey</td>
+                <td class="last">
+                    
+                                    </td>
+                <td><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#property_apiKey"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getRequestMethod">getRequestMethod</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getRequestMethod"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getUrlPath">getUrlPath</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getUrlPath"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getRequestHeaders">getRequestHeaders</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getRequestHeaders"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getRequestBody">getRequestBody</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getRequestBody"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getRequestParams">getRequestParams</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getRequestParams"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addParam">addParam</a>($key, $value)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_addParam"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addHeader">addHeader</a>($key, $value)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_addHeader"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getRequestHeadersAsMap">getRequestHeadersAsMap</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getRequestHeadersAsMap"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getRequestParamsAsMap">getRequestParamsAsMap</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getRequestParamsAsMap"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getEmptyJSONObject">getEmptyJSONObject</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getEmptyJSONObject"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setRequestMethod">setRequestMethod</a>(string $requestMethod)
+        
+                                            <p>Set the request method.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_setRequestMethod"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setUrlPath">setUrlPath</a>(string $urlPath)
+        
+                                            <p>Set the request urlPath.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_setUrlPath"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setRequestHeaders">setRequestHeaders</a>(array $requestHeaders)
+        
+                                            <p>set the request Headers.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_setRequestHeaders"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setRequestParams">setRequestParams</a>(array $requestParams)
+        
+                                            <p>Set the request parameters.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_setRequestParams"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setRequestBody">setRequestBody</a>(<abbr title="Zoho\CRM\Library\Api\Handler\JSON">JSON</abbr> $requestBody)
+        
+                                            <p>Set the requestBody.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_setRequestBody"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getApiKey">getApiKey</a>()
+        
+                                            <p>Get the API Key used in the input json data(like 'modules', 'data','layouts',.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getApiKey"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setApiKey">setApiKey</a>(string $apiKey)
+        
+                                            <p>Set the API Key used in the input json data(like 'modules', 'data','layouts',.</p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_setApiKey"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getInstance">getInstance</a>(<abbr title="Zoho\CRM\Library\Api\Handler\ZCRMModule">ZCRMModule</abbr> $module)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getModuleDetails">getModuleDetails</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getFieldDetails">getFieldDetails</a>($fieldId)
+        
+                                            <p>Method to get the specified Field details
+Returns api response with ZCRMField instance.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAllFields">getAllFields</a>()
+        
+                                            <p>Method to get all the Fields of a module
+Returns api response with array of ZCRMField instances.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAllLayouts">getAllLayouts</a>()
+        
+                                            <p>Method to get all the layouts of a module
+Returns api response with array of ZCRMLayout instances.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLayoutDetails">getLayoutDetails</a>($layoutId)
+        
+                                            <p>Method to get the specified layout
+Input:: layout id
+Returns api response with ZCRMLayout instance.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getCustomView">getCustomView</a>($customViewId)
+        
+                                            <p>Method to get the specified custom view details
+Input:: custom view id
+Returns api response with ZCRMCustomView instance.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAllCustomViews">getAllCustomViews</a>()
+        
+                                            <p>Method to get all the custom views of a module
+Returns api response with array of ZCRMCustomView instances.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_updateModuleSettings">updateModuleSettings</a>()
+        
+                                            <p>Method to update module settings
+Input:: ZCRMModule instance with the properties to get updated
+Returns api response.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_updateCustomView">updateCustomView</a>($customViewInstance)
+        
+                                            <p>Method to update custom view settings of a module
+Input:: ZCRMCustomView instance with the properties to get updated
+Returns api response.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAllRelatedLists">getAllRelatedLists</a>()
+        
+                                            <p>Method to get all the related lists of a module
+Returns api response with array of related list instances.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getRelatedListDetails">getRelatedListDetails</a>($relatedListId)
+        
+                                            <p>Method to get the specified related list
+Returns api response with related list instance.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getZCRMCustomView">getZCRMCustomView</a>($customViewDetails, $categoriesArr)
+        
+                                            <p>Method to process the given custom view details and set them in ZCRMCustomView instance
+Input:: custom view details as array
+Returns ZCRMCustomView instance.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLayouts">getLayouts</a>($allLayoutDetails)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAllSectionsOfLayout">getAllSectionsOfLayout</a>($allSectionDetails)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSectionFields">getSectionFields</a>($allFieldArray)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getFields">getFields</a>($allFieldArray)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getZCRMFieldForSection">getZCRMFieldForSection</a>($fieldDetails)
+        
+                                            <p>Method to process the given section field details and set them in ZCRMField instance
+Input:: section field details as array
+Returns ZCRMField instance.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getZCRMField">getZCRMField</a>($fieldDetails)
+        
+                                            <p>Method to process the given field details and set them in ZCRMField instance
+Input:: field details as array
+Returns ZCRMField instance.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLookupFieldInstance">getLookupFieldInstance</a>($lookupDetails)
+        
+                                            <p>Method to process the given lookup field details and set them in ZCRMLookupField instance
+Input:: lookup field details as array
+Returns ZCRMLookupField instance.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getPickListValueInstance">getPickListValueInstance</a>($pickListDetails)
+        
+                                            <p>Method to process the given Picklist details and set them in ZCRMPickListValue instance
+Input:: picklist details as array
+Returns ZCRMPickListValue instance.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getZCRMLayout">getZCRMLayout</a>($layoutDetails)
+        
+                                            <p>Method to process the given layout details and set them in ZCRMLayout instance
+Input:: layout details as array
+Returns ZCRMLayout instance.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_constructJSONForCustomView">constructJSONForCustomView</a>($customViewInstance)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_constructJSONForModuleUpdate">constructJSONForModuleUpdate</a>($moduleInstance)
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_getRequestMethod">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getRequestMethod"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 17</div>
+        <code>                    
+    <strong>getRequestMethod</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getUrlPath">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getUrlPath"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 22</div>
+        <code>                    
+    <strong>getUrlPath</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getRequestHeaders">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getRequestHeaders"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 27</div>
+        <code>                    
+    <strong>getRequestHeaders</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getRequestBody">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getRequestBody"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 32</div>
+        <code>                    
+    <strong>getRequestBody</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getRequestParams">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getRequestParams"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 37</div>
+        <code>                    
+    <strong>getRequestParams</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addParam">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_addParam"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 42</div>
+        <code>                    
+    <strong>addParam</strong>($key, $value)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$key</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addHeader">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_addHeader"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 53</div>
+        <code>                    
+    <strong>addHeader</strong>($key, $value)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$key</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getRequestHeadersAsMap">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getRequestHeadersAsMap"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 58</div>
+        <code>                    
+    <strong>getRequestHeadersAsMap</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getRequestParamsAsMap">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getRequestParamsAsMap"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 63</div>
+        <code>                    
+    <strong>getRequestParamsAsMap</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getEmptyJSONObject">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getEmptyJSONObject"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 68</div>
+        <code>        static            
+    <strong>getEmptyJSONObject</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setRequestMethod">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_setRequestMethod"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 78</div>
+        <code>                    
+    <strong>setRequestMethod</strong>(string $requestMethod)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set the request method.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$requestMethod</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setUrlPath">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_setUrlPath"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 88</div>
+        <code>                    
+    <strong>setUrlPath</strong>(string $urlPath)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set the request urlPath.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$urlPath</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setRequestHeaders">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_setRequestHeaders"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 98</div>
+        <code>                    
+    <strong>setRequestHeaders</strong>(array $requestHeaders)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>set the request Headers.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$requestHeaders</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setRequestParams">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_setRequestParams"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 108</div>
+        <code>                    
+    <strong>setRequestParams</strong>(array $requestParams)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set the request parameters.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$requestParams</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setRequestBody">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_setRequestBody"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 118</div>
+        <code>                    
+    <strong>setRequestBody</strong>(<abbr title="Zoho\CRM\Library\Api\Handler\JSON">JSON</abbr> $requestBody)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set the requestBody.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Api\Handler\JSON">JSON</abbr></td>
+                <td>$requestBody</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getApiKey">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_getApiKey"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 128</div>
+        <code>                    string
+    <strong>getApiKey</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Get the API Key used in the input json data(like 'modules', 'data','layouts',.</p>                    <p>.etc).</p>                            </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setApiKey">
+        <div class="location">in <a href="../../../../../Zoho/CRM/Library/Api/Handler/APIHandler.html#method_setApiKey"><abbr title="Zoho\CRM\Library\Api\Handler\APIHandler">APIHandler</abbr></a> at         line 138</div>
+        <code>                    
+    <strong>setApiKey</strong>(string $apiKey)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set the API Key used in the input json data(like 'modules', 'data','layouts',.</p>                    <p>.etc).</p>                            </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$apiKey</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getInstance">
+        <div class="location">at         line 14</div>
+        <code>        static            
+    <strong>getInstance</strong>(<abbr title="Zoho\CRM\Library\Api\Handler\ZCRMModule">ZCRMModule</abbr> $module)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Api\Handler\ZCRMModule">ZCRMModule</abbr></td>
+                <td>$module</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getModuleDetails">
+        <div class="location">at         line 19</div>
+        <code>                    
+    <strong>getModuleDetails</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getFieldDetails">
+        <div class="location">at         line 28</div>
+        <code>                    
+    <strong>getFieldDetails</strong>($fieldId)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the specified Field details
+Returns api response with ZCRMField instance.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$fieldId</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAllFields">
+        <div class="location">at         line 46</div>
+        <code>                    
+    <strong>getAllFields</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get all the Fields of a module
+Returns api response with array of ZCRMField instances.</p>                                                </div>
+                <div class="tags">
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAllLayouts">
+        <div class="location">at         line 68</div>
+        <code>                    
+    <strong>getAllLayouts</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get all the layouts of a module
+Returns api response with array of ZCRMLayout instances.</p>                                                </div>
+                <div class="tags">
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLayoutDetails">
+        <div class="location">at         line 91</div>
+        <code>                    
+    <strong>getLayoutDetails</strong>($layoutId)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the specified layout
+Input:: layout id
+Returns api response with ZCRMLayout instance.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$layoutId</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getCustomView">
+        <div class="location">at         line 110</div>
+        <code>                    
+    <strong>getCustomView</strong>($customViewId)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the specified custom view details
+Input:: custom view id
+Returns api response with ZCRMCustomView instance.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$customViewId</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAllCustomViews">
+        <div class="location">at         line 129</div>
+        <code>                    
+    <strong>getAllCustomViews</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get all the custom views of a module
+Returns api response with array of ZCRMCustomView instances.</p>                                                </div>
+                <div class="tags">
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_updateModuleSettings">
+        <div class="location">at         line 153</div>
+        <code>                    
+    <strong>updateModuleSettings</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to update module settings
+Input:: ZCRMModule instance with the properties to get updated
+Returns api response.</p>                                                </div>
+                <div class="tags">
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_updateCustomView">
+        <div class="location">at         line 171</div>
+        <code>                    
+    <strong>updateCustomView</strong>($customViewInstance)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to update custom view settings of a module
+Input:: ZCRMCustomView instance with the properties to get updated
+Returns api response.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$customViewInstance</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAllRelatedLists">
+        <div class="location">at         line 189</div>
+        <code>                    
+    <strong>getAllRelatedLists</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get all the related lists of a module
+Returns api response with array of related list instances.</p>                                                </div>
+                <div class="tags">
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getRelatedListDetails">
+        <div class="location">at         line 212</div>
+        <code>                    
+    <strong>getRelatedListDetails</strong>($relatedListId)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the specified related list
+Returns api response with related list instance.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$relatedListId</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getZCRMCustomView">
+        <div class="location">at         line 234</div>
+        <code>                    
+    <strong>getZCRMCustomView</strong>($customViewDetails, $categoriesArr)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to process the given custom view details and set them in ZCRMCustomView instance
+Input:: custom view details as array
+Returns ZCRMCustomView instance.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$customViewDetails</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$categoriesArr</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLayouts">
+        <div class="location">at         line 292</div>
+        <code>                    
+    <strong>getLayouts</strong>($allLayoutDetails)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$allLayoutDetails</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAllSectionsOfLayout">
+        <div class="location">at         line 302</div>
+        <code>                    
+    <strong>getAllSectionsOfLayout</strong>($allSectionDetails)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$allSectionDetails</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSectionFields">
+        <div class="location">at         line 319</div>
+        <code>                    
+    <strong>getSectionFields</strong>($allFieldArray)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$allFieldArray</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getFields">
+        <div class="location">at         line 329</div>
+        <code>                    
+    <strong>getFields</strong>($allFieldArray)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$allFieldArray</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getZCRMFieldForSection">
+        <div class="location">at         line 344</div>
+        <code>                    
+    <strong>getZCRMFieldForSection</strong>($fieldDetails)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to process the given section field details and set them in ZCRMField instance
+Input:: section field details as array
+Returns ZCRMField instance.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$fieldDetails</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getZCRMField">
+        <div class="location">at         line 366</div>
+        <code>                    
+    <strong>getZCRMField</strong>($fieldDetails)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to process the given field details and set them in ZCRMField instance
+Input:: field details as array
+Returns ZCRMField instance.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$fieldDetails</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLookupFieldInstance">
+        <div class="location">at         line 471</div>
+        <code>                    
+    <strong>getLookupFieldInstance</strong>($lookupDetails)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to process the given lookup field details and set them in ZCRMLookupField instance
+Input:: lookup field details as array
+Returns ZCRMLookupField instance.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$lookupDetails</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getPickListValueInstance">
+        <div class="location">at         line 486</div>
+        <code>                    
+    <strong>getPickListValueInstance</strong>($pickListDetails)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to process the given Picklist details and set them in ZCRMPickListValue instance
+Input:: picklist details as array
+Returns ZCRMPickListValue instance.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$pickListDetails</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getZCRMLayout">
+        <div class="location">at         line 506</div>
+        <code>                    
+    <strong>getZCRMLayout</strong>($layoutDetails)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to process the given layout details and set them in ZCRMLayout instance
+Input:: layout details as array
+Returns ZCRMLayout instance.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$layoutDetails</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_constructJSONForCustomView">
+        <div class="location">at         line 557</div>
+        <code>                    
+    <strong>constructJSONForCustomView</strong>($customViewInstance)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$customViewInstance</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_constructJSONForModuleUpdate">
+        <div class="location">at         line 596</div>
+        <code>                    
+    <strong>constructJSONForModuleUpdate</strong>($moduleInstance)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$moduleInstance</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="https://github.com/blueend-ag/Sami/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

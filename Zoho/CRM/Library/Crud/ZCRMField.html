@@ -1,0 +1,2757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Zoho\CRM\Library\Crud\ZCRMField | ZCRM Php SDK</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/sami.css">
+        <script src="../../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../../js/bootstrap.min.js"></script>
+        <script src="../../../../js/typeahead.min.js"></script>
+        <script src="../../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Zoho_CRM_Library_Crud_ZCRMField" data-root-path="../../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../../index.html">ZCRM Php SDK</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../../traits.html">Traits</a></li>
+                    <li><a href="../../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../../Zoho.html">Zoho</a></li><li class="backslash">\</li><li><a href="../../../../Zoho/CRM.html">CRM</a></li><li class="backslash">\</li><li><a href="../../../../Zoho/CRM/Library.html">Library</a></li><li class="backslash">\</li><li><a href="../../../../Zoho/CRM/Library/Crud.html">Crud</a></li><li class="backslash">\</li><li>ZCRMField</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            ZCRMField
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>ZCRMField</strong>
+</p>
+
+        
+    
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;<a href="../../../../Zoho/CRM/Library/Crud/ZCRMField.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMField">ZCRMField</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getInstance">getInstance</a>(string $apiName)
+        
+                                            <p>Method to get the instance of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setConvertMapping">setConvertMapping</a>(array $convertMapping)
+        
+                                            <p>Method to set the convert mapping of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getConvertMapping">getConvertMapping</a>()
+        
+                                            <p>Method to get the convert mapping of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getApiName">getApiName</a>()
+        
+                                            <p>Method to get the api name of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLength">setLength</a>(int $length)
+        
+                                            <p>Method to set the length of the field value.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLength">getLength</a>()
+        
+                                            <p>Method to get the length of the field value.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setVisible">setVisible</a>(bool $isVisible)
+        
+                                            <p>Method to make the field visble.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isVisible">isVisible</a>()
+        
+                                            <p>Method to check whether the field is visible.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setFieldLabel">setFieldLabel</a>(string $fieldLabel)
+        
+                                            <p>Method to set the field label.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getFieldLabel">getFieldLabel</a>()
+        
+                                            <p>Method to get the field label.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setCreatedSource">setCreatedSource</a>(string $createdSource)
+        
+                                            <p>Method to set the creation source of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getCreatedSource">getCreatedSource</a>()
+        
+                                            <p>Method to get the creation source of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setMandatory">setMandatory</a>(bool $Mandatory)
+        
+                                            <p>Method to set the field as mandatory.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isMandatory">isMandatory</a>()
+        
+                                            <p>Method to check whether the field is mandatory.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setSequenceNumber">setSequenceNumber</a>(int $seqNumber)
+        
+                                            <p>Method to set the sequence number to the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSequenceNumber">getSequenceNumber</a>()
+        
+                                            <p>Method to get the sequence number of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setReadOnly">setReadOnly</a>(bool $readOnly)
+        
+                                            <p>Method to set the field as read only.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isReadOnly">isReadOnly</a>()
+        
+                                            <p>Method to check whether the field as read only.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setDataType">setDataType</a>(string $dataType)
+        
+                                            <p>Method to set the data type of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getDataType">getDataType</a>()
+        
+                                            <p>Method to get the data type of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setId">setId</a>(string $id)
+        
+                                            <p>Method to set the field id.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getId">getId</a>()
+        
+                                            <p>Method to get the field id.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setCustomField">setCustomField</a>(bool $customField)
+        
+                                            <p>Method to set the field as custom field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isCustomField">isCustomField</a>()
+        
+                                            <p>Method to check whether the field is custom field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isBusinessCardSupported">isBusinessCardSupported</a>()
+        
+                                            <p>Method to check whether the field supports business card.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setBusinessCardSupported">setBusinessCardSupported</a>(bool $businessCardSupported)
+        
+                                            <p>Method to set the field as business card supported.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setDefaultValue">setDefaultValue</a>(string $defaultVal)
+        
+                                            <p>Method to set the default value of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getDefaultValue">getDefaultValue</a>()
+        
+                                            <p>Method to get the default value of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setFieldLayoutPermissions">setFieldLayoutPermissions</a>(array $fieldLayoutPermissions)
+        
+                                            <p>Method to set the fieldlayout permissions of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getFieldLayoutPermissions">getFieldLayoutPermissions</a>()
+        
+                                            <p>Method to get the fieldlayout permissions of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLookupField">setLookupField</a>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMLookupField.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMLookupField">ZCRMLookupField</abbr></a> $lookupFields)
+        
+                                            <p>Method to set the lookup fields of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../Zoho/CRM/Library/Crud/ZCRMLookupField.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMLookupField">ZCRMLookupField</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLookupField">getLookupField</a>()
+        
+                                            <p>Method to get the lookup fields of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setPickListFieldValues">setPickListFieldValues</a>(array $pickListValues)
+        
+                                            <p>Method to set the Pick list values of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getPickListFieldValues">getPickListFieldValues</a>()
+        
+                                            <p>Method to get the Pick list values of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setUniqueField">setUniqueField</a>(bool $uniqueField)
+        
+                                            <p>Method to set the field as unique field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isUniqueField">isUniqueField</a>()
+        
+                                            <p>Method to check whether the field is unique.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setCaseSensitive">setCaseSensitive</a>(bool $caseSensitive)
+        
+                                            <p>Method to set the field as case sensitive field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isCaseSensitive">isCaseSensitive</a>()
+        
+                                            <p>Method to check whether the field is case sensitive.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setCurrencyField">setCurrencyField</a>(bool $currencyField)
+        
+                                            <p>Method to set the field as a currency field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isCurrencyField">isCurrencyField</a>()
+        
+                                            <p>Method to check the if the field is a currency field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setPrecision">setPrecision</a>(int $precision)
+        
+                                            <p>Method to set the rounding precision of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getPrecision">getPrecision</a>()
+        
+                                            <p>Method to get the rounding precision of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setRoundingOption">setRoundingOption</a>(string $roundingOption)
+        
+                                            <p>Method to set the rounding options of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getRoundingOption">getRoundingOption</a>()
+        
+                                            <p>Method to get the rounding options of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setFormulaField">setFormulaField</a>(bool $formulaField)
+        
+                                            <p>Method to set the field as a formula field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isFormulaField">isFormulaField</a>()
+        
+                                            <p>Method to check if the field is a formula field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setFormulaReturnType">setFormulaReturnType</a>(string $returnType)
+        
+                                            <p>Method to set the return type of the formula.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getFormulaReturnType">getFormulaReturnType</a>()
+        
+                                            <p>Method to get the return type of the formula for the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setFormulaExpression">setFormulaExpression</a>(string $expression)
+        
+                                            <p>Method to set the formula expression of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getFormulaExpression">getFormulaExpression</a>()
+        
+                                            <p>Method to get the formula expression of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setAutoNumber">setAutoNumber</a>(bool $autoNumberField)
+        
+                                            <p>Method to set the field as autonumber.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_isAutoNumberField">isAutoNumberField</a>()
+        
+                                            <p>Method to check if the field is autonumber.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setPrefix">setPrefix</a>(string $prefix)
+        
+                                            <p>Method to set the prefix of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getPrefix">getPrefix</a>()
+        
+                                            <p>Method to get the prefix of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setSuffix">setSuffix</a>(string $suffix)
+        
+                                            <p>Method to set the suffix of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getSuffix">getSuffix</a>()
+        
+                                            <p>Method to get the suffix of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setStartNumber">setStartNumber</a>(int $startNumber)
+        
+                                            <p>Method  to set the starting number of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getStartNumber">getStartNumber</a>()
+        
+                                            <p>Method to get the starting number of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setDecimalPlace">setDecimalPlace</a>(int $decimalPlace)
+        
+                                            <p>Method to set the decimal places of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getDecimalPlace">getDecimalPlace</a>()
+        
+                                            <p>Method to get the decimal places of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setJsonType">setJsonType</a>(string $jsonType)
+        
+                                            <p>Method to set the json datatype of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getJsonType">getJsonType</a>()
+        
+                                            <p>Method to get the json datatype of the field.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_getInstance">
+        <div class="location">at         line 211</div>
+        <code>        static            <a href="../../../../Zoho/CRM/Library/Crud/ZCRMField.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMField">ZCRMField</abbr></a>
+    <strong>getInstance</strong>(string $apiName)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the instance of the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$apiName</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMField.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMField">ZCRMField</abbr></a></td>
+            <td>instance of the ZCRMField</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setConvertMapping">
+        <div class="location">at         line 221</div>
+        <code>                    
+    <strong>setConvertMapping</strong>(array $convertMapping)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the convert mapping of the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$convertMapping</td>
+                <td>array containing module name as the key and value as boolean</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getConvertMapping">
+        <div class="location">at         line 231</div>
+        <code>                    array
+    <strong>getConvertMapping</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the convert mapping of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td>array containing module name as the key and value as boolean</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getApiName">
+        <div class="location">at         line 241</div>
+        <code>                    string
+    <strong>getApiName</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the api name of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>api name of the field</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLength">
+        <div class="location">at         line 251</div>
+        <code>                    
+    <strong>setLength</strong>(int $length)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the length of the field value.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$length</td>
+                <td>length of the value</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLength">
+        <div class="location">at         line 261</div>
+        <code>                    int
+    <strong>getLength</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the length of the field value.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td>length of the field</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setVisible">
+        <div class="location">at         line 271</div>
+        <code>                    
+    <strong>setVisible</strong>(bool $isVisible)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to make the field visble.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>bool</td>
+                <td>$isVisible</td>
+                <td>true to make the field visible otherwise false</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isVisible">
+        <div class="location">at         line 281</div>
+        <code>                    bool
+    <strong>isVisible</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to check whether the field is visible.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td>true if the field is visible otherwise false</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setFieldLabel">
+        <div class="location">at         line 291</div>
+        <code>                    
+    <strong>setFieldLabel</strong>(string $fieldLabel)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the field label.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$fieldLabel</td>
+                <td>field lable name</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getFieldLabel">
+        <div class="location">at         line 301</div>
+        <code>                    string
+    <strong>getFieldLabel</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the field label.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>field label name</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setCreatedSource">
+        <div class="location">at         line 311</div>
+        <code>                    
+    <strong>setCreatedSource</strong>(string $createdSource)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the creation source of the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$createdSource</td>
+                <td>creation source of field</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getCreatedSource">
+        <div class="location">at         line 321</div>
+        <code>                    string
+    <strong>getCreatedSource</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the creation source of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>creation source of the field</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setMandatory">
+        <div class="location">at         line 331</div>
+        <code>                    
+    <strong>setMandatory</strong>(bool $Mandatory)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the field as mandatory.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>bool</td>
+                <td>$Mandatory</td>
+                <td>true to make the field mandatory otherwise false</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isMandatory">
+        <div class="location">at         line 341</div>
+        <code>                    bool
+    <strong>isMandatory</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to check whether the field is mandatory.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td>true if the field is mandatory otherwise false</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setSequenceNumber">
+        <div class="location">at         line 351</div>
+        <code>                    
+    <strong>setSequenceNumber</strong>(int $seqNumber)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the sequence number to the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$seqNumber</td>
+                <td>the sequence number</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSequenceNumber">
+        <div class="location">at         line 361</div>
+        <code>                    int
+    <strong>getSequenceNumber</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the sequence number of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td>sequence number</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setReadOnly">
+        <div class="location">at         line 371</div>
+        <code>                    
+    <strong>setReadOnly</strong>(bool $readOnly)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the field as read only.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>bool</td>
+                <td>$readOnly</td>
+                <td>true to set the field as read only otherwise false</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isReadOnly">
+        <div class="location">at         line 381</div>
+        <code>                    bool
+    <strong>isReadOnly</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to check whether the field as read only.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td>true if the field as read only otherwise false</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setDataType">
+        <div class="location">at         line 391</div>
+        <code>                    
+    <strong>setDataType</strong>(string $dataType)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the data type of the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$dataType</td>
+                <td>data type of the field</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getDataType">
+        <div class="location">at         line 401</div>
+        <code>                    string
+    <strong>getDataType</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the data type of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>data type of the field</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setId">
+        <div class="location">at         line 411</div>
+        <code>                    
+    <strong>setId</strong>(string $id)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the field id.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$id</td>
+                <td>field id</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getId">
+        <div class="location">at         line 421</div>
+        <code>                    string
+    <strong>getId</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the field id.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>field id</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setCustomField">
+        <div class="location">at         line 431</div>
+        <code>                    
+    <strong>setCustomField</strong>(bool $customField)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the field as custom field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>bool</td>
+                <td>$customField</td>
+                <td>true to set field as custom field otherwise false</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isCustomField">
+        <div class="location">at         line 441</div>
+        <code>                    bool
+    <strong>isCustomField</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to check whether the field is custom field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td>true if the field is custom field otherwise false</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isBusinessCardSupported">
+        <div class="location">at         line 451</div>
+        <code>                    bool
+    <strong>isBusinessCardSupported</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to check whether the field supports business card.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td>true if the field supports business card  otherwise false</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setBusinessCardSupported">
+        <div class="location">at         line 461</div>
+        <code>                    
+    <strong>setBusinessCardSupported</strong>(bool $businessCardSupported)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the field as business card supported.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>bool</td>
+                <td>$businessCardSupported</td>
+                <td>true to set field as business class supported otherwise false</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setDefaultValue">
+        <div class="location">at         line 471</div>
+        <code>                    
+    <strong>setDefaultValue</strong>(string $defaultVal)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the default value of the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$defaultVal</td>
+                <td>default field value</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getDefaultValue">
+        <div class="location">at         line 481</div>
+        <code>                    string
+    <strong>getDefaultValue</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the default value of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>default field value</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setFieldLayoutPermissions">
+        <div class="location">at         line 491</div>
+        <code>                    
+    <strong>setFieldLayoutPermissions</strong>(array $fieldLayoutPermissions)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the fieldlayout permissions of the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$fieldLayoutPermissions</td>
+                <td>array of permissions list like CREATE,EDIT,VIEW,QUICK_CREATE etc.</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getFieldLayoutPermissions">
+        <div class="location">at         line 501</div>
+        <code>                    array
+    <strong>getFieldLayoutPermissions</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the fieldlayout permissions of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td>array of permissions list like CREATE,EDIT,VIEW,QUICK_CREATE etc.</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLookupField">
+        <div class="location">at         line 511</div>
+        <code>                    
+    <strong>setLookupField</strong>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMLookupField.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMLookupField">ZCRMLookupField</abbr></a> $lookupFields)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the lookup fields of the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMLookupField.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMLookupField">ZCRMLookupField</abbr></a></td>
+                <td>$lookupFields</td>
+                <td>instance of ZCRMLookupField</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLookupField">
+        <div class="location">at         line 521</div>
+        <code>                    <a href="../../../../Zoho/CRM/Library/Crud/ZCRMLookupField.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMLookupField">ZCRMLookupField</abbr></a>
+    <strong>getLookupField</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the lookup fields of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMLookupField.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMLookupField">ZCRMLookupField</abbr></a></td>
+            <td>instance of ZCRMLookupField</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setPickListFieldValues">
+        <div class="location">at         line 531</div>
+        <code>                    
+    <strong>setPickListFieldValues</strong>(array $pickListValues)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the Pick list values of the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$pickListValues</td>
+                <td>array of ZCRMPickListValue class instances</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getPickListFieldValues">
+        <div class="location">at         line 541</div>
+        <code>                    array
+    <strong>getPickListFieldValues</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the Pick list values of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td>array of ZCRMPickListValue class instances</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setUniqueField">
+        <div class="location">at         line 551</div>
+        <code>                    
+    <strong>setUniqueField</strong>(bool $uniqueField)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the field as unique field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>bool</td>
+                <td>$uniqueField</td>
+                <td>true to set the field as case sensitive otherwise false</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isUniqueField">
+        <div class="location">at         line 561</div>
+        <code>                    bool
+    <strong>isUniqueField</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to check whether the field is unique.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td>true if the field is case sensitive otherwise false</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setCaseSensitive">
+        <div class="location">at         line 571</div>
+        <code>                    
+    <strong>setCaseSensitive</strong>(bool $caseSensitive)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the field as case sensitive field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>bool</td>
+                <td>$caseSensitive</td>
+                <td>true to set the field as case sensitive otherwise false</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isCaseSensitive">
+        <div class="location">at         line 581</div>
+        <code>                    bool
+    <strong>isCaseSensitive</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to check whether the field is case sensitive.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td>true if the field is case sensitive otherwise false</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setCurrencyField">
+        <div class="location">at         line 591</div>
+        <code>                    
+    <strong>setCurrencyField</strong>(bool $currencyField)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the field as a currency field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>bool</td>
+                <td>$currencyField</td>
+                <td>true to set the field as a currency field otherwise false</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isCurrencyField">
+        <div class="location">at         line 601</div>
+        <code>                    bool
+    <strong>isCurrencyField</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to check the if the field is a currency field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td>true if currency field otherwise false</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setPrecision">
+        <div class="location">at         line 611</div>
+        <code>                    
+    <strong>setPrecision</strong>(int $precision)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the rounding precision of the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$precision</td>
+                <td>precision number</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getPrecision">
+        <div class="location">at         line 621</div>
+        <code>                    int
+    <strong>getPrecision</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the rounding precision of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td>precision number</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setRoundingOption">
+        <div class="location">at         line 631</div>
+        <code>                    
+    <strong>setRoundingOption</strong>(string $roundingOption)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the rounding options of the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$roundingOption</td>
+                <td>rounding option of the field</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getRoundingOption">
+        <div class="location">at         line 641</div>
+        <code>                    string
+    <strong>getRoundingOption</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the rounding options of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>rounding options</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setFormulaField">
+        <div class="location">at         line 651</div>
+        <code>                    
+    <strong>setFormulaField</strong>(bool $formulaField)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the field as a formula field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>bool</td>
+                <td>$formulaField</td>
+                <td>true to set the field as formula field otherwise false</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isFormulaField">
+        <div class="location">at         line 661</div>
+        <code>                    bool
+    <strong>isFormulaField</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to check if the field is a formula field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td>true if the field is the formula field otherwise false</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setFormulaReturnType">
+        <div class="location">at         line 671</div>
+        <code>                    
+    <strong>setFormulaReturnType</strong>(string $returnType)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the return type of the formula.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$returnType</td>
+                <td>return type of the formula</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getFormulaReturnType">
+        <div class="location">at         line 681</div>
+        <code>                    string
+    <strong>getFormulaReturnType</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the return type of the formula for the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>return type of the formula</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setFormulaExpression">
+        <div class="location">at         line 691</div>
+        <code>                    
+    <strong>setFormulaExpression</strong>(string $expression)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the formula expression of the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$expression</td>
+                <td>formula expression</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getFormulaExpression">
+        <div class="location">at         line 701</div>
+        <code>                    string
+    <strong>getFormulaExpression</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the formula expression of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>formula expression</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setAutoNumber">
+        <div class="location">at         line 711</div>
+        <code>                    
+    <strong>setAutoNumber</strong>(bool $autoNumberField)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the field as autonumber.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>bool</td>
+                <td>$autoNumberField</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isAutoNumberField">
+        <div class="location">at         line 721</div>
+        <code>                    bool
+    <strong>isAutoNumberField</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to check if the field is autonumber.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td>true if autonumbering is enabled</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setPrefix">
+        <div class="location">at         line 731</div>
+        <code>                    
+    <strong>setPrefix</strong>(string $prefix)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the prefix of the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$prefix</td>
+                <td>prefix</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getPrefix">
+        <div class="location">at         line 741</div>
+        <code>                    string
+    <strong>getPrefix</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the prefix of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>prefix</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setSuffix">
+        <div class="location">at         line 751</div>
+        <code>                    
+    <strong>setSuffix</strong>(string $suffix)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the suffix of the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$suffix</td>
+                <td>suffix</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSuffix">
+        <div class="location">at         line 761</div>
+        <code>                    string
+    <strong>getSuffix</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the suffix of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>suffix</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setStartNumber">
+        <div class="location">at         line 771</div>
+        <code>                    
+    <strong>setStartNumber</strong>(int $startNumber)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method  to set the starting number of the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$startNumber</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getStartNumber">
+        <div class="location">at         line 781</div>
+        <code>                    int
+    <strong>getStartNumber</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the starting number of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td>the starting number</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setDecimalPlace">
+        <div class="location">at         line 791</div>
+        <code>                    
+    <strong>setDecimalPlace</strong>(int $decimalPlace)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the decimal places of the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$decimalPlace</td>
+                <td>decimal places</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getDecimalPlace">
+        <div class="location">at         line 801</div>
+        <code>                    int
+    <strong>getDecimalPlace</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the decimal places of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td>decimal places</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setJsonType">
+        <div class="location">at         line 811</div>
+        <code>                    
+    <strong>setJsonType</strong>(string $jsonType)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the json datatype of the field.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$jsonType</td>
+                <td>json datatype</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getJsonType">
+        <div class="location">at         line 821</div>
+        <code>                    string
+    <strong>getJsonType</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the json datatype of the field.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>datatype</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="https://github.com/blueend-ag/Sami/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

@@ -1,0 +1,2890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Zoho\CRM\Library\Crud\ZCRMRecord | ZCRM Php SDK</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/sami.css">
+        <script src="../../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../../js/bootstrap.min.js"></script>
+        <script src="../../../../js/typeahead.min.js"></script>
+        <script src="../../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Zoho_CRM_Library_Crud_ZCRMRecord" data-root-path="../../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../../index.html">ZCRM Php SDK</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../../traits.html">Traits</a></li>
+                    <li><a href="../../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../../Zoho.html">Zoho</a></li><li class="backslash">\</li><li><a href="../../../../Zoho/CRM.html">CRM</a></li><li class="backslash">\</li><li><a href="../../../../Zoho/CRM/Library.html">Library</a></li><li class="backslash">\</li><li><a href="../../../../Zoho/CRM/Library/Crud.html">Crud</a></li><li class="backslash">\</li><li>ZCRMRecord</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            ZCRMRecord
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>ZCRMRecord</strong>
+</p>
+
+        
+    
+
+            <div class="description">
+            <p>Provides methods for basic CRUD operations of the record.</p>                                </div>
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;<abbr title="Zoho\CRM\Library\Crud\ZCRMRecord-instance">ZCRMRecord-instance</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getInstance">getInstance</a>(string $module, string $entityId)
+        
+                                            <p>Method to get the instance of the ZCRMRecord class.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addTax">addTax</a>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMTax.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMTax">ZCRMTax</abbr></a> $taxIns)
+        
+                                            <p>Method inserts the tax associated to the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getTaxList">getTaxList</a>()
+        
+                                            <p>Method to get the tax associated to the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getEntityId">getEntityId</a>()
+        
+                                            <p>Method to get the record id.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setEntityId">setEntityId</a>(string $entityId)
+        
+                                            <p>Method to set the record id.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getModuleApiName">getModuleApiName</a>()
+        
+                                            <p>Method to get the module api name of that record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setModuleApiName">setModuleApiName</a>(string $moduleApiName)
+        
+                                            <p>Method to set the module api name of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getFieldValue">getFieldValue</a>(string $apiName)
+        
+                                            <p>Method to get the field value by api name of the field of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setFieldValue">setFieldValue</a>(string $apiName, string $value)
+        
+                                            <p>Method to set the field value by api name of the field of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getData">getData</a>()
+        
+                                            <p>Method to get an array(key-value pair) containing field name as key and field data as value for the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLineItems">getLineItems</a>()
+        
+                                            <p>Method to get the line items of the inventory record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addLineItem">addLineItem</a>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMInventoryLineItem.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMInventoryLineItem">ZCRMInventoryLineItem</abbr></a> $lineItem)
+        
+                                            <p>Method adds the line item to the inventory record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLookupLabel">getLookupLabel</a>()
+        
+                                            <p>Method to get the lookup label of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLookupLabel">setLookupLabel</a>(string $lookupLabel)
+        
+                                            <p>Method to set the lookup label for the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getOwner">getOwner</a>()
+        
+                                            <p>Method to get the owner of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setOwner">setOwner</a>(<abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr> $owner)
+        
+                                            <p>Method to set the owner of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getCreatedBy">getCreatedBy</a>()
+        
+                                            <p>Method to get the creator of that record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setCreatedBy">setCreatedBy</a>(<abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr> $createdBy)
+        
+                                            <p>Method to set the creator of that record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getModifiedBy">getModifiedBy</a>()
+        
+                                            <p>Method to get the user who modified the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setModifiedBy">setModifiedBy</a>(<abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr> $modifiedBy)
+        
+                                            <p>Method to set the user who modified the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getCreatedTime">getCreatedTime</a>()
+        
+                                            <p>Method to get the creation time of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setCreatedTime">setCreatedTime</a>(string $createdTime)
+        
+                                            <p>Method to set the creation time of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getModifiedTime">getModifiedTime</a>()
+        
+                                            <p>Method to get the modification time of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setModifiedTime">setModifiedTime</a>(string $modifiedTime)
+        
+                                            <p>Method to set the modification time of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getTags">getTags</a>()
+        
+                                            <p>Method to get the tags for the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setTags">setTags</a>(array $tags)
+        
+                                            <p>Method to set the tags for the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_create">create</a>()
+        
+                                            <p>Method creates record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_update">update</a>()
+        
+                                            <p>Method to update the records.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_delete">delete</a>()
+        
+                                            <p>Method to delete the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_convert">convert</a>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMRecord.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMRecord">ZCRMRecord</abbr></a> $potentialRecord = null, string $assignToUser = null)
+        
+                                            <p>Method to convert the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getRelatedListRecords">getRelatedListRecords</a>(string $relatedListAPIName, string $sortByField = null, string $sortOrder = null, <abbr title="Zoho\CRM\Library\Crud\number">number</abbr> $page = 1, <abbr title="Zoho\CRM\Library\Crud\number">number</abbr> $perPage = 20)
+        
+                                            <p>Method to get the RelatedList records.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getNotes">getNotes</a>(string $sortByField = null, string $sortOrder = null, <abbr title="Zoho\CRM\Library\Crud\number">number</abbr> $page = 1, <abbr title="Zoho\CRM\Library\Crud\number">number</abbr> $perPage = 20)
+        
+                                            <p>Method to get the notes.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addNote">addNote</a>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a> $zcrmNoteIns)
+        
+                                            <p>Method adds the note to the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_updateNote">updateNote</a>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a> $zcrmNoteIns)
+        
+                                            <p>Method to update the note of the reecord.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_deleteNote">deleteNote</a>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a> $zcrmNoteIns)
+        
+                                            <p>Method to delete the note of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAttachments">getAttachments</a>(<abbr title="Zoho\CRM\Library\Crud\number">number</abbr> $page = 1, <abbr title="Zoho\CRM\Library\Crud\number">number</abbr> $perPage = 20)
+        
+                                            <p>Method to get the attachments of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_uploadAttachment">uploadAttachment</a>(string $filePath)
+        
+                                            <p>Method to upload the attachment to the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_uploadLinkAsAttachment">uploadLinkAsAttachment</a>(string $attachmentUrl)
+        
+                                            <p>Method to upload the link as the attachment to the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\FileAPIResponse">FileAPIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_downloadAttachment">downloadAttachment</a>(string $attachmentId)
+        
+                                            <p>Method to download the attachment of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_deleteAttachment">deleteAttachment</a>(string $attachmentId)
+        
+                                            <p>Method to delete the attachment of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_uploadPhoto">uploadPhoto</a>(string $filePath)
+        
+                                            <p>Method to upload a photo to the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\FileAPIResponse">FileAPIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_downloadPhoto">downloadPhoto</a>()
+        
+                                            <p>Method to download the photo of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_deletePhoto">deletePhoto</a>()
+        
+                                            <p>Method to delete the photo of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addRelation">addRelation</a>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMJunctionRecord.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMJunctionRecord">ZCRMJunctionRecord</abbr></a> $junctionRecord)
+        
+                                            <p>Method to relate the record with another record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_removeRelation">removeRelation</a>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMJunctionRecord.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMJunctionRecord">ZCRMJunctionRecord</abbr></a> $junctionRecord)
+        
+                                            <p>Method to delete the relationship between the records.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addTags">addTags</a>(string $tagNames)
+        
+                                            <p>Method adds the tag to the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_removeTags">removeTags</a>(string $tagNames)
+        
+                                            <p>Method to remove the tags for the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAllProperties">getAllProperties</a>()
+        
+                                            <p>Method to get the properties of a record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getProperty">getProperty</a>(string $propertyName)
+        
+                                            <p>Method to get the value of the property name of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setProperty">setProperty</a>(string $key, string $value)
+        
+                                            <p>Method to set the property value to the property name of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getParticipants">getParticipants</a>()
+        
+                                            <p>method to get the participants of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addParticipant">addParticipant</a>(array $participant)
+        
+                                            <p>method to add the participants to the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getPriceDetails">getPriceDetails</a>()
+        
+                                            <p>Method to fetch the price details of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addPriceDetail">addPriceDetail</a>($priceDetail)
+        
+                                            <p>Method adds the price details to the record of the price book module.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../Zoho/CRM/Library/Crud/ZCRMLayout.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMLayout">ZCRMLayout</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLayout">getLayout</a>()
+        
+                                            <p>Method to get the layout of the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLayout">setLayout</a>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMLayout.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMLayout">ZCRMLayout</abbr></a> $layout)
+        
+                                            <p>Method to set the layout.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLastActivityTime">getLastActivityTime</a>()
+        
+                                            <p>Method to get the time of last activity on the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLastActivityTime">setLastActivityTime</a>(string $lastActivityTime)
+        
+                                            <p>Method to set the time of last activity on the record.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_getInstance">
+        <div class="location">at         line 135</div>
+        <code>        static            <abbr title="Zoho\CRM\Library\Crud\ZCRMRecord-instance">ZCRMRecord-instance</abbr>
+    <strong>getInstance</strong>(string $module, string $entityId)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the instance of the ZCRMRecord class.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$module</td>
+                <td>api name of the module</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$entityId</td>
+                <td>the record id</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\ZCRMRecord-instance">ZCRMRecord-instance</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addTax">
+        <div class="location">at         line 145</div>
+        <code>                    
+    <strong>addTax</strong>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMTax.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMTax">ZCRMTax</abbr></a> $taxIns)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method inserts the tax associated to the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMTax.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMTax">ZCRMTax</abbr></a></td>
+                <td>$taxIns</td>
+                <td>the tax instance</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getTaxList">
+        <div class="location">at         line 155</div>
+        <code>                    array
+    <strong>getTaxList</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the tax associated to the record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td>array of ZCRMTax tax instances</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getEntityId">
+        <div class="location">at         line 165</div>
+        <code>                    string
+    <strong>getEntityId</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the record id.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>record id</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setEntityId">
+        <div class="location">at         line 175</div>
+        <code>                    
+    <strong>setEntityId</strong>(string $entityId)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the record id.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$entityId</td>
+                <td>record id</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getModuleApiName">
+        <div class="location">at         line 185</div>
+        <code>                    string
+    <strong>getModuleApiName</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the module api name of that record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>api name of the module</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setModuleApiName">
+        <div class="location">at         line 195</div>
+        <code>                    
+    <strong>setModuleApiName</strong>(string $moduleApiName)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the module api name of the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$moduleApiName</td>
+                <td>module api name of the record</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getFieldValue">
+        <div class="location">at         line 207</div>
+        <code>                    string
+    <strong>getFieldValue</strong>(string $apiName)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the field value by api name of the field of the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$apiName</td>
+                <td>field api name</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>the field value of that field api name</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setFieldValue">
+        <div class="location">at         line 218</div>
+        <code>                    
+    <strong>setFieldValue</strong>(string $apiName, string $value)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the field value by api name of the field of the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$apiName</td>
+                <td>api name of the field</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$value</td>
+                <td>value of the field (the value must be of the same datatype of the field. Ex. "val1", 10, 200.56, true)</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getData">
+        <div class="location">at         line 228</div>
+        <code>                    array
+    <strong>getData</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get an array(key-value pair) containing field name as key and field data as value for the record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td>key-value pair of field name and field value</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLineItems">
+        <div class="location">at         line 238</div>
+        <code>                    array
+    <strong>getLineItems</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the line items of the inventory record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td>containing the ZCRMInventoryLineItem</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addLineItem">
+        <div class="location">at         line 248</div>
+        <code>                    
+    <strong>addLineItem</strong>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMInventoryLineItem.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMInventoryLineItem">ZCRMInventoryLineItem</abbr></a> $lineItem)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method adds the line item to the inventory record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMInventoryLineItem.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMInventoryLineItem">ZCRMInventoryLineItem</abbr></a></td>
+                <td>$lineItem</td>
+                <td>line item to add</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLookupLabel">
+        <div class="location">at         line 258</div>
+        <code>                    string
+    <strong>getLookupLabel</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the lookup label of the record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>-the look up label  of the record</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLookupLabel">
+        <div class="location">at         line 268</div>
+        <code>                    
+    <strong>setLookupLabel</strong>(string $lookupLabel)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the lookup label for the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$lookupLabel</td>
+                <td>lookup label that you want to set</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getOwner">
+        <div class="location">at         line 278</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr>
+    <strong>getOwner</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the owner of the record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr></td>
+            <td>owner of the record</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setOwner">
+        <div class="location">at         line 288</div>
+        <code>                    
+    <strong>setOwner</strong>(<abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr> $owner)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the owner of the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr></td>
+                <td>$owner</td>
+                <td>owner of the record</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getCreatedBy">
+        <div class="location">at         line 298</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr>
+    <strong>getCreatedBy</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the creator of that record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr></td>
+            <td>user who created the record</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setCreatedBy">
+        <div class="location">at         line 308</div>
+        <code>                    
+    <strong>setCreatedBy</strong>(<abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr> $createdBy)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the creator of that record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr></td>
+                <td>$createdBy</td>
+                <td>user who created the record</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getModifiedBy">
+        <div class="location">at         line 318</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr>
+    <strong>getModifiedBy</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the user who modified the record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr></td>
+            <td>user who modified the record</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setModifiedBy">
+        <div class="location">at         line 328</div>
+        <code>                    
+    <strong>setModifiedBy</strong>(<abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr> $modifiedBy)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the user who modified the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\ZCRMUser">ZCRMUser</abbr></td>
+                <td>$modifiedBy</td>
+                <td>user who modified the record</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getCreatedTime">
+        <div class="location">at         line 338</div>
+        <code>                    string
+    <strong>getCreatedTime</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the creation time of the record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>creation time in ISO 8601 format</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setCreatedTime">
+        <div class="location">at         line 348</div>
+        <code>                    
+    <strong>setCreatedTime</strong>(string $createdTime)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the creation time of the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$createdTime</td>
+                <td>creation time in ISO 8601 format</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getModifiedTime">
+        <div class="location">at         line 358</div>
+        <code>                    string
+    <strong>getModifiedTime</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the modification time of the record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>the modification time in ISO 8601 format</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setModifiedTime">
+        <div class="location">at         line 368</div>
+        <code>                    
+    <strong>setModifiedTime</strong>(string $modifiedTime)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the modification time of the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$modifiedTime</td>
+                <td>modification time in ISO 8601 format</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getTags">
+        <div class="location">at         line 378</div>
+        <code>                    array
+    <strong>getTags</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the tags for the record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td>array of ZCRMTag instances related to the record</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setTags">
+        <div class="location">at         line 388</div>
+        <code>                    
+    <strong>setTags</strong>(array $tags)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the tags for the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$tags</td>
+                <td>array of ZCRMTag instances related to the record</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_create">
+        <div class="location">at         line 400</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>create</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method creates record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class which holds the API response.</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\ZCRMException">ZCRMException</abbr></td>
+                <td>if Entity ID of the record is not NULL</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_update">
+        <div class="location">at         line 419</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>update</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to update the records.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class which holds the API response.</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\ZCRMException">ZCRMException</abbr></td>
+                <td>if Entity ID of the record is NULL</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_delete">
+        <div class="location">at         line 438</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>delete</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to delete the record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class which holds the API response.</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\ZCRMException">ZCRMException</abbr></td>
+                <td>if Entity ID of the record is NULL</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_convert">
+        <div class="location">at         line 458</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>convert</strong>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMRecord.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMRecord">ZCRMRecord</abbr></a> $potentialRecord = null, string $assignToUser = null)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to convert the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMRecord.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMRecord">ZCRMRecord</abbr></a></td>
+                <td>$potentialRecord</td>
+                <td>the potential record</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$assignToUser</td>
+                <td>owner of the converted record</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class which holds the API response.</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getRelatedListRecords">
+        <div class="location">at         line 474</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr>
+    <strong>getRelatedListRecords</strong>(string $relatedListAPIName, string $sortByField = null, string $sortOrder = null, <abbr title="Zoho\CRM\Library\Crud\number">number</abbr> $page = 1, <abbr title="Zoho\CRM\Library\Crud\number">number</abbr> $perPage = 20)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the RelatedList records.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$relatedListAPIName</td>
+                <td>Api name of the Related List</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$sortByField</td>
+                <td>sorts the related list records accoring to the field api name (no sorting by default)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$sortOrder</td>
+                <td>sorts the related list records in ascending-"asc" or descending-"desc" order(no sorting by default)</td>
+            </tr>
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\number">number</abbr></td>
+                <td>$page</td>
+                <td>page To get the list of records from the respective pages. Default value for page is 1.</td>
+            </tr>
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\number">number</abbr></td>
+                <td>$perPage</td>
+                <td>To get the list of records available per page. Default value for per page is 20.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr></td>
+            <td>instance of the BulkAPIResponse class which holds the Bulk API Response</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getNotes">
+        <div class="location">at         line 489</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr>
+    <strong>getNotes</strong>(string $sortByField = null, string $sortOrder = null, <abbr title="Zoho\CRM\Library\Crud\number">number</abbr> $page = 1, <abbr title="Zoho\CRM\Library\Crud\number">number</abbr> $perPage = 20)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the notes.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$sortByField</td>
+                <td>sorts the notes according to the field api name (no sorting by default)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$sortOrder</td>
+                <td>sorts the notes in ascending-"asc" or descending-"desc"  order(no sorting by default)</td>
+            </tr>
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\number">number</abbr></td>
+                <td>$page</td>
+                <td>page To get the list of notes from the respective pages. Default value for page is 1.</td>
+            </tr>
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\number">number</abbr></td>
+                <td>$perPage</td>
+                <td>To get the list of notes available per page. Default value for per page is 20.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr></td>
+            <td>instance of the BulkAPIResponse class which holds the Bulk API response.</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addNote">
+        <div class="location">at         line 503</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>addNote</strong>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a> $zcrmNoteIns)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method adds the note to the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a></td>
+                <td>$zcrmNoteIns</td>
+                <td>note instance</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class which holds the API response.</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\ZCRMException">ZCRMException</abbr></td>
+                <td>if the note id of the note is null</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_updateNote">
+        <div class="location">at         line 524</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>updateNote</strong>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a> $zcrmNoteIns)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to update the note of the reecord.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a></td>
+                <td>$zcrmNoteIns</td>
+                <td>Notes instance</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class which holds the API response.</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\ZCRMException">ZCRMException</abbr></td>
+                <td>if note instance is not valid</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_deleteNote">
+        <div class="location">at         line 545</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>deleteNote</strong>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a> $zcrmNoteIns)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to delete the note of the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a></td>
+                <td>$zcrmNoteIns</td>
+                <td>note instance</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class which holds the API response.</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\ZCRMException">ZCRMException</abbr></td>
+                <td>if note id is not valid</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAttachments">
+        <div class="location">at         line 565</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr>
+    <strong>getAttachments</strong>(<abbr title="Zoho\CRM\Library\Crud\number">number</abbr> $page = 1, <abbr title="Zoho\CRM\Library\Crud\number">number</abbr> $perPage = 20)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the attachments of the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\number">number</abbr></td>
+                <td>$page</td>
+                <td>page To get the list of attachments from the respective pages. Default value for page is 1.</td>
+            </tr>
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\number">number</abbr></td>
+                <td>$perPage</td>
+                <td>To get the list of attachments available per page. Default value for per page is 20.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr></td>
+            <td>instance of the BulkAPIResponse class which holds the BulkAPI response.</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_uploadAttachment">
+        <div class="location">at         line 577</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>uploadAttachment</strong>(string $filePath)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to upload the attachment to the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$filePath</td>
+                <td>the file path of the attachment</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class which holds the API response.</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_uploadLinkAsAttachment">
+        <div class="location">at         line 589</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>uploadLinkAsAttachment</strong>(string $attachmentUrl)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to upload the link as the attachment to the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$attachmentUrl</td>
+                <td>the URL of the attachment</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class which holds the API response.</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_downloadAttachment">
+        <div class="location">at         line 601</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\FileAPIResponse">FileAPIResponse</abbr>
+    <strong>downloadAttachment</strong>(string $attachmentId)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to download the attachment of the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$attachmentId</td>
+                <td>the attachment id</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\FileAPIResponse">FileAPIResponse</abbr></td>
+            <td>instance of the FileAPIResponse class which holds the response.</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_deleteAttachment">
+        <div class="location">at         line 613</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>deleteAttachment</strong>(string $attachmentId)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to delete the attachment of the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$attachmentId</td>
+                <td>the attachment id</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class which holds the response.</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_uploadPhoto">
+        <div class="location">at         line 625</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>uploadPhoto</strong>(string $filePath)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to upload a photo to the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$filePath</td>
+                <td>the location of the photo</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class which holds the response.</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_downloadPhoto">
+        <div class="location">at         line 635</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\FileAPIResponse">FileAPIResponse</abbr>
+    <strong>downloadPhoto</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to download the photo of the record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\FileAPIResponse">FileAPIResponse</abbr></td>
+            <td>instance of the FileAPIResponse class which holds the response.</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_deletePhoto">
+        <div class="location">at         line 645</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>deletePhoto</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to delete the photo of the record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class which holds the response.</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addRelation">
+        <div class="location">at         line 657</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>addRelation</strong>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMJunctionRecord.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMJunctionRecord">ZCRMJunctionRecord</abbr></a> $junctionRecord)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to relate the record with another record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMJunctionRecord.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMJunctionRecord">ZCRMJunctionRecord</abbr></a></td>
+                <td>$junctionRecord</td>
+                <td>instance of ZCRMJunctionRecord class with which relation has to be created</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>APIResponse instance of the APIResponse class which holds the API response.</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_removeRelation">
+        <div class="location">at         line 669</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>removeRelation</strong>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMJunctionRecord.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMJunctionRecord">ZCRMJunctionRecord</abbr></a> $junctionRecord)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to delete the relationship between the records.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMJunctionRecord.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMJunctionRecord">ZCRMJunctionRecord</abbr></a></td>
+                <td>$junctionRecord</td>
+                <td>instance of ZCRMJunctionRecord class which relation has to be removed</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>APIResponse instance of the APIResponse class which holds the API response.</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addTags">
+        <div class="location">at         line 683</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>addTags</strong>(string $tagNames)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method adds the tag to the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$tagNames</td>
+                <td>tagnames to add(multiple tag names as comma separated values)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>APIResponse instance of the APIResponse class which holds the API response.</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\ZCRMException">ZCRMException</abbr></td>
+                <td>if the record or module or tag doesn't exist</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_removeTags">
+        <div class="location">at         line 707</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>removeTags</strong>(string $tagNames)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to remove the tags for the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$tagNames</td>
+                <td>tag names to remove(multiple tag names as comma separated values)</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class which holds the API response.</td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Zoho\CRM\Library\Crud\ZCRMException">ZCRMException</abbr></td>
+                <td>if the record or module or tag doesn't exist</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAllProperties">
+        <div class="location">at         line 727</div>
+        <code>                    array
+    <strong>getAllProperties</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the properties of a record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td>properties of the record</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getProperty">
+        <div class="location">at         line 739</div>
+        <code>                    string
+    <strong>getProperty</strong>(string $propertyName)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the value of the property name of the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$propertyName</td>
+                <td>name of the property</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>property value of the property name</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setProperty">
+        <div class="location">at         line 750</div>
+        <code>                    
+    <strong>setProperty</strong>(string $key, string $value)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the property value to the property name of the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$key</td>
+                <td>property name</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$value</td>
+                <td>property value</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getParticipants">
+        <div class="location">at         line 760</div>
+        <code>                    array
+    <strong>getParticipants</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to get the participants of the record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td>array of ZCRMParticipants instances of the record</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addParticipant">
+        <div class="location">at         line 770</div>
+        <code>                    
+    <strong>addParticipant</strong>(array $participant)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to add the participants to the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array</td>
+                <td>$participant</td>
+                <td>ZCRMParticipants instances of the record</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getPriceDetails">
+        <div class="location">at         line 780</div>
+        <code>                    array
+    <strong>getPriceDetails</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to fetch the price details of the record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td>ZCRMPriceBookPricing instances in the record</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addPriceDetail">
+        <div class="location">at         line 790</div>
+        <code>                    
+    <strong>addPriceDetail</strong>($priceDetail)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method adds the price details to the record of the price book module.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$priceDetail</td>
+                <td>ZCRMPriceBookPricing  pricing details of a ZCRMPriceBookPricing record</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLayout">
+        <div class="location">at         line 800</div>
+        <code>                    <a href="../../../../Zoho/CRM/Library/Crud/ZCRMLayout.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMLayout">ZCRMLayout</abbr></a>
+    <strong>getLayout</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the layout of the record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMLayout.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMLayout">ZCRMLayout</abbr></a></td>
+            <td>Layout</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLayout">
+        <div class="location">at         line 810</div>
+        <code>                    
+    <strong>setLayout</strong>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMLayout.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMLayout">ZCRMLayout</abbr></a> $layout)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the layout.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMLayout.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMLayout">ZCRMLayout</abbr></a></td>
+                <td>$layout</td>
+                <td>Layout</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLastActivityTime">
+        <div class="location">at         line 820</div>
+        <code>                    string
+    <strong>getLastActivityTime</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to get the time of last activity on the record.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>Time of last activity</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLastActivityTime">
+        <div class="location">at         line 830</div>
+        <code>                    
+    <strong>setLastActivityTime</strong>(string $lastActivityTime)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Method to set the time of last activity on the record.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$lastActivityTime</td>
+                <td>Time of last activity</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="https://github.com/blueend-ag/Sami/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>

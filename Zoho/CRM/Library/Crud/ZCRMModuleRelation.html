@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Zoho\CRM\Library\Crud\ZCRMModuleRelation | ZCRM Php SDK</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../../css/sami.css">
+        <script src="../../../../js/jquery-1.11.1.min.js"></script>
+        <script src="../../../../js/bootstrap.min.js"></script>
+        <script src="../../../../js/typeahead.min.js"></script>
+        <script src="../../../../sami.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    
+    
+    </head>
+
+    <body id="class" data-name="class:Zoho_CRM_Library_Crud_ZCRMModuleRelation" data-root-path="../../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../../../search.html" method="GET">
+            <span class="glyphicon glyphicon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../../index.html">ZCRM Php SDK</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../../classes.html">Classes</a></li>
+                                            <li><a href="../../../../namespaces.html">Namespaces</a></li>
+                                        <li><a href="../../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../../traits.html">Traits</a></li>
+                    <li><a href="../../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../../Zoho.html">Zoho</a></li><li class="backslash">\</li><li><a href="../../../../Zoho/CRM.html">CRM</a></li><li class="backslash">\</li><li><a href="../../../../Zoho/CRM/Library.html">Library</a></li><li class="backslash">\</li><li><a href="../../../../Zoho/CRM/Library/Crud.html">Crud</a></li><li class="backslash">\</li><li>ZCRMModuleRelation</li>
+            </ol>
+        </div>
+                <div id="page-content">
+                
+    <div class="page-header">
+        <h1>
+            ZCRMModuleRelation
+                
+        </h1>
+    </div>
+
+    <p>    class
+    <strong>ZCRMModuleRelation</strong>
+</p>
+
+        
+    
+
+    
+    
+    
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    static&nbsp;<a href="../../../../Zoho/CRM/Library/Crud/ZCRMModuleRelation.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMModuleRelation">ZCRMModuleRelation</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getInstance">getInstance</a>($parentModuleAPINameOrParentRecord, $relatedListAPIName)
+        
+                                            <p>method to get the instance of the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getRecords">getRecords</a>(string $sortByField = null, string $sortOrder = null, int $page = 1, int $perPage = 20)
+        
+                                            <p>method to get the module relation records.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getNotes">getNotes</a>(string $sortByField = null, string $sortOrder = null, int $page = 1, int $perPage = 20)
+        
+                                            <p>method to get the module relation notes.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addNote">addNote</a>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a> $zcrmNote)
+        
+                                            <p>method to add the note to the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_updateNote">updateNote</a>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a> $zcrmNote)
+        
+                                            <p>method to update the note of the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_deleteNote">deleteNote</a>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a> $zcrmNote)
+        
+                                            <p>method to delete the note of the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getAttachments">getAttachments</a>(int $page, int $perPage)
+        
+                                            <p>method to get the module relation attachments.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_uploadAttachment">uploadAttachment</a>(string $filePath)
+        
+                                            <p>method to upload the attachment by file path of the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_uploadLinkAsAttachment">uploadLinkAsAttachment</a>(string $attachmentUrl)
+        
+                                            <p>method to upload the attachment by url of the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\FileAPIResponse">FileAPIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_downloadAttachment">downloadAttachment</a>(string $attachmentId)
+        
+                                            <p>method to download the attachment of the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_deleteAttachment">deleteAttachment</a>(string $attachmentId)
+        
+                                            <p>method to delete the attachment of the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_addRelation">addRelation</a>()
+        
+                                            <p>method to add the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_removeRelation">removeRelation</a>()
+        
+                                            <p>method to delete the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getLabel">getLabel</a>()
+        
+                                            <p>method to get the display name label of the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setLabel">setLabel</a>(string $label)
+        
+                                            <p>method to set the display name label of the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getApiName">getApiName</a>()
+        
+                                            <p>method to get the api name of the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setApiName">setApiName</a>(string $apiName)
+        
+                                            <p>method to set the api name of the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getId">getId</a>()
+        
+                                            <p>method to get the id of the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setId">setId</a>(string $id)
+        
+                                            <p>method to set the id of the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getParentModuleAPIName">getParentModuleAPIName</a>()
+        
+                                            <p>method to get the parent Module API Name of the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setParentModuleAPIName">setParentModuleAPIName</a>(string $parentModuleAPIName)
+        
+                                            <p>method to set the parent Module API Name of the module relation.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getVisible">getVisible</a>()
+        
+                                            <p>method to check whether the module relation is visible.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setVisible">setVisible</a>(bool $visible)
+        
+                                            <p>method to set the visibility of the module relation is visible.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../../Zoho/CRM/Library/Crud/ZCRMRecord.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMRecord">ZCRMRecord</abbr></a>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_getParentRecord">getParentRecord</a>()
+        
+                                            <p>method to get the record to which the module relation belongs.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_setParentRecord">setParentRecord</a>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMRecord.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMRecord">ZCRMRecord</abbr></a> $parentRecord)
+        
+                                            <p>method to set the record to which the module relation belongs.</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_getInstance">
+        <div class="location">at         line 82</div>
+        <code>        static            <a href="../../../../Zoho/CRM/Library/Crud/ZCRMModuleRelation.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMModuleRelation">ZCRMModuleRelation</abbr></a>
+    <strong>getInstance</strong>($parentModuleAPINameOrParentRecord, $relatedListAPIName)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to get the instance of the module relation.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$parentModuleAPINameOrParentRecord</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$relatedListAPIName</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMModuleRelation.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMModuleRelation">ZCRMModuleRelation</abbr></a></td>
+            <td>instance of the ZCRMModuleRelation</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getRecords">
+        <div class="location">at         line 97</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr>
+    <strong>getRecords</strong>(string $sortByField = null, string $sortOrder = null, int $page = 1, int $perPage = 20)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to get the module relation records.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$sortByField</td>
+                <td>api name of the field to be sorted (no sorting by default)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$sortOrder</td>
+                <td>order of the sort "asc" for ascending , "desc" for descending order (no sorting by default)</td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$page</td>
+                <td>To get the list of records from the respective pages. Default value for page is 1.</td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$perPage</td>
+                <td>To get the list of records available per page. Default value for per page is 20</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr></td>
+            <td>instance of the BulkAPIResponse class containing the bulk api response</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getNotes">
+        <div class="location">at         line 112</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr>
+    <strong>getNotes</strong>(string $sortByField = null, string $sortOrder = null, int $page = 1, int $perPage = 20)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to get the module relation notes.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$sortByField</td>
+                <td>api name of the field to be sorted (no sorting by default)</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$sortOrder</td>
+                <td>order of the sort "asc" for ascending , "desc" for descending order (no sorting by default)</td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$page</td>
+                <td>To get the list of notes from the respective pages. Default value for page is 1.</td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$perPage</td>
+                <td>To get the list of notes available per page. Default value for per page is 20</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr></td>
+            <td>instance of the BulkAPIResponse class containing the bulk api response</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addNote">
+        <div class="location">at         line 124</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>addNote</strong>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a> $zcrmNote)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to add the note to the module relation.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a></td>
+                <td>$zcrmNote</td>
+                <td>instance of the ZCRMNote</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class containing the api response</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_updateNote">
+        <div class="location">at         line 136</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>updateNote</strong>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a> $zcrmNote)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to update the note of the module relation.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a></td>
+                <td>$zcrmNote</td>
+                <td>instance of the ZCRMNote</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class containing the api response</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_deleteNote">
+        <div class="location">at         line 148</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>deleteNote</strong>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a> $zcrmNote)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to delete the note of the module relation.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMNote.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMNote">ZCRMNote</abbr></a></td>
+                <td>$zcrmNote</td>
+                <td>instance of the ZCRMNote</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class containing the api response</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAttachments">
+        <div class="location">at         line 161</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr>
+    <strong>getAttachments</strong>(int $page, int $perPage)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to get the module relation attachments.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$page</td>
+                <td>To get the list of attachments from the respective pages</td>
+            </tr>
+                    <tr>
+                <td>int</td>
+                <td>$perPage</td>
+                <td>To get the list of attachments available per page.</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\BulkAPIResponse">BulkAPIResponse</abbr></td>
+            <td>instance of the BulkAPIResponse class containing the bulk api response</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_uploadAttachment">
+        <div class="location">at         line 173</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>uploadAttachment</strong>(string $filePath)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to upload the attachment by file path of the module relation.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$filePath</td>
+                <td>filepath of the attachment</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class containing the api response</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_uploadLinkAsAttachment">
+        <div class="location">at         line 185</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>uploadLinkAsAttachment</strong>(string $attachmentUrl)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to upload the attachment by url of the module relation.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$attachmentUrl</td>
+                <td>attachment url of the attachment</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class containing the api response</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_downloadAttachment">
+        <div class="location">at         line 197</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\FileAPIResponse">FileAPIResponse</abbr>
+    <strong>downloadAttachment</strong>(string $attachmentId)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to download the attachment of the module relation.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$attachmentId</td>
+                <td>attachment id of the attachment</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\FileAPIResponse">FileAPIResponse</abbr></td>
+            <td>instance of the FileAPIResponse class containing the file api response</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_deleteAttachment">
+        <div class="location">at         line 209</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>deleteAttachment</strong>(string $attachmentId)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to delete the attachment of the module relation.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$attachmentId</td>
+                <td>attachment id of the attachment</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class containing the api response</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_addRelation">
+        <div class="location">at         line 219</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>addRelation</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to add the module relation.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class containing the api response</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_removeRelation">
+        <div class="location">at         line 229</div>
+        <code>                    <abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr>
+    <strong>removeRelation</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to delete the module relation.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Zoho\CRM\Library\Crud\APIResponse">APIResponse</abbr></td>
+            <td>instance of the APIResponse class containing the api response</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLabel">
+        <div class="location">at         line 239</div>
+        <code>                    string
+    <strong>getLabel</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to get the display name label of the module relation.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>the display name label of the module relation</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLabel">
+        <div class="location">at         line 249</div>
+        <code>                    
+    <strong>setLabel</strong>(string $label)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to set the display name label of the module relation.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$label</td>
+                <td>display name label of the module relation</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getApiName">
+        <div class="location">at         line 259</div>
+        <code>                    string
+    <strong>getApiName</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to get the api name of the module relation.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>api name of the module relation</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setApiName">
+        <div class="location">at         line 269</div>
+        <code>                    
+    <strong>setApiName</strong>(string $apiName)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to set the api name of the module relation.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$apiName</td>
+                <td>api name of the module relation</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getId">
+        <div class="location">at         line 279</div>
+        <code>                    string
+    <strong>getId</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to get the id of the module relation.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>id of the module relation</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setId">
+        <div class="location">at         line 289</div>
+        <code>                    
+    <strong>setId</strong>(string $id)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to set the id of the module relation.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$id</td>
+                <td>id of the module relation</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getParentModuleAPIName">
+        <div class="location">at         line 299</div>
+        <code>                    string
+    <strong>getParentModuleAPIName</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to get the parent Module API Name of the module relation.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td>the parent Module API Name of the module relation</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setParentModuleAPIName">
+        <div class="location">at         line 309</div>
+        <code>                    
+    <strong>setParentModuleAPIName</strong>(string $parentModuleAPIName)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to set the parent Module API Name of the module relation.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$parentModuleAPIName</td>
+                <td>the parent Module API Name of the module relation</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getVisible">
+        <div class="location">at         line 319</div>
+        <code>                    bool
+    <strong>getVisible</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to check whether the module relation is visible.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td>true if visible otherwise false</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setVisible">
+        <div class="location">at         line 329</div>
+        <code>                    
+    <strong>setVisible</strong>(bool $visible)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to set the visibility of the module relation is visible.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>bool</td>
+                <td>$visible</td>
+                <td>true to set the module relation visible otherwise false</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getParentRecord">
+        <div class="location">at         line 339</div>
+        <code>                    <a href="../../../../Zoho/CRM/Library/Crud/ZCRMRecord.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMRecord">ZCRMRecord</abbr></a>
+    <strong>getParentRecord</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to get the record to which the module relation belongs.</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMRecord.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMRecord">ZCRMRecord</abbr></a></td>
+            <td>instance of the ZCRMRecord class</td>
+        </tr>
+    </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setParentRecord">
+        <div class="location">at         line 349</div>
+        <code>                    
+    <strong>setParentRecord</strong>(<a href="../../../../Zoho/CRM/Library/Crud/ZCRMRecord.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMRecord">ZCRMRecord</abbr></a> $parentRecord)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>method to set the record to which the module relation belongs.</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../../Zoho/CRM/Library/Crud/ZCRMRecord.html"><abbr title="Zoho\CRM\Library\Crud\ZCRMRecord">ZCRMRecord</abbr></a></td>
+                <td>$parentRecord</td>
+                <td>instance of the ZCRMRecord class</td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+            </div>
+                <div id="footer">
+        Generated by <a href="https://github.com/blueend-ag/Sami/">Sami, the API Documentation Generator</a>.
+    </div>
+
+        </div>
+    </div>
+    </body>
+
+</html>
