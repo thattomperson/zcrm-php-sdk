@@ -2,7 +2,6 @@
 
 namespace Zoho\CRM\Tests\Library\Api;
 
-use Zoho\CRM\Library\Api\Handler\EntityAPIHandler;
 use PHPUnit\Framework\TestCase;
 
 class EntityAPIHandlerTest extends TestCase
