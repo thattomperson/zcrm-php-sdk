@@ -1,8 +1,12 @@
-<?php namespace Zoho\CRM\Oauth\Client;
+<?php
+
+namespace Zoho\CRM\Oauth\Client;
 
 interface ZohoOAuthPersistenceInterface
 {
-	public function saveOAuthData($zohoOAuthTokens);
-	public function getOAuthTokens($userEmailId);
-	public function deleteOAuthTokens($userEmailId);
+    public function saveOAuthData($zohoOAuthTokens);
+
+    public function getOAuthTokens($userEmailId);
+
+    public function deleteOAuthTokens($userEmailId);
 }

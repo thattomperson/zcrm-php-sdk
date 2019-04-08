@@ -1,108 +1,133 @@
-<?php namespace Zoho\CRM\Library\Crud;
+<?php
+
+namespace Zoho\CRM\Library\Crud;
 
 class ZCRMPriceBookPricing
 {
     /**
-     * id of the price booking price
+     * id of the price booking price.
+     *
      * @var string
      */
-	private $id=null;
-	/**
-	 * range upper limit
-	 * @var double
-	 */
-	private $toRange=null;
-	/**
-	 * range upper limit
-	 * @var double
-	 */
-	private $fromRange=null;
-	/**
-	 * discount offered
-	 * @var double
-	 */
-	private $discount=null;
-	/**
-	 * constructor to assign price book pricing id
-	 * @param string $id price book pricing id
-	 */
-	private function __construct($id)
-	{
-		$this->id=$id;
-	}
-	/**
-	 * method to get the instance of the price book pricing 
-	 * @param string $id price book pricing id
-	 * @return ZCRMPriceBookPricing instance of the ZCRMPriceBookPricing class
-	 */
-	public static function getInstance($id)
-	{
-		return new ZCRMPriceBookPricing($id);
-	}
-
+    private $id = null;
     /**
-     * method to get the price book pricing id
-     * @return string price book pricing id
+     * range upper limit.
+     *
+     * @var float
      */
-    public function getId(){
-        return $this->id;
-    }
+    private $toRange = null;
+    /**
+     * range upper limit.
+     *
+     * @var float
+     */
+    private $fromRange = null;
+    /**
+     * discount offered.
+     *
+     * @var float
+     */
+    private $discount = null;
 
     /**
-     * method to set the price book pricing id
+     * constructor to assign price book pricing id.
+     *
      * @param string $id price book pricing id
      */
-    public function setId($id){
+    private function __construct($id)
+    {
         $this->id = $id;
     }
 
     /**
-     * method to get the upper limit of price book pricing
-     * @return Double the upper limit of price book pricing
+     * method to get the instance of the price book pricing.
+     *
+     * @param string $id price book pricing id
+     *
+     * @return ZCRMPriceBookPricing instance of the ZCRMPriceBookPricing class
      */
-    public function getToRange(){
+    public static function getInstance($id)
+    {
+        return new self($id);
+    }
+
+    /**
+     * method to get the price book pricing id.
+     *
+     * @return string price book pricing id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * method to set the price book pricing id.
+     *
+     * @param string $id price book pricing id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * method to get the upper limit of price book pricing.
+     *
+     * @return float the upper limit of price book pricing
+     */
+    public function getToRange()
+    {
         return $this->toRange;
     }
 
     /**
-     * method to set the upper limit of price book pricing
-     * @param Double $toRange upper limit of price book pricing
+     * method to set the upper limit of price book pricing.
+     *
+     * @param float $toRange upper limit of price book pricing
      */
-    public function setToRange($toRange){
+    public function setToRange($toRange)
+    {
         $this->toRange = $toRange;
     }
 
     /**
-     * method to get the lower limit of price book pricing
-     * @return Double the upper limit of price book pricing
+     * method to get the lower limit of price book pricing.
+     *
+     * @return float the upper limit of price book pricing
      */
-    public function getFromRange(){
+    public function getFromRange()
+    {
         return $this->fromRange;
     }
 
     /**
-     * method to set the lower limit of price book pricing
-     * @param Double $fromRange lower limit of price book pricing
+     * method to set the lower limit of price book pricing.
+     *
+     * @param float $fromRange lower limit of price book pricing
      */
-    public function setFromRange($fromRange){
+    public function setFromRange($fromRange)
+    {
         $this->fromRange = $fromRange;
     }
 
     /**
-     * method to get the discount of the price book pricing
-     * @return Double the discount of the price book pricing
+     * method to get the discount of the price book pricing.
+     *
+     * @return float the discount of the price book pricing
      */
-    public function getDiscount(){
+    public function getDiscount()
+    {
         return $this->discount;
     }
 
     /**
-     * method to set the discount of the price book pricing
-     * @param Double $discount the discount of the price book pricing
+     * method to set the discount of the price book pricing.
+     *
+     * @param float $discount the discount of the price book pricing
      */
-    public function setDiscount($discount){
+    public function setDiscount($discount)
+    {
         $this->discount = $discount;
     }
-
 }
-?>
