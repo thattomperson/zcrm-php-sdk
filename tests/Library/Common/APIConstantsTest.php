@@ -1,24 +1,14 @@
 <?php namespace Zoho\CRM\Tests\Library\Common;
 
 use PHPUnit\Framework\TestCase;
-use Zoho\CRM\Tests\Common\PHPUnitTestUtil;
+
 use Zoho\CRM\Library\Common\APIConstants;
 
 class APIConstantsTest extends TestCase
 {
-	public function setUp(): void
-	{
-		$this->instance = new PHPUnitTestUtil;
-	}
-	
-	public function tearDown(): void
-	{
-		unset($this->instance);
-	}
-    public function testConstants()
-    {
 
-        
+    public function testConstants()
+    {  
         $this->assertEquals('error',APIConstants::ERROR);
         $this->assertEquals('GET',APIConstants::REQUEST_METHOD_GET);
         $this->assertEquals('PUT',APIConstants::REQUEST_METHOD_PUT);
