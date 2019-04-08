@@ -25,216 +25,193 @@ class RelatedListAPIHandler extends APIHandler
 
     public function getRecords($sortByField, $sortOrder, $page, $perPage)
     {
-        
-            $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            if ($sortByField != null) {
-                $this->addParam('sort_by', $sortByField);
-            }
-            if ($sortOrder != null) {
-                $this->addParam('sort_order', $sortOrder);
-            }
-            $this->addParam('page', $page);
-            $this->addParam('per_page', $perPage);
+        $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        if ($sortByField != null) {
+            $this->addParam('sort_by', $sortByField);
+        }
+        if ($sortOrder != null) {
+            $this->addParam('sort_order', $sortOrder);
+        }
+        $this->addParam('page', $page);
+        $this->addParam('per_page', $perPage);
 
-            $responseInstance = APIRequest::getInstance($this)->getBulkAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $records = $responseJSON['data'];
-            $recordsList = [];
-            foreach ($records as $record) {
-                $recordInstance = ZCRMRecord::getInstance($this->relatedList->getApiName(), $record['id']);
-                EntityAPIHandler::getInstance($recordInstance)->setRecordProperties($record);
-                array_push($recordsList, $recordInstance);
-            }
+        $responseInstance = APIRequest::getInstance($this)->getBulkAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $records = $responseJSON['data'];
+        $recordsList = [];
+        foreach ($records as $record) {
+            $recordInstance = ZCRMRecord::getInstance($this->relatedList->getApiName(), $record['id']);
+            EntityAPIHandler::getInstance($recordInstance)->setRecordProperties($record);
+            array_push($recordsList, $recordInstance);
+        }
 
-            $responseInstance->setData($recordsList);
+        $responseInstance->setData($recordsList);
 
-            return $responseInstance;
-      
+        return $responseInstance;
     }
 
     public function getNotes($sortByField, $sortOrder, $page, $perPage)
     {
-        
-            $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            $this->addParam('page', $page);
-            $this->addParam('per_page', $perPage);
-            if ($sortByField != null) {
-                $this->addParam('sort_by', $sortByField);
-            }
-            if ($sortOrder != null) {
-                $this->addParam('sort_order', $sortOrder);
-            }
+        $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        $this->addParam('page', $page);
+        $this->addParam('per_page', $perPage);
+        if ($sortByField != null) {
+            $this->addParam('sort_by', $sortByField);
+        }
+        if ($sortOrder != null) {
+            $this->addParam('sort_order', $sortOrder);
+        }
 
-            $responseInstance = APIRequest::getInstance($this)->getBulkAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $notes = $responseJSON['data'];
-            $notesList = [];
-            foreach ($notes as $note) {
-                array_push($notesList, self::getZCRMNote($note, null));
-            }
+        $responseInstance = APIRequest::getInstance($this)->getBulkAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $notes = $responseJSON['data'];
+        $notesList = [];
+        foreach ($notes as $note) {
+            array_push($notesList, self::getZCRMNote($note, null));
+        }
 
-            $responseInstance->setData($notesList);
+        $responseInstance->setData($notesList);
 
-            return $responseInstance;
-  
+        return $responseInstance;
     }
 
     public function getAttachments($page, $perPage)
     {
-        
-            $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            $this->addParam('page', $page);
-            $this->addParam('per_page', $perPage);
+        $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        $this->addParam('page', $page);
+        $this->addParam('per_page', $perPage);
 
-            $responseInstance = APIRequest::getInstance($this)->getBulkAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $attachments = $responseJSON['data'];
-            $attachmentList = [];
-            foreach ($attachments as $attachment) {
-                array_push($attachmentList, self::getZCRMAttachment($attachment));
-            }
+        $responseInstance = APIRequest::getInstance($this)->getBulkAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $attachments = $responseJSON['data'];
+        $attachmentList = [];
+        foreach ($attachments as $attachment) {
+            array_push($attachmentList, self::getZCRMAttachment($attachment));
+        }
 
-            $responseInstance->setData($attachmentList);
+        $responseInstance->setData($attachmentList);
 
-            return $responseInstance;
-       
+        return $responseInstance;
     }
 
     public function addNote($zcrmNote)
     {
-        
-            $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
-            $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
-            $this->addHeader('Content-Type', 'application/json');
-            $inputJSON = ['data'=>[self::getZCRMNoteAsJSON($zcrmNote)]];
-            $this->requestBody = json_encode($inputJSON);
+        $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
+        $this->addHeader('Content-Type', 'application/json');
+        $inputJSON = ['data'=>[self::getZCRMNoteAsJSON($zcrmNote)]];
+        $this->requestBody = json_encode($inputJSON);
 
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $responseData = $responseJSON['data'][0];
-            $responseDetails = isset($responseData['details']) ? $responseData['details'] : [];
-            $zcrmNote = self::getZCRMNote($responseDetails, $zcrmNote);
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $responseData = $responseJSON['data'][0];
+        $responseDetails = isset($responseData['details']) ? $responseData['details'] : [];
+        $zcrmNote = self::getZCRMNote($responseDetails, $zcrmNote);
 
-            $responseInstance->setData($zcrmNote);
+        $responseInstance->setData($zcrmNote);
 
-            return $responseInstance;
-       
+        return $responseInstance;
     }
 
     public function updateNote($zcrmNote)
     {
-        
-            $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName().'/'.$zcrmNote->getId();
-            $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
-            $this->addHeader('Content-Type', 'application/json');
-            $inputJSON = ['data'=>[self::getZCRMNoteAsJSON($zcrmNote)]];
-            $this->requestBody = json_encode($inputJSON);
+        $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName().'/'.$zcrmNote->getId();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
+        $this->addHeader('Content-Type', 'application/json');
+        $inputJSON = ['data'=>[self::getZCRMNoteAsJSON($zcrmNote)]];
+        $this->requestBody = json_encode($inputJSON);
 
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $responseData = $responseJSON['data'][0];
-            $responseDetails = isset($responseData['details']) ? $responseData['details'] : [];
-            $zcrmNote = self::getZCRMNote($responseDetails, $zcrmNote);
-            $responseInstance->setData($zcrmNote);
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $responseData = $responseJSON['data'][0];
+        $responseDetails = isset($responseData['details']) ? $responseData['details'] : [];
+        $zcrmNote = self::getZCRMNote($responseDetails, $zcrmNote);
+        $responseInstance->setData($zcrmNote);
 
-            return $responseInstance;
-       
+        return $responseInstance;
     }
 
     public function deleteNote($zcrmNote)
     {
-            $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName().'/'.$zcrmNote->getId();
-            $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
-            $this->addHeader('Content-Type', 'application/json');
+        $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName().'/'.$zcrmNote->getId();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
+        $this->addHeader('Content-Type', 'application/json');
 
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
 
-            return $responseInstance;
-      
+        return $responseInstance;
     }
 
     public function uploadAttachment($filePath)
     {
-        
-            $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
-            $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
+        $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
 
-            $responseInstance = APIRequest::getInstance($this)->uploadFile($filePath);
-            $responseJson = $responseInstance->getResponseJSON();
-            $detailsJSON = isset($responseJson['data'][0]['details']) ? $responseJson['data'][0]['details'] : [];
-            $responseInstance->setData(ZCRMAttachment::getInstance($this->parentRecord, isset($detailsJSON['id']) ? ($detailsJSON['id']) : '0'));
+        $responseInstance = APIRequest::getInstance($this)->uploadFile($filePath);
+        $responseJson = $responseInstance->getResponseJSON();
+        $detailsJSON = isset($responseJson['data'][0]['details']) ? $responseJson['data'][0]['details'] : [];
+        $responseInstance->setData(ZCRMAttachment::getInstance($this->parentRecord, isset($detailsJSON['id']) ? ($detailsJSON['id']) : '0'));
 
-            return $responseInstance;
-      
+        return $responseInstance;
     }
 
     public function uploadLinkAsAttachment($attachmentUrl)
     {
-        
-            $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
-            $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
+        $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName();
 
-            $responseInstance = APIRequest::getInstance($this)->uploadLinkAsAttachment($attachmentUrl);
-            $responseJson = $responseInstance->getResponseJSON();
-            $detailsJSON = isset($responseJson['data'][0]['details']) ? $responseJson['data'][0]['details'] : [];
+        $responseInstance = APIRequest::getInstance($this)->uploadLinkAsAttachment($attachmentUrl);
+        $responseJson = $responseInstance->getResponseJSON();
+        $detailsJSON = isset($responseJson['data'][0]['details']) ? $responseJson['data'][0]['details'] : [];
 
-            $responseInstance->setData(ZCRMAttachment::getInstance($this->parentRecord, isset($detailsJSON['id']) ? ($detailsJSON['id']) : '0'));
+        $responseInstance->setData(ZCRMAttachment::getInstance($this->parentRecord, isset($detailsJSON['id']) ? ($detailsJSON['id']) : '0'));
 
-            return $responseInstance;
-     
+        return $responseInstance;
     }
 
     public function downloadAttachment($attachmentId)
     {
-        
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName().'/'.$attachmentId;
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName().'/'.$attachmentId;
 
-            return APIRequest::getInstance($this)->downloadFile();
-    
+        return APIRequest::getInstance($this)->downloadFile();
     }
 
     public function deleteAttachment($attachmentId)
     {
-        
-            $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
-            $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName().'/'.$attachmentId;
+        $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
+        $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->relatedList->getApiName().'/'.$attachmentId;
 
-            return APIRequest::getInstance($this)->getAPIResponse();
-    
+        return APIRequest::getInstance($this)->getAPIResponse();
     }
 
     public function addRelation()
     {
-        
-            $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
-            $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->junctionRecord->getApiName().'/'.$this->junctionRecord->getId();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
+        $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->junctionRecord->getApiName().'/'.$this->junctionRecord->getId();
 
-            $dataArray = $this->junctionRecord->getRelatedDetails();
-            if (count($dataArray) == 0) {
-                $dataArray = CommonUtil::getEmptyJSONObject();
-            }
-            $inputJSON = ['data'=>[$dataArray]];
-            $this->requestBody = json_encode($inputJSON);
+        $dataArray = $this->junctionRecord->getRelatedDetails();
+        if (count($dataArray) == 0) {
+            $dataArray = CommonUtil::getEmptyJSONObject();
+        }
+        $inputJSON = ['data'=>[$dataArray]];
+        $this->requestBody = json_encode($inputJSON);
 
-            return APIRequest::getInstance($this)->getAPIResponse();
-     
+        return APIRequest::getInstance($this)->getAPIResponse();
     }
 
     public function removeRelation()
     {
-        
-            $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
-            $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->junctionRecord->getApiName().'/'.$this->junctionRecord->getId();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_DELETE;
+        $this->urlPath = $this->parentRecord->getModuleApiName().'/'.$this->parentRecord->getEntityId().'/'.$this->junctionRecord->getApiName().'/'.$this->junctionRecord->getId();
 
-            return APIRequest::getInstance($this)->getAPIResponse();
-       
+        return APIRequest::getInstance($this)->getAPIResponse();
     }
 
     public function getZCRMNoteAsJSON($noteIns)

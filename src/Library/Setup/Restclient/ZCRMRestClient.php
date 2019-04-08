@@ -2,8 +2,8 @@
 
 namespace Zoho\CRM\Library\Setup\Restclient;
 
-use Zoho\CRM\Library\Common\ZCRMConfigUtil;
 use Zoho\CRM\Library\Api\Handler\OrganizationAPIHandler;
+use Zoho\CRM\Library\Common\ZCRMConfigUtil;
 
 class ZCRMRestClient
 {

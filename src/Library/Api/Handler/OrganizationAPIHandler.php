@@ -2,8 +2,8 @@
 
 namespace Zoho\CRM\Library\Api\Handler;
 
-use Zoho\CRM\Library\Common\APIConstants;
 use Zoho\CRM\Library\Api\APIRequest;
+use Zoho\CRM\Library\Common\APIConstants;
 use Zoho\CRM\Library\Exception\ZCRMException;
 
 /**
@@ -24,17 +24,15 @@ class OrganizationAPIHandler extends APIHandler
 
     public function getOrganizationDetails()
     {
-        
-            $this->urlPath = 'org';
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $orgDetails = $responseJSON['org'][0];
-            $responseInstance->setData(self::setOrganizationDetails($orgDetails));
+        $this->urlPath = 'org';
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $orgDetails = $responseJSON['org'][0];
+        $responseInstance->setData(self::setOrganizationDetails($orgDetails));
 
-            return $responseInstance;
-    
+        return $responseInstance;
     }
 
     public function setOrganizationDetails($orgDetails)
@@ -78,34 +76,32 @@ class OrganizationAPIHandler extends APIHandler
 
     public function getAllRoles()
     {
-    
-            $this->urlPath = 'settings/roles';
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            $responseInstance = APIRequest::getInstance($this)->getBulkAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $roles = $responseJSON['roles'];
-            $roleInstanceArray = [];
-            foreach ($roles as $role) {
-                array_push($roleInstanceArray, self::getZCRMRole($role));
-            }
-            $responseInstance->setData($roleInstanceArray);
+        $this->urlPath = 'settings/roles';
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        $responseInstance = APIRequest::getInstance($this)->getBulkAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $roles = $responseJSON['roles'];
+        $roleInstanceArray = [];
+        foreach ($roles as $role) {
+            array_push($roleInstanceArray, self::getZCRMRole($role));
+        }
+        $responseInstance->setData($roleInstanceArray);
 
-            return $responseInstance;
+        return $responseInstance;
     }
 
     public function getRole($roleId)
     {
-        
-            $this->urlPath = 'settings/roles/'.$roleId;
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $roles = $responseJSON['roles'];
-            $responseInstance->setData(self::getZCRMRole($roles[0]));
+        $this->urlPath = 'settings/roles/'.$roleId;
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $roles = $responseJSON['roles'];
+        $responseInstance->setData(self::getZCRMRole($roles[0]));
 
-            return $responseInstance;
+        return $responseInstance;
     }
 
     public function getZCRMRole($roleDetails)
@@ -122,17 +118,15 @@ class OrganizationAPIHandler extends APIHandler
 
     public function createUser($userInstance)
     {
-        
-            $userJson = self::constructJSONForUser([$userInstance]);
-            $this->urlPath = 'users';
-            $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
-            $this->addHeader('Content-Type', 'application/json');
-            $this->requestBody = $userJson;
-            $this->apiKey = 'users';
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $userJson = self::constructJSONForUser([$userInstance]);
+        $this->urlPath = 'users';
+        $this->requestMethod = APIConstants::REQUEST_METHOD_POST;
+        $this->addHeader('Content-Type', 'application/json');
+        $this->requestBody = $userJson;
+        $this->apiKey = 'users';
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
 
-            return $responseInstance;
-       
+        return $responseInstance;
     }
 
     public function updateUser($userInstance)

@@ -27,16 +27,16 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function getFieldDetails($fieldId)
     {
-            $this->urlPath = 'settings/fields/'.$fieldId;
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            $this->addParam('module', $this->module->getAPIName());
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $fieldObj = $responseJSON['fields'][0];
-            $responseInstance->setData(self::getZCRMField($fieldObj));
+        $this->urlPath = 'settings/fields/'.$fieldId;
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        $this->addParam('module', $this->module->getAPIName());
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $fieldObj = $responseJSON['fields'][0];
+        $responseInstance->setData(self::getZCRMField($fieldObj));
 
-            return $responseInstance;
+        return $responseInstance;
     }
 
     /**
@@ -45,19 +45,18 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function getAllFields()
     {
-            $this->urlPath = 'settings/fields';
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            $this->addParam('module', $this->module->getAPIName());
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $fields = $responseJSON['fields'];
-            $fieldInstancesArray = [];
-            foreach ($fields as $fieldObj) {
-                array_push($fieldInstancesArray, self::getZCRMField($fieldObj));
-            }
-            $responseInstance->setData($fieldInstancesArray);
-    
+        $this->urlPath = 'settings/fields';
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        $this->addParam('module', $this->module->getAPIName());
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $fields = $responseJSON['fields'];
+        $fieldInstancesArray = [];
+        foreach ($fields as $fieldObj) {
+            array_push($fieldInstancesArray, self::getZCRMField($fieldObj));
+        }
+        $responseInstance->setData($fieldInstancesArray);
 
         return $responseInstance;
     }
@@ -68,22 +67,20 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function getAllLayouts()
     {
-    
-            $this->urlPath = 'settings/layouts';
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            $this->addParam('module', $this->module->getAPIName());
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $allLayouts = $responseJSON['layouts'];
-            $layoutInstancesArray = [];
-            foreach ($allLayouts as $layoutObj) {
-                array_push($layoutInstancesArray, self::getZCRMLayout($layoutObj));
-            }
-            $responseInstance->setData($layoutInstancesArray);
+        $this->urlPath = 'settings/layouts';
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        $this->addParam('module', $this->module->getAPIName());
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $allLayouts = $responseJSON['layouts'];
+        $layoutInstancesArray = [];
+        foreach ($allLayouts as $layoutObj) {
+            array_push($layoutInstancesArray, self::getZCRMLayout($layoutObj));
+        }
+        $responseInstance->setData($layoutInstancesArray);
 
-            return $responseInstance;
-    
+        return $responseInstance;
     }
 
     /**
@@ -93,17 +90,16 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function getLayoutDetails($layoutId)
     {
-    
-            $this->urlPath = 'settings/layouts/'.$layoutId;
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            $this->addParam('module', $this->module->getAPIName());
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $layoutDetails = $responseJSON['layouts'][0];
-            $responseInstance->setData(self::getZCRMLayout($layoutDetails));
+        $this->urlPath = 'settings/layouts/'.$layoutId;
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        $this->addParam('module', $this->module->getAPIName());
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $layoutDetails = $responseJSON['layouts'][0];
+        $responseInstance->setData(self::getZCRMLayout($layoutDetails));
 
-            return $responseInstance;
+        return $responseInstance;
     }
 
     /**
@@ -113,19 +109,17 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function getCustomView($customViewId)
     {
+        $this->urlPath = 'settings/custom_views/'.$customViewId;
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        $this->addParam('module', $this->module->getAPIName());
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $categories = $responseJSON['info']['translation'];
 
-            $this->urlPath = 'settings/custom_views/'.$customViewId;
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            $this->addParam('module', $this->module->getAPIName());
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $categories = $responseJSON['info']['translation'];
+        $responseInstance->setData(self::getZCRMCustomView($responseJSON['custom_views'][0], $categories));
 
-            $responseInstance->setData(self::getZCRMCustomView($responseJSON['custom_views'][0], $categories));
-
-            return $responseInstance;
-   
+        return $responseInstance;
     }
 
     /**
@@ -134,23 +128,21 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function getAllCustomViews()
     {
-    
-            $this->urlPath = 'settings/custom_views';
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            $this->addParam('module', $this->module->getAPIName());
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $customViews = $responseJSON['custom_views'];
-            $categories = $responseJSON['info']['translation'];
-            $customViewInstances = [];
-            foreach ($customViews as $customView) {
-                array_push($customViewInstances, self::getZCRMCustomView($customView, $categories));
-            }
-            $responseInstance->setData($customViewInstances);
+        $this->urlPath = 'settings/custom_views';
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        $this->addParam('module', $this->module->getAPIName());
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $customViews = $responseJSON['custom_views'];
+        $categories = $responseJSON['info']['translation'];
+        $customViewInstances = [];
+        foreach ($customViews as $customView) {
+            array_push($customViewInstances, self::getZCRMCustomView($customView, $categories));
+        }
+        $responseInstance->setData($customViewInstances);
 
-            return $responseInstance;
-
+        return $responseInstance;
     }
 
     /**
@@ -160,15 +152,15 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function updateModuleSettings()
     {
-            $inputJSON = self::constructJSONForModuleUpdate($this->module);
-            $this->urlPath = 'settings/modules/'.$this->module->getAPIName();
-            $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
-            $this->addHeader('Content-Type', 'application/json');
-            $this->requestBody = $inputJSON;
-            $this->apiKey = 'modules';
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $inputJSON = self::constructJSONForModuleUpdate($this->module);
+        $this->urlPath = 'settings/modules/'.$this->module->getAPIName();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
+        $this->addHeader('Content-Type', 'application/json');
+        $this->requestBody = $inputJSON;
+        $this->apiKey = 'modules';
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
 
-            return $responseInstance;
+        return $responseInstance;
     }
 
     /**
@@ -178,16 +170,16 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function updateCustomView($customViewInstance)
     {
-            $inputJSON = self::constructJSONForCustomView($customViewInstance);
-            $this->urlPath = 'settings/custom_views/'.$customViewInstance->getId();
-            $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
-            $this->addHeader('Content-Type', 'application/json');
-            $this->addParam('module', $this->module->getAPIName());
-            $this->requestBody = $inputJSON;
-            //$this->apiKey='custom_views';
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $inputJSON = self::constructJSONForCustomView($customViewInstance);
+        $this->urlPath = 'settings/custom_views/'.$customViewInstance->getId();
+        $this->requestMethod = APIConstants::REQUEST_METHOD_PUT;
+        $this->addHeader('Content-Type', 'application/json');
+        $this->addParam('module', $this->module->getAPIName());
+        $this->requestBody = $inputJSON;
+        //$this->apiKey='custom_views';
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
 
-            return $responseInstance;
+        return $responseInstance;
     }
 
     /**
@@ -196,22 +188,21 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function getAllRelatedLists()
     {
-            $this->urlPath = 'settings/related_lists';
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            $this->addParam('module', $this->module->getAPIName());
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $relatedListArray = $responseJSON['related_lists'];
-            $relatedListInstanceArray = [];
-            foreach ($relatedListArray as $relatedListObj) {
-                $moduleRelatedListIns = ZCRMModuleRelatedList::getInstance($relatedListObj['api_name']);
-                array_push($relatedListInstanceArray, $moduleRelatedListIns->setRelatedListProperties($relatedListObj));
-            }
-            $responseInstance->setData($relatedListInstanceArray);
+        $this->urlPath = 'settings/related_lists';
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        $this->addParam('module', $this->module->getAPIName());
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $relatedListArray = $responseJSON['related_lists'];
+        $relatedListInstanceArray = [];
+        foreach ($relatedListArray as $relatedListObj) {
+            $moduleRelatedListIns = ZCRMModuleRelatedList::getInstance($relatedListObj['api_name']);
+            array_push($relatedListInstanceArray, $moduleRelatedListIns->setRelatedListProperties($relatedListObj));
+        }
+        $responseInstance->setData($relatedListInstanceArray);
 
-            return $responseInstance;
-    
+        return $responseInstance;
     }
 
     /**
@@ -220,20 +211,19 @@ class ModuleAPIHandler extends APIHandler
      **/
     public function getRelatedListDetails($relatedListId)
     {
-            $this->urlPath = 'settings/related_lists/'.$relatedListId;
-            $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
-            $this->addHeader('Content-Type', 'application/json');
-            $this->addParam('module', $this->module->getAPIName());
-            $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
-            $responseJSON = $responseInstance->getResponseJSON();
-            $relatedListArray = $responseJSON['related_lists'];
-            $relatedListObj = $relatedListArray[0];
-            $moduleRelatedListIns = ZCRMModuleRelatedList::getInstance($relatedListObj['api_name']);
-            $moduleRelatedListIns = $moduleRelatedListIns->setRelatedListProperties($relatedListObj);
-            $responseInstance->setData($moduleRelatedListIns);
+        $this->urlPath = 'settings/related_lists/'.$relatedListId;
+        $this->requestMethod = APIConstants::REQUEST_METHOD_GET;
+        $this->addHeader('Content-Type', 'application/json');
+        $this->addParam('module', $this->module->getAPIName());
+        $responseInstance = APIRequest::getInstance($this)->getAPIResponse();
+        $responseJSON = $responseInstance->getResponseJSON();
+        $relatedListArray = $responseJSON['related_lists'];
+        $relatedListObj = $relatedListArray[0];
+        $moduleRelatedListIns = ZCRMModuleRelatedList::getInstance($relatedListObj['api_name']);
+        $moduleRelatedListIns = $moduleRelatedListIns->setRelatedListProperties($relatedListObj);
+        $responseInstance->setData($moduleRelatedListIns);
 
-            return $responseInstance;
-    
+        return $responseInstance;
     }
 
     /**

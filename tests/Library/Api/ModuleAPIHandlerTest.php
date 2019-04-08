@@ -13,7 +13,6 @@ class ModuleAPIHandlerTest extends TestCase
     public static $moduleVsRelatedListIdMap = [];
     public static $customViewVsFieldMap = [];
 
-
     public function testGetAllFields()
     {
         if (count(MetaDataAPIHandlerTest::$moduleList) <= 0) {
