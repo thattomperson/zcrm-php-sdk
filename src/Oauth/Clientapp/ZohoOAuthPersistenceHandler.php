@@ -2,6 +2,8 @@
 
 namespace Zoho\CRM\Oauth\Clientapp;
 
+use Zoho\CRM\Oauth\Client\ZohoOAuthPersistenceInterface;
+
 class ZohoOAuthPersistenceHandler implements ZohoOAuthPersistenceInterface
 {
     public function saveOAuthData($zohoOAuthTokens)

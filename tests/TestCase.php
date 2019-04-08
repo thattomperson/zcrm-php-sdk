@@ -14,6 +14,7 @@ class TestCase extends BaseTestCase
             'client_secret'    => $_ENV['CLIENT_SECRET'],
             'redirect_uri'     => 'https://localhost:8080',
             'currentUserEmail' => $_ENV['CURRENT_USER_EMAIL'],
+            'token_persistence_path' => __DIR__,
         ]);
     }
 }

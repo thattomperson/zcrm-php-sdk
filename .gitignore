@@ -5,3 +5,4 @@ phpunit.xml
 sami.phar
 cache
 dist
+tests/zcrm_oauthtokens.txt

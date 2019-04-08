@@ -4,6 +4,8 @@ namespace Zoho\CRM\Oauth\Client;
 
 use Zoho\CRM\Oauth\Common\ZohoOAuthConstants;
 use Zoho\CRM\Oauth\Common\ZohoOAuthParams;
+use Zoho\CRM\Oauth\Clientapp\ZohoOAuthPersistenceHandler;
+use Zoho\CRM\Oauth\Clientapp\ZohoOAuthPersistenceByFile;
 
 class ZohoOAuth
 {
