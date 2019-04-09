@@ -10,7 +10,6 @@ class TestCase extends BaseTestCase
 {
     public function setUp(): void
     {
-        $a = $_ENV['GITHUB_TOKEN'];
         ZCRMRestClient::initialize([
             'client_id'              => $_ENV['CLIENT_ID'],
             'client_secret'          => $_ENV['CLIENT_SECRET'],
