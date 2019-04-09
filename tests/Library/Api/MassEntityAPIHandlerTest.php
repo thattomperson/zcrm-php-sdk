@@ -243,6 +243,7 @@ class MassEntityAPIHandlerTest extends TestCase
     public function validateDeleteRecordsResponse($moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             if (self::$moduleApiNameVsEntityIds[$moduleAPIName] == null) {
                 $endTime = $endTime == 0 ? microtime(true) * 1000 : $endTime;
@@ -276,6 +277,7 @@ class MassEntityAPIHandlerTest extends TestCase
     public function validateGetRecordsResponse($moduleAPIName, $moduleName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             $moduleIns = ZCRMModule::getInstance($moduleAPIName);
             $bulkResponseIns = $moduleIns->getRecords();
@@ -323,6 +325,7 @@ class MassEntityAPIHandlerTest extends TestCase
     public function updateRecordFieldsAndValidate($moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             $moduleFields = MetaDataAPIHandlerTest::$moduleVsFieldMap[$moduleAPIName];
             $layoutIds = array_keys(MetaDataAPIHandlerTest::$moduleVsLayoutMap[$moduleAPIName]);
@@ -362,6 +365,7 @@ class MassEntityAPIHandlerTest extends TestCase
     public function validateUpdateResponse($fieldAPIName, $fieldValue, $moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             $moduleIns = ZCRMModule::getInstance($moduleAPIName);
             $bulkResponseIns = $moduleIns->updateRecords(self::$moduleApiNameVsEntityIds[$moduleAPIName], $fieldAPIName, $fieldValue);
@@ -389,6 +393,7 @@ class MassEntityAPIHandlerTest extends TestCase
     public function setRecordFieldsAndValidate($moduleAPIName, $startTime, $endTime, $method)
     {
         $this->markTestIncomplete();
+
         try {
             $moduleFields = MetaDataAPIHandlerTest::$moduleVsFieldMap[$moduleAPIName];
             $layoutIds = array_keys(MetaDataAPIHandlerTest::$moduleVsLayoutMap[$moduleAPIName]);
@@ -508,6 +513,7 @@ class MassEntityAPIHandlerTest extends TestCase
     public function validateCreateResponse($recordsArray, $moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             $moduleIns = ZCRMModule::getInstance($moduleAPIName);
             $bulkResponseIns = $moduleIns->createRecords($recordsArray);
@@ -543,6 +549,7 @@ class MassEntityAPIHandlerTest extends TestCase
     public function validateUpsertResponse($recordsArray, $moduleAPIName, $startTime, $endTime, $updateEntityId)
     {
         $this->markTestIncomplete();
+
         try {
             $startTime = microtime(true) * 1000;
             $moduleIns = ZCRMModule::getInstance($moduleAPIName);

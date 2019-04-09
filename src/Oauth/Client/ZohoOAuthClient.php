@@ -2,10 +2,10 @@
 
 namespace Zoho\CRM\Oauth\Client;
 
-use Zoho\CRM\Oauth\Common\ZohoOAuthHTTPConnector;
+use Zoho\CRM\Oauth\Common\OAuthLogger;
 use Zoho\CRM\Oauth\Common\ZohoOAuthConstants;
 use Zoho\CRM\Oauth\Common\ZohoOAuthException;
-use Zoho\CRM\Oauth\Common\OAuthLogger;
+use Zoho\CRM\Oauth\Common\ZohoOAuthHTTPConnector;
 use Zoho\CRM\Oauth\Common\ZohoOAuthTokens;
 
 class ZohoOAuthClient
@@ -130,7 +130,6 @@ class ZohoOAuthClient
 
     private function getTokensFromJSON($responseObj)
     {
-        
         $oAuthTokens = new ZohoOAuthTokens();
         $expiresIn = $responseObj[ZohoOAuthConstants::EXPIRES_IN];
         $oAuthTokens->setExpiryTime($oAuthTokens->getCurrentTimeInMillis() + $expiresIn);
