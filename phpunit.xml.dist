@@ -17,4 +17,9 @@
             <directory suffix=".php">./src</directory>
         </whitelist>
     </filter>
+    <php>
+      <env name="CLIENT_ID" />
+      <env name="CLIENT_SECRET" />
+      <env name="CURRENT_USER_EMAIL" />
+    </php>
 </phpunit>
