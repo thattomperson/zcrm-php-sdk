@@ -4,6 +4,8 @@ namespace Zoho\CRM\Oauth\Clientapp;
 
 use Zoho\CRM\Oauth\Client\ZohoOAuth;
 use Zoho\CRM\Oauth\Client\ZohoOAuthPersistenceInterface;
+use Zoho\CRM\Oauth\Common\ZohoOAuthException;
+use Zoho\CRM\Oauth\Common\ZohoOAuthTokens;
 
 class ZohoOAuthPersistenceByFile implements ZohoOAuthPersistenceInterface
 {

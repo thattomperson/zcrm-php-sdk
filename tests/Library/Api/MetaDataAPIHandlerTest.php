@@ -14,16 +14,10 @@ class MetaDataAPIHandlerTest extends TestCase
     public static $moduleVsFieldMap = [];
     public static $moduleVsLayoutMap = [];
 
-    public static function test($fp)
-    {
-        $ins = new self();
-        self::$filePointer = $fp;
-        $ins->testGetAllModules();
-        $ins->testGetModule();
-    }
 
     public function testGetAllModules()
     {
+        $this->markTestIncomplete();
         try {
             Main::incrementTotalCount();
             $startTime = microtime(true) * 1000;
@@ -64,6 +58,7 @@ class MetaDataAPIHandlerTest extends TestCase
 
     public function testGetModule()
     {
+        $this->markTestIncomplete();
         if (!count(self::$moduleList) > 0) {
             Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMRestClient', 'getModule', 'Invalid Response', 'Module List is null or empty', 'failure', 0);
 

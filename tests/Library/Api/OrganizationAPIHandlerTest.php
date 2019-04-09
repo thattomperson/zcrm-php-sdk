@@ -21,23 +21,10 @@ class OrganizationAPIHandlerTest extends TestCase
     private static $filePointer = null;
     private static $userTypeVsMethod = ['ActiveUsers'=>'getAllActiveUsers', 'DeactiveUsers'=>'getAllDeactiveUsers', 'ConfirmedUsers'=>'getAllConfirmedUsers', 'NotConfirmedUsers'=>'getAllNotConfirmedUsers', 'DeletedUsers'=>'getAllDeletedUsers', 'ActiveConfirmedUsers'=>'getAllActiveConfirmedUsers', 'AdminUsers'=>'getAllAdminUsers', 'ActiveConfirmedAdmins'=>'getAllActiveConfirmedAdmins', 'CurrentUser'=>'getCurrentUser'];
 
-    public static function test($fp)
-    {
-        $ins = new self();
-        self::$filePointer = $fp;
-        $ins->testGetOrganizationDetails();
-        $ins->testGetAllProfiles();
-        $ins->testGetAllRoles();
-        $ins->testGetProfile();
-        $ins->testGetRole();
-        $ins->testGetAllUsers();
-        $ins->testCreateUsers();
-        $ins->testGetUser();
-        $ins->testSpecificUsers();
-    }
 
     public function testGetOrganizationDetails()
     {
+        $this->markTestIncomplete();
         $restIns = ZCRMRestClient::getInstance();
         $responseInstance = $restIns->getOrganizationDetails();
         $zcrmOrganization = $responseInstance->getData();
@@ -65,65 +52,46 @@ class OrganizationAPIHandlerTest extends TestCase
     }
 
     public function testGetAllProfiles()
-    {
-        try {
-            Main::incrementTotalCount();
-            $startTime = microtime(true) * 1000;
-            $endTime = 0;
-            $orgIns = ZCRMOrganization::getInstance();
-            $responseInstance = $orgIns->getAllProfiles();
-            $zcrmProfiles = $responseInstance->getData();
-            $endTime = microtime(true) * 1000;
-            if ($zcrmProfiles == null || count($zcrmProfiles) <= 0) {
-                throw new ZCRMException('No Profile Received');
-            }
-            foreach ($zcrmProfiles as $zcrmProfile) {
-                if ($zcrmProfile->getId() == null || $zcrmProfile->getName() == null) {
-                    throw new ZCRMException('Invalid Profile Data Received (Either ID or Name is NULL)');
-                }
-                if ('Administrator' === $zcrmProfile->getName()) {
-                    self::$adminProfileId = $zcrmProfile->getId();
-                }
-                array_push(self::$profileIdList, $zcrmProfile->getId());
-            }
-            Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMOrganization', 'getAllProfiles', null, null, 'success', ($endTime - $startTime));
-        } catch (ZCRMException $e) {
-            $endTime = $endTime == 0 ? microtime(true) * 1000 : $endTime;
-            Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMOrganization', 'getAllProfiles', $e->getMessage(), $e->getExceptionDetails(), 'failure', ($endTime - $startTime));
+    {    
+        $this->markTestIncomplete();
+        $orgIns = ZCRMOrganization::getInstance();
+        $responseInstance = $orgIns->getAllProfiles();
+        $zcrmProfiles = $responseInstance->getData();
+        
+        $this->assertNotNull($zcrmProfiles);
+        $this->assertNotEmpty($zcrmProfiles);
+
+        
+        foreach ($zcrmProfiles as $zcrmProfile) {
+            $this->assertNotNull($zcrmProfile->getId());
+            $this->assertNotNull($zcrmProfile->getName());
         }
     }
 
     public function testGetAllRoles()
     {
-        try {
-            Main::incrementTotalCount();
-            $startTime = microtime(true) * 1000;
-            $endTime = 0;
+        $this->markTestIncomplete();
             $orgIns = ZCRMOrganization::getInstance();
             $responseInstance = $orgIns->getAllRoles();
             $zcrmRoles = $responseInstance->getData();
-            $endTime = microtime(true) * 1000;
-            if ($zcrmRoles == null || count($zcrmRoles) <= 0) {
-                throw new ZCRMException('No Role Received');
-            }
+            
+            $this->assertNotNull($zcrmRoles);
+            $this->assertNotEmpty($zcrmRoles);
+
             foreach ($zcrmRoles as $zcrmRole) {
-                if ($zcrmRole->getId() == null || $zcrmRole->getName() == null || $zcrmRole->getDisplayLabel() == null || ($zcrmRole->getReportingTo() != null && ($zcrmRole->getReportingTo()->getId() == null || $zcrmRole->getReportingTo()->getName() == null))) {
-                    throw new ZCRMException('Invalid Role Data Received (Either ID or Name or Label or reportingTo is NULL)');
-                }
-                if ($zcrmRole->isAdminRole()) {
-                    self::$adminRoleId = $zcrmRole->getId();
-                }
-                array_push(self::$roleIdList, $zcrmRole->getId());
+                $this->assertNotNull($zcrmRole->getId());
+                $this->assertNotNull($zcrmRole->getName());
+                $this->assertNotNull($zcrmRole->getDisplayLabel());
+                $this->assertNotNull($zcrmRole->getReportingTo());
+                $this->assertNotNull($zcrmRole->getReportingTo()->getId());
+                $this->assertNotNull($zcrmRole->getReportingTo()->getName());
             }
-            Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMOrganization', 'getAllRoles', null, null, 'success', ($endTime - $startTime));
-        } catch (ZCRMException $e) {
-            $endTime = $endTime == 0 ? microtime(true) * 1000 : $endTime;
-            Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMOrganization', 'getAllRoles', $e->getMessage(), $e->getExceptionDetails(), 'failure', ($endTime - $startTime));
-        }
     }
 
     public function testGetRole()
     {
+        $this->markTestIncomplete();
+
         if (count(self::$roleIdList) <= 0) {
             Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMOrganization', 'getRole', 'Invalid Response', 'Roles List is null or empty', 'failure', 0);
 
@@ -151,6 +119,7 @@ class OrganizationAPIHandlerTest extends TestCase
 
     public function testGetProfile()
     {
+        $this->markTestIncomplete();
         if (count(self::$profileIdList) <= 0) {
             Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMOrganization', 'getProfile', 'Invalid Response', 'Profile List is null or empty', 'failure', 0);
 
@@ -199,6 +168,7 @@ class OrganizationAPIHandlerTest extends TestCase
 
     public function testGetAllUsers()
     {
+        $this->markTestIncomplete();
         try {
             Main::incrementTotalCount();
             $startTime = microtime(true) * 1000;
@@ -238,6 +208,7 @@ class OrganizationAPIHandlerTest extends TestCase
 
     public function testGetUser()
     {
+        $this->markTestIncomplete();
         if (count(self::$userIdList) <= 0) {
             Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMOrganization', 'getUser', 'Invalid Response', 'User List is null or empty', 'failure', 0);
 
@@ -265,6 +236,7 @@ class OrganizationAPIHandlerTest extends TestCase
 
     public function testCreateUsers()
     {
+        $this->markTestIncomplete();
         $nameArr = ['automation1'];
         $userJSONArray = [];
         $zcrmUser = null;
@@ -322,6 +294,7 @@ class OrganizationAPIHandlerTest extends TestCase
 
     public function testSpecificUsers()
     {
+        $this->markTestIncomplete();
         $typeArr = ['ActiveUsers', 'DeactiveUsers', 'ConfirmedUsers', 'NotConfirmedUsers', 'DeletedUsers', 'ActiveConfirmedUsers', 'AdminUsers', 'ActiveConfirmedAdmins', 'CurrentUser'];
         foreach ($typeArr as $type) {
             try {

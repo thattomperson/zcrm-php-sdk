@@ -2,6 +2,8 @@
 
 namespace Zoho\CRM\Library\Crud;
 
+use Zoho\CRM\Library\Api\Handler\ModuleAPIHandler;
+
 class ZCRMModule
 {
     /**

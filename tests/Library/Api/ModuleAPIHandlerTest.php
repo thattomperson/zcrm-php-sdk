@@ -15,6 +15,7 @@ class ModuleAPIHandlerTest extends TestCase
 
     public function testGetAllFields()
     {
+        $this->markTestIncomplete();
         if (count(MetaDataAPIHandlerTest::$moduleList) <= 0) {
             Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMModule', 'getAllFields', 'Invalid Request', 'Module List is empty', 'failure', 0);
 
@@ -57,6 +58,7 @@ class ModuleAPIHandlerTest extends TestCase
 
     public function testGetFieldDetails()
     {
+        $this->markTestIncomplete();
         if (count(self::$moduleVsFieldIdMap) <= 0) {
             Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMModule', 'getFieldDetails', 'Invalid Request', 'Module Field List is empty', 'failure', 0);
 
@@ -107,6 +109,7 @@ class ModuleAPIHandlerTest extends TestCase
 
     public function testGetAllLayouts()
     {
+        $this->markTestIncomplete();
         if (count(MetaDataAPIHandlerTest::$moduleList) <= 0) {
             Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMModule', 'getAllLayouts', 'Invalid Request', 'Module List is empty', 'failure', 0);
 
@@ -187,6 +190,7 @@ class ModuleAPIHandlerTest extends TestCase
 
     public function testGetLayoutDetails()
     {
+        $this->markTestIncomplete();
         if (count(self::$moduleVsLayoutIdMap) <= 0) {
             Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMModule', 'getLayoutDetails', 'Invalid Request', 'Module layout List is empty', 'failure', 0);
 
@@ -264,6 +268,7 @@ class ModuleAPIHandlerTest extends TestCase
 
     public function testGetAllCustomViews()
     {
+        $this->markTestIncomplete();
         if (count(MetaDataAPIHandlerTest::$moduleList) <= 0) {
             Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMModule', 'getAllCustomViews', 'Invalid Request', 'Module List is empty', 'failure', 0);
 
@@ -312,6 +317,7 @@ class ModuleAPIHandlerTest extends TestCase
 
     public function testGetCustomViewDetails()
     {
+        $this->markTestIncomplete();
         if (count(self::$moduleVsCustomViewIdMap) <= 0) {
             Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMModule', 'getCustomViewDetails', 'Invalid Request', 'Module custom view List is empty', 'failure', 0);
 
@@ -364,6 +370,7 @@ class ModuleAPIHandlerTest extends TestCase
 
     public function testGetAllRelatedLists()
     {
+        $this->markTestIncomplete();
         if (count(MetaDataAPIHandlerTest::$moduleList) <= 0) {
             Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMModule', 'getAllRelatedLists', 'Invalid Request', 'Module List is empty', 'failure', 0);
 
@@ -404,6 +411,7 @@ class ModuleAPIHandlerTest extends TestCase
 
     public function testGetRelatedListDetails()
     {
+        $this->markTestIncomplete();
         if (count(self::$moduleVsRelatedListIdMap) <= 0) {
             Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMModule('.$moduleApiName.')', 'getRelatedListDetails('.$relatedListId.')', 'Invalid Request', 'Module Related List is empty', 'failure', 0);
 
@@ -437,6 +445,7 @@ class ModuleAPIHandlerTest extends TestCase
 
     public function testUpdateCustomView()
     {
+        $this->markTestIncomplete();
         if (count(self::$moduleVsCustomViewIdMap) <= 0) {
             Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMModule', 'updateCustomView', 'Invalid Request', 'Module custom view List is empty', 'failure', 0);
 
@@ -473,6 +482,7 @@ class ModuleAPIHandlerTest extends TestCase
 
     public function testUpdateModuleSettings()
     {
+        $this->markTestIncomplete();
         if (count(MetaDataAPIHandlerTest::$moduleList) <= 0) {
             Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'ZCRMModule', 'updateModuleSettings', 'Invalid Request', 'Module List is empty', 'failure', 0);
 

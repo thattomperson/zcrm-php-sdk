@@ -2,6 +2,8 @@
 
 namespace Zoho\CRM\Library\Api\Handler;
 
+use Zoho\CRM\Library\Crud\ZCRMModule;
+
 class ModuleAPIHandler extends APIHandler
 {
     private $module = null;

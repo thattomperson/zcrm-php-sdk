@@ -2,6 +2,8 @@
 
 namespace Zoho\CRM\Oauth\Common;
 
+use Exception;
+
 class ZohoOAuthException extends Exception
 {
     protected $message = 'Unknown exception';     // Exception message
