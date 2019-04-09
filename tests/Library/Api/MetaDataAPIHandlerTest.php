@@ -14,10 +14,10 @@ class MetaDataAPIHandlerTest extends TestCase
     public static $moduleVsFieldMap = [];
     public static $moduleVsLayoutMap = [];
 
-
     public function testGetAllModules()
     {
         $this->markTestIncomplete();
+
         try {
             Main::incrementTotalCount();
             $startTime = microtime(true) * 1000;

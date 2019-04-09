@@ -2,10 +2,9 @@
 
 namespace Zoho\CRM\Tests\Library\Api;
 
-
-use Zoho\CRM\Library\Crud\ZCRMRecord;
-use Zoho\CRM\Library\Crud\ZCRMModule;
 use Zoho\CRM\Library\Api\Handler\EntityAPIHandler;
+use Zoho\CRM\Library\Crud\ZCRMModule;
+use Zoho\CRM\Library\Crud\ZCRMRecord;
 use Zoho\CRM\Tests\TestCase;
 
 class EntityAPIHandlerTest extends TestCase
@@ -15,10 +14,9 @@ class EntityAPIHandlerTest extends TestCase
     public static $firstParnetModule = null;
     public static $moduleApiNameVsEntityId = [];
 
-
     public function createProduct()
     {
-        $products = ZCRMModule::getInstance("Products");
+        $products = ZCRMModule::getInstance('Products');
 
         var_dump($products->getAllFields()->getData());
         die;
@@ -26,8 +24,6 @@ class EntityAPIHandlerTest extends TestCase
         // $record = ZCRMRecord::getInstance('Products', null);
         // $record->
         // EntityAPIHandler::getInstance($record)->createRecord();
-        
-
 
         // $moduleIns=ZCRMModuleClient::getInstance()->getModuleInstance("Products"); //To get module instance
         // $response=$moduleIns->getAllFields(); //to get the field
@@ -48,7 +44,6 @@ class EntityAPIHandlerTest extends TestCase
         $this->markTestIncomplete();
         $product = $this->createProduct();
         $priceBook = $this->createPriceBook();
-
 
         // $productId = self::$moduleApiNameVsEntityId[MetaDataAPIHandlerTest::$moduleNameVsApiName['Products']];
         // $priceBookId = self::$moduleApiNameVsEntityId[MetaDataAPIHandlerTest::$moduleNameVsApiName['PriceBooks']];
@@ -233,6 +228,7 @@ class EntityAPIHandlerTest extends TestCase
     public function validateDeleteRecordResponse($moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             if (self::$moduleApiNameVsEntityId[$moduleAPIName] == null) {
                 $endTime = $endTime == 0 ? microtime(true) * 1000 : $endTime;
@@ -259,6 +255,7 @@ class EntityAPIHandlerTest extends TestCase
     public function validateGetRecordResponse($moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             $moduleIns = ZCRMModule::getInstance($moduleAPIName);
             if (self::$moduleApiNameVsEntityId[$moduleAPIName] == null) {
@@ -286,6 +283,7 @@ class EntityAPIHandlerTest extends TestCase
     public function updateRecordFieldsAndValidate($moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             $moduleFields = MetaDataAPIHandlerTest::$moduleVsFieldMap[$moduleAPIName];
             $layoutIds = array_keys(MetaDataAPIHandlerTest::$moduleVsLayoutMap[$moduleAPIName]);
@@ -390,6 +388,7 @@ class EntityAPIHandlerTest extends TestCase
     public function validateUpdateResponse($zcrmrecord, $moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             $responseIns = $zcrmrecord->update();
             $endTime = microtime(true) * 1000;
@@ -412,6 +411,7 @@ class EntityAPIHandlerTest extends TestCase
     public function setRecordFieldsAndValidate($moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             $moduleFields = MetaDataAPIHandlerTest::$moduleVsFieldMap[$moduleAPIName];
             $layoutIds = array_keys(MetaDataAPIHandlerTest::$moduleVsLayoutMap[$moduleAPIName]);
@@ -515,6 +515,7 @@ class EntityAPIHandlerTest extends TestCase
     public function validateCreateResponse($zcrmrecord, $moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             $responseIns = $zcrmrecord->create();
             $endTime = microtime(true) * 1000;
@@ -569,6 +570,7 @@ class EntityAPIHandlerTest extends TestCase
     public function uploadFile($moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             $record = ZCRMRecord::getInstance(self::$firstParnetModule, self::$firstParnetId);
             $responseIns = $record->uploadAttachment('../../../resources/image.png');
@@ -613,6 +615,7 @@ class EntityAPIHandlerTest extends TestCase
     public function downloadFile($moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             $record = ZCRMRecord::getInstance(self::$firstParnetModule, self::$firstParnetId);
             $responseIns = $record->downloadAttachment(self::$moduleApiNameVsEntityId[$moduleAPIName]);
@@ -653,6 +656,7 @@ class EntityAPIHandlerTest extends TestCase
     public function deleteFile($moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             $record = ZCRMRecord::getInstance(self::$firstParnetModule, self::$firstParnetId);
             $responseIns = $record->deleteAttachment(self::$moduleApiNameVsEntityId[$moduleAPIName]);
@@ -674,6 +678,7 @@ class EntityAPIHandlerTest extends TestCase
     public function createNote($moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             $parentRecord = ZCRMRecord::getInstance(self::$firstParnetModule, self::$firstParnetId);
             $noteIns = ZCRMNote::getInstance($parentRecord);
@@ -700,6 +705,7 @@ class EntityAPIHandlerTest extends TestCase
     public function updateNote($moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             if (self::$moduleApiNameVsEntityId[$moduleAPIName] == null) {
                 Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'EntityAPIHandlerTest('.self::$firstParnetModule.','.self::$firstParnetId.')', 'updateNote', 'Note update failed', 'Reason::Note creation failed', 'failure', ($endTime - $startTime));
@@ -729,6 +735,7 @@ class EntityAPIHandlerTest extends TestCase
     public function getNotes($moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             Main::incrementTotalCount();
             if (self::$moduleApiNameVsEntityId[$moduleAPIName] == null) {
@@ -756,6 +763,7 @@ class EntityAPIHandlerTest extends TestCase
     public function deleteNote($moduleAPIName, $startTime, $endTime)
     {
         $this->markTestIncomplete();
+
         try {
             if (self::$moduleApiNameVsEntityId[$moduleAPIName] == null) {
                 Helper::writeToFile(self::$filePointer, Main::getCurrentCount(), 'EntityAPIHandlerTest('.self::$firstParnetModule.','.self::$firstParnetId.')', 'deleteNote', 'Note deletion failed', 'Reason::Note creation failed', 'failure', 0);

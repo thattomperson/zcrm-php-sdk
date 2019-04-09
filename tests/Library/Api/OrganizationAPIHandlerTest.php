@@ -21,7 +21,6 @@ class OrganizationAPIHandlerTest extends TestCase
     private static $filePointer = null;
     private static $userTypeVsMethod = ['ActiveUsers'=>'getAllActiveUsers', 'DeactiveUsers'=>'getAllDeactiveUsers', 'ConfirmedUsers'=>'getAllConfirmedUsers', 'NotConfirmedUsers'=>'getAllNotConfirmedUsers', 'DeletedUsers'=>'getAllDeletedUsers', 'ActiveConfirmedUsers'=>'getAllActiveConfirmedUsers', 'AdminUsers'=>'getAllAdminUsers', 'ActiveConfirmedAdmins'=>'getAllActiveConfirmedAdmins', 'CurrentUser'=>'getCurrentUser'];
 
-
     public function testGetOrganizationDetails()
     {
         $this->markTestIncomplete();
@@ -52,16 +51,15 @@ class OrganizationAPIHandlerTest extends TestCase
     }
 
     public function testGetAllProfiles()
-    {    
+    {
         $this->markTestIncomplete();
         $orgIns = ZCRMOrganization::getInstance();
         $responseInstance = $orgIns->getAllProfiles();
         $zcrmProfiles = $responseInstance->getData();
-        
+
         $this->assertNotNull($zcrmProfiles);
         $this->assertNotEmpty($zcrmProfiles);
 
-        
         foreach ($zcrmProfiles as $zcrmProfile) {
             $this->assertNotNull($zcrmProfile->getId());
             $this->assertNotNull($zcrmProfile->getName());
@@ -71,21 +69,21 @@ class OrganizationAPIHandlerTest extends TestCase
     public function testGetAllRoles()
     {
         $this->markTestIncomplete();
-            $orgIns = ZCRMOrganization::getInstance();
-            $responseInstance = $orgIns->getAllRoles();
-            $zcrmRoles = $responseInstance->getData();
-            
-            $this->assertNotNull($zcrmRoles);
-            $this->assertNotEmpty($zcrmRoles);
+        $orgIns = ZCRMOrganization::getInstance();
+        $responseInstance = $orgIns->getAllRoles();
+        $zcrmRoles = $responseInstance->getData();
 
-            foreach ($zcrmRoles as $zcrmRole) {
-                $this->assertNotNull($zcrmRole->getId());
-                $this->assertNotNull($zcrmRole->getName());
-                $this->assertNotNull($zcrmRole->getDisplayLabel());
-                $this->assertNotNull($zcrmRole->getReportingTo());
-                $this->assertNotNull($zcrmRole->getReportingTo()->getId());
-                $this->assertNotNull($zcrmRole->getReportingTo()->getName());
-            }
+        $this->assertNotNull($zcrmRoles);
+        $this->assertNotEmpty($zcrmRoles);
+
+        foreach ($zcrmRoles as $zcrmRole) {
+            $this->assertNotNull($zcrmRole->getId());
+            $this->assertNotNull($zcrmRole->getName());
+            $this->assertNotNull($zcrmRole->getDisplayLabel());
+            $this->assertNotNull($zcrmRole->getReportingTo());
+            $this->assertNotNull($zcrmRole->getReportingTo()->getId());
+            $this->assertNotNull($zcrmRole->getReportingTo()->getName());
+        }
     }
 
     public function testGetRole()
@@ -169,6 +167,7 @@ class OrganizationAPIHandlerTest extends TestCase
     public function testGetAllUsers()
     {
         $this->markTestIncomplete();
+
         try {
             Main::incrementTotalCount();
             $startTime = microtime(true) * 1000;
