@@ -2,18 +2,19 @@ language: php
 php:
 - '7.2'
 - '7.3'
-jobs:
-  test:
-    before_script:
-    - travis_retry composer self-update
-    - travis_retry composer install --no-interaction --prefer-source
-    script:
-    - vendor/bin/phpunit --coverage-clover=coverage.xml
-    after_success:
-    - bash <(curl -s https://codecov.io/bash)
-    - curl -LO https://github.com/blueend-ag/Sami/releases/download/4.1.3/sami.phar
-    - php sami.phar update sami.config.php
-after_success: 
+
+before_script:
+- travis_retry composer self-update
+- travis_retry composer install --no-interaction --prefer-source
+
+script:
+- vendor/bin/phpunit --coverage-clover=coverage.xml
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)
+- curl -LO https://github.com/blueend-ag/Sami/releases/download/4.1.3/sami.phar
+- php sami.phar update sami.config.php
+
 deploy:
   provider: pages
   skip_cleanup: true
@@ -22,6 +23,7 @@ deploy:
   on:
     php: '7.2'
     branch: master
+
 env:
   global:
   - secure: BgA27yHwWurFqcXbZ+OWELdCiDVSS0tuYRV8UeXY9/u2osyY9JyXbX03FGNHXosW80DEdAPkRMWmYLZzCCcDI23+JpphSSLmU8dc8o0rYtddbYkR5A7l1R81XH31DoDWwUHn3uRY9Bhszc7HNZXLw+yft1UguMDmqezVtCktiFAzOf1PHJcUVYWscKoPKScNxPpIvAOCSGoxM2Io54c1Z5C3ytCUdPWT6pxLfHSo1EStOxDPv7YhRvqAsx8w1CsOLiyvWyUn6836zitpbJl5QZjQtuVKy0fkdKjAeDNVNRIdRzZEa5YUBGWXuROyiUCHb2C6/gM5YL1ZWFO1usCeznVob9n42CmAFm48i5GEWPs0E9d2D0st/JqKUGdF9kd0qx4931JcNcMaQlBU1Y2Q9/qk75gc/TPQAN4kgFMKKHdcOGvJAj7pYyGEnbvWux22TVMV5KPlNuOycyYB/qokqFI1W2mcYuI3Pkahh1BECIhC7NPqbaaHd0hJAlO9DrEJvfuRBT30pFps+cVXxvX6gOmOzktJ8dQUIGCcUrvi9xlenukCYwl257cfrO8iRXz2WSHB1nbV7D77h7cY1gGIqtDcqNYQf72fmyHHULA3V65yUJZIquRq+oZtWp8eMy9YnqUBzK6Alt2HORDvIhK3dDxk8sOjqDyaBxRHWRrBEUI=
